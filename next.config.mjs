@@ -4,7 +4,6 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
 
-  // Aggressive build-time optimizations
   experimental: {
     optimizePackageImports: ["framer-motion", "lucide-react"],
   },
@@ -22,11 +21,10 @@ const nextConfig = {
     ],
   },
 
-  // Add aggressive cache headers for static assets
   async headers() {
     return [
       {
-        source: "/(.*)",
+        source: "/:path*",
         headers: [
           {
             key: "X-Content-Type-Options",
@@ -39,18 +37,7 @@ const nextConfig = {
         ],
       },
       {
-        // Cache all static files for 1 year
-        source: "/(.*)\\.(js|css|woff|woff2|ttf|otf|eot|ico|png|jpg|jpeg|gif|svg|webp|avif)",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
-      },
-      {
-        // Cache images
-        source: "/images/(.*)",
+        source: "/images/:path*",
         headers: [
           {
             key: "Cache-Control",

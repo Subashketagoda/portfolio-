@@ -1,24 +1,21 @@
-import dynamic from "next/dynamic";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import MarqueeBanner from "@/components/MarqueeBanner";
+import About from "@/components/About";
+import Services from "@/components/Services";
+import ProcessSection from "@/components/ProcessSection";
+import Skills from "@/components/Skills";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
-// Client-only UI (no SSR needed)
-const LoadingScreen = dynamic(() => import("@/components/LoadingScreen"), { ssr: false });
-const MouseSpotlight = dynamic(() => import("@/components/MouseSpotlight"), { ssr: false });
-const ScrollProgressBar = dynamic(() => import("@/components/ui/ScrollProgressBar"), { ssr: false });
-const BackToTop = dynamic(() => import("@/components/ui/BackToTop"), { ssr: false });
-const ScrollReveal = dynamic(() => import("@/components/ui/ScrollReveal"), { ssr: false });
-
-// Below-the-fold sections - lazy loaded
-const MarqueeBanner = dynamic(() => import("@/components/MarqueeBanner"));
-const About = dynamic(() => import("@/components/About"));
-const Services = dynamic(() => import("@/components/Services"));
-const ProcessSection = dynamic(() => import("@/components/ProcessSection"));
-const Skills = dynamic(() => import("@/components/Skills"));
-const Projects = dynamic(() => import("@/components/Projects"));
-const Testimonials = dynamic(() => import("@/components/Testimonials"));
-const Contact = dynamic(() => import("@/components/Contact"));
-const Footer = dynamic(() => import("@/components/Footer"));
+// Client-only ambient indicators
+import LoadingScreen from "@/components/LoadingScreen";
+import MouseSpotlight from "@/components/MouseSpotlight";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import BackToTop from "@/components/ui/BackToTop";
 
 export default function Home() {
   return (

@@ -15,18 +15,27 @@ export default function ScrollReveal({
   delay = 0,
   direction = "up",
 }: ScrollRevealProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  // Always start as TRUE so SSR HTML and initial render are 100% visible immediately
+  // Content is NEVER hidden or invisible on first paint
+  const [isVisible, setIsVisible] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reveal immediately on mobile screens (<768px) or if user prefers reduced motion
+    // On mobile / touch screens (<1024px), stay permanently visible with zero animation delays
     if (
       typeof window !== "undefined" &&
-      (window.innerWidth < 768 || window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+      (window.innerWidth < 1024 ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches)
     ) {
       setIsVisible(true);
       return;
     }
+
+    // Only on larger desktop screens, gently observe viewport entrance
+    const currentRef = ref.current;
+    if (!currentRef) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -37,46 +46,31 @@ export default function ScrollReveal({
       },
       {
         threshold: 0.05,
-        rootMargin: "80px 0px 80px 0px",
+        rootMargin: "120px 0px 120px 0px",
       }
     );
 
-    const currentRef = ref.current;
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
+    observer.observe(currentRef);
+
+    // Fallback: guaranteed visible after 800ms under all desktop circumstances
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 800);
 
     return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
+      clearTimeout(timer);
+      observer.disconnect();
     };
   }, []);
-
-  const getInitialTransform = () => {
-    switch (direction) {
-      case "up":
-        return "translateY(36px)";
-      case "down":
-        return "translateY(-36px)";
-      case "left":
-        return "translateX(36px)";
-      case "right":
-        return "translateX(-36px)";
-      default:
-        return "translateY(36px)";
-    }
-  };
 
   return (
     <div
       ref={ref}
       className={`scroll-reveal-box ${className}`.trim()}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? "translate3d(0, 0, 0)" : getInitialTransform(),
-        transition: `opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1) ${delay}ms`,
-        willChange: "transform, opacity",
+        opacity: isVisible ? 1 : 0.9,
+        transform: "none",
+        transition: `opacity 0.5s ease ${delay}ms`,
       }}
     >
       {children}

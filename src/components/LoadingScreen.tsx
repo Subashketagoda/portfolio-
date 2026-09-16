@@ -74,8 +74,8 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
 
     setMounted(true);
 
-    // Prevent body scrolling ONLY on desktop while loading screen is active
-    if (typeof document !== "undefined") {
+    // Prevent body scrolling ONLY on verified desktop (>=1024px) while loading screen is active
+    if (typeof document !== "undefined" && typeof window !== "undefined" && window.innerWidth >= 1024) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     }

@@ -27,8 +27,8 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Instant visibility on mobile: prevents any blank/frozen sections during initial load or hydration */
-@media (max-width: 768px) {
+/* Instant visibility on mobile and tablet: prevents any blank/frozen sections during initial load or hydration */
+@media (max-width: 1024px) {
   .scroll-reveal-box {
     opacity: 1 !important;
     transform: none !important;
