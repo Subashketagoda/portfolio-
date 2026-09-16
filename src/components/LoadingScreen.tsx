@@ -37,9 +37,9 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   }, [handleFinish]);
 
   useEffect(() => {
-    // 2.0s silky-smooth cubic-bezier counter
+    // 3.0s silky-smooth cubic-bezier counter
     const startTime = Date.now();
-    const duration = 2000;
+    const duration = 3000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
