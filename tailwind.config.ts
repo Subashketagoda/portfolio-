@@ -41,9 +41,14 @@ const config: Config = {
       animation: {
         "spin-slow": "spin 25s linear infinite",
         "float": "float 6s ease-in-out infinite",
+        "float-slow": "float 9s ease-in-out infinite",
         "pulse-subtle": "pulseSubtle 3s ease-in-out infinite",
+        "pulse-slow": "pulseSlow 4s ease-in-out infinite",
         "marquee": "marquee 35s linear infinite",
         "marquee-reverse": "marqueeReverse 35s linear infinite",
+        "shimmer": "shimmer 2.5s infinite",
+        "gradient-x": "gradientX 6s ease infinite",
+        "laser-pulse": "laserPulse 3s linear infinite",
       },
       keyframes: {
         float: {
@@ -53,6 +58,22 @@ const config: Config = {
         pulseSubtle: {
           "0%, 100%": { opacity: "0.2" },
           "50%": { opacity: "0.5" },
+        },
+        pulseSlow: {
+          "0%, 100%": { opacity: "0.25", transform: "scale(0.98)" },
+          "50%": { opacity: "0.55", transform: "scale(1.03)" },
+        },
+        shimmer: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(200%)" },
+        },
+        gradientX: {
+          "0%, 100%": { "background-size": "200% 200%", "background-position": "left center" },
+          "50%": { "background-size": "200% 200%", "background-position": "right center" },
+        },
+        laserPulse: {
+          "0%": { strokeDashoffset: "600" },
+          "100%": { strokeDashoffset: "-600" },
         },
         marquee: {
           "0%": { transform: "translateX(0%)" },
