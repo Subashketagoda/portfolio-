@@ -440,6 +440,22 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Animated Scroll Down Prompt */}
+      <div className="pt-8 sm:pt-12 flex flex-col items-center justify-center relative z-20">
+        <a
+          href="#about"
+          className="group flex flex-col items-center gap-2 text-gray-500 hover:text-orange-400 transition-colors cursor-pointer"
+          aria-label="Scroll down to About section"
+        >
+          <span className="font-mono text-[9px] sm:text-[10px] tracking-[0.28em] uppercase font-semibold text-gray-400 group-hover:text-orange-400 transition-colors">
+            SCROLL TO EXPLORE
+          </span>
+          <div className="w-5 h-8 rounded-full border border-white/20 group-hover:border-orange-500/60 flex items-start justify-center p-1.5 transition-colors">
+            <div className="w-1 h-2 bg-orange-500 rounded-full animate-bounce" />
+          </div>
+        </a>
+      </div>
     </section>
   );
 }

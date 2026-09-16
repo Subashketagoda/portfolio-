@@ -5,13 +5,21 @@ import { ArrowUp } from "lucide-react";
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsVisible(window.scrollY > 400);
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (totalHeight > 0) {
+        const current = (window.scrollY / totalHeight) * 100;
+        setScrollProgress(Math.min(100, Math.max(0, current)));
+      }
+      setIsVisible(window.scrollY > 350);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -22,15 +30,38 @@ export default function BackToTop() {
     });
   };
 
-  if (!isVisible) return null;
-
   return (
     <button
       onClick={scrollToTop}
       aria-label="Back to Top"
-      className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-[#13131b]/90 border border-white/10 hover:border-[#ff8a00] hover:bg-[#ff8a00]/15 flex items-center justify-center text-gray-400 hover:text-[#ff8a00] shadow-xl backdrop-blur-md transition-all duration-300 hover:scale-110"
+      className={`fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[#0d0f17]/95 border border-white/10 hover:border-orange-500/60 flex items-center justify-center text-gray-400 hover:text-orange-400 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer ${
+        isVisible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
+      }`}
     >
-      <ArrowUp className="w-4 h-4" />
+      {/* Circular Scroll Progress Ring */}
+      <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none" viewBox="0 0 48 48">
+        <circle
+          cx="24"
+          cy="24"
+          r="21"
+          className="stroke-white/[0.08]"
+          strokeWidth="2"
+          fill="transparent"
+        />
+        <circle
+          cx="24"
+          cy="24"
+          r="21"
+          className="stroke-orange-500 transition-all duration-100"
+          strokeWidth="2.5"
+          strokeDasharray={132}
+          strokeDashoffset={132 - (132 * scrollProgress) / 100}
+          strokeLinecap="round"
+          fill="transparent"
+        />
+      </svg>
+
+      <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 relative z-10" />
     </button>
   );
 }

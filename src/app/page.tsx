@@ -3,6 +3,9 @@
 import Navbar from "@/components/Navbar";
 import LoadingScreen from "@/components/LoadingScreen";
 import MouseSpotlight from "@/components/MouseSpotlight";
+import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
+import BackToTop from "@/components/ui/BackToTop";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import Hero from "@/components/Hero";
 import MarqueeBanner from "@/components/MarqueeBanner";
 import About from "@/components/About";
@@ -19,6 +22,12 @@ export default function Home() {
     <>
       <LoadingScreen />
 
+      {/* Global Top Scroll Reading Progress Line */}
+      <ScrollProgressBar />
+
+      {/* Floating Circular Scroll-To-Top Indicator */}
+      <BackToTop />
+
       <div className="min-h-screen bg-[#080b0f] text-white selection:bg-orange-500 selection:text-white">
         {/* Interactive Mouse Follower Spotlight */}
         <MouseSpotlight />
@@ -31,14 +40,25 @@ export default function Home() {
           {/* Luxury Marquee Ticker 1 */}
           <MarqueeBanner />
 
-          <About />
+          {/* About Section with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <About />
+          </ScrollReveal>
 
-          <Services />
+          {/* Services Section with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <Services />
+          </ScrollReveal>
 
           {/* Creative Process & Engineering Workflow */}
-          <ProcessSection />
+          <ScrollReveal direction="up" delay={50}>
+            <ProcessSection />
+          </ScrollReveal>
 
-          <Skills />
+          {/* Skills Grid with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <Skills />
+          </ScrollReveal>
 
           {/* Luxury Marquee Ticker 2 (Reversed with project & stack highlights) */}
           <MarqueeBanner
@@ -55,11 +75,20 @@ export default function Home() {
             ]}
           />
 
-          <Projects />
+          {/* Projects Portfolio with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <Projects />
+          </ScrollReveal>
 
-          <Testimonials />
+          {/* Testimonials with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <Testimonials />
+          </ScrollReveal>
 
-          <Contact />
+          {/* Contact Section with Scroll Reveal */}
+          <ScrollReveal direction="up" delay={50}>
+            <Contact />
+          </ScrollReveal>
         </main>
 
         <Footer />
