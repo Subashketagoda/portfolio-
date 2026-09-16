@@ -126,10 +126,8 @@ export default function Hero() {
         }}
       />
 
-      {/* 8. Precision Geometric Constellation Vectors (Desktop only) */}
+      {/* 8. Precision Geometric HUD Vectors (Desktop only) */}
       <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.16] hidden md:block" viewBox="0 0 1440 900" fill="none">
-        <circle cx="1120" cy="450" r="280" stroke="rgba(249, 115, 22, 0.3)" strokeWidth="0.8" strokeDasharray="4 8" />
-        <circle cx="1120" cy="450" r="340" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="0.5" />
         <line x1="160" y1="180" x2="480" y2="180" stroke="rgba(249, 115, 22, 0.25)" strokeWidth="0.8" strokeDasharray="2 6" />
         <line x1="160" y1="180" x2="160" y2="340" stroke="rgba(249, 115, 22, 0.25)" strokeWidth="0.8" strokeDasharray="2 6" />
         <circle cx="160" cy="180" r="3" fill="#ff8a00" />
@@ -270,44 +268,44 @@ export default function Hero() {
         <div className="lg:col-span-5 flex items-center justify-center relative">
           <div className="relative w-[340px] h-[480px] sm:w-[440px] sm:h-[580px] lg:w-[480px] lg:h-[620px] flex items-center justify-center">
 
-            {/* Glowing Orange Orbital System BEHIND the cutout */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] sm:w-[440px] sm:h-[440px] pointer-events-none">
-              {/* Outer soft ambient orange aura */}
-              <div className="absolute inset-0 rounded-full bg-orange-500/15 blur-[80px]" />
+            {/* Ultra-Luxury Modern Architectural Glass Backdrop (Replaced generic circles) */}
+            <div className="absolute inset-2 sm:inset-4 lg:inset-6 pointer-events-none flex items-center justify-center">
+              {/* Warm Volumetric Ambient Backlight */}
+              <div className="absolute w-[280px] sm:w-[380px] h-[360px] sm:h-[460px] bg-gradient-to-t from-orange-500/22 via-amber-500/12 to-transparent blur-[90px] rounded-3xl" />
 
-              {/* Outer Thin Concentric Orbital Ring */}
-              <div className="absolute inset-0 rounded-full border border-orange-500/20" />
+              {/* Architectural Frosted Glass Shield */}
+              <div className="relative w-full h-full rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.035] via-orange-500/[0.02] to-transparent backdrop-blur-[2px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_25px_60px_rgba(0,0,0,0.55)] overflow-hidden">
+                {/* Diagonal Ambient Light Sheen */}
+                <div className="absolute -inset-full bg-gradient-to-tr from-transparent via-orange-400/[0.04] to-transparent rotate-45 transform pointer-events-none" />
 
-              {/* Dashed Orbital Track */}
-              <div className="absolute inset-6 rounded-full border border-dashed border-orange-500/25 animate-spin-slow" />
-
-              {/* Glowing High-Intensity Orange Arc (Desktop only, avoids mobile SVG filter CPU stalling) */}
-              <svg className="absolute inset-0 w-full h-full animate-pulse-subtle hidden md:block" viewBox="0 0 100 100">
-                <defs>
-                  <linearGradient id="orbitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#ff8a00" stopOpacity="1" />
-                    <stop offset="50%" stopColor="#ffa534" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#ff8a00" stopOpacity="0" />
-                  </linearGradient>
-                  <filter id="glowFilter" x="-20%" y="-20%" width="140%" height="140%">
-                    <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-                <path
-                  d="M 20,50 A 30,30 0 0,1 80,50"
-                  fill="none"
-                  stroke="url(#orbitGlow)"
-                  strokeWidth="1.2"
-                  filter="url(#glowFilter)"
-                  strokeLinecap="round"
+                {/* Subtle Modern Dot-Matrix Lattice */}
+                <div
+                  className="absolute inset-0 opacity-[0.22]"
+                  style={{
+                    backgroundImage: "radial-gradient(rgba(249, 115, 22, 0.45) 1px, transparent 1px)",
+                    backgroundSize: "22px 22px",
+                    maskImage: "linear-gradient(to bottom, black 30%, transparent 85%)",
+                    WebkitMaskImage: "linear-gradient(to bottom, black 30%, transparent 85%)",
+                  }}
                 />
-                <circle cx="20" cy="50" r="1.5" fill="#ff8a00" filter="url(#glowFilter)" />
-                <circle cx="80" cy="50" r="1.5" fill="#ffa534" filter="url(#glowFilter)" />
-              </svg>
+
+                {/* High-Tech Precision Corner Accents */}
+                <div className="absolute top-3.5 left-3.5 w-3.5 h-3.5 border-t-2 border-l-2 border-orange-500/60" />
+                <div className="absolute top-3.5 right-3.5 w-3.5 h-3.5 border-t-2 border-r-2 border-orange-500/60" />
+                <div className="absolute bottom-3.5 left-3.5 w-3.5 h-3.5 border-b-2 border-l-2 border-orange-500/40" />
+                <div className="absolute bottom-3.5 right-3.5 w-3.5 h-3.5 border-b-2 border-r-2 border-orange-500/40" />
+
+                {/* Top Status Indicator */}
+                <div className="absolute top-3.5 inset-x-0 flex justify-center items-center gap-1.5 font-mono text-[9px] text-orange-400/60 uppercase tracking-widest">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>DEV_CORE // SYSTEM.01</span>
+                </div>
+
+                {/* Bottom Architectural Edition Watermark */}
+                <div className="absolute bottom-3.5 inset-x-0 flex justify-center items-center font-mono text-[9px] text-gray-500/40 uppercase tracking-widest">
+                  PORTFOLIO &bull; 2026 EDITION
+                </div>
+              </div>
             </div>
 
             {/* Seamless Cutout Portrait of Subash Ketagoda (NO box, NO rectangle border!) */}
