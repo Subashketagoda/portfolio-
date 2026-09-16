@@ -81,13 +81,67 @@ export default function Hero() {
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/35 to-transparent pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent blur-[2px] pointer-events-none" />
 
-      {/* 1. Volumetric God-Rays / Angled Luminous Light Beams */}
-      <div className="absolute -top-40 right-1/4 w-[480px] h-[850px] bg-gradient-to-b from-orange-500/16 via-amber-500/[0.04] to-transparent -rotate-[28deg] blur-3xl pointer-events-none" />
-      <div className="absolute -top-52 right-12 w-[340px] h-[720px] bg-gradient-to-b from-amber-400/12 via-orange-500/[0.02] to-transparent -rotate-[38deg] blur-2xl pointer-events-none hidden sm:block" />
+      {/* 1. Dynamic Angled Chevron Stripes (Inspired by reference, matching brand colors) */}
+      <div className="absolute top-0 right-0 bottom-0 w-full sm:w-[65%] lg:w-[48%] pointer-events-none overflow-hidden z-0">
+        <svg
+          className="w-full h-full opacity-65 sm:opacity-75 object-cover"
+          viewBox="0 0 600 850"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <defs>
+            <linearGradient id="chevGrad1" x1="100%" y1="0%" x2="0%" y2="50%">
+              <stop offset="0%" stopColor="#ff8a00" stopOpacity="0.55" />
+              <stop offset="50%" stopColor="#ea580c" stopOpacity="0.32" />
+              <stop offset="100%" stopColor="#7c2d12" stopOpacity="0.08" />
+            </linearGradient>
+            <linearGradient id="chevGrad2" x1="100%" y1="0%" x2="0%" y2="50%">
+              <stop offset="0%" stopColor="#ea580c" stopOpacity="0.45" />
+              <stop offset="55%" stopColor="#c2410c" stopOpacity="0.22" />
+              <stop offset="100%" stopColor="#431407" stopOpacity="0.04" />
+            </linearGradient>
+            <linearGradient id="chevGrad3" x1="100%" y1="0%" x2="0%" y2="50%">
+              <stop offset="0%" stopColor="#c2410c" stopOpacity="0.32" />
+              <stop offset="100%" stopColor="#1c0a04" stopOpacity="0.02" />
+            </linearGradient>
+          </defs>
+
+          {/* Innermost Dynamic Chevron */}
+          <path
+            d="M 450 -20 L 150 425 L 450 870"
+            stroke="url(#chevGrad1)"
+            strokeWidth="80"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+
+          {/* Middle Dynamic Chevron */}
+          <path
+            d="M 630 -20 L 330 425 L 630 870"
+            stroke="url(#chevGrad2)"
+            strokeWidth="95"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+
+          {/* Outer Dynamic Chevron */}
+          <path
+            d="M 810 -20 L 510 425 L 810 870"
+            stroke="url(#chevGrad3)"
+            strokeWidth="110"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+        </svg>
+
+        {/* Seamless edge fade into black background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080b0f] via-transparent to-[#080b0f]/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080b0f] via-transparent to-[#080b0f]/40 pointer-events-none" />
+      </div>
 
       {/* 2. Primary Radiant Orange Aura behind the portrait */}
-      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/22 via-amber-500/12 to-transparent blur-[130px] pointer-events-none hidden md:block animate-pulse-subtle" />
-      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-orange-500/15 blur-[45px] pointer-events-none md:hidden" />
+      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/26 via-amber-500/15 to-transparent blur-[130px] pointer-events-none hidden md:block animate-pulse-subtle" />
+      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-orange-500/18 blur-[50px] pointer-events-none md:hidden" />
 
       {/* 3. Deep Indigo / Violet Nebula on the left for chromatic luxury depth */}
       <div className="absolute top-1/4 -left-28 w-[560px] h-[560px] rounded-full bg-indigo-600/[0.08] blur-[160px] pointer-events-none hidden md:block" />
@@ -262,53 +316,76 @@ export default function Hero() {
               <Mail className="w-4 h-4" />
             </a>
           </div>
+
+          {/* Technologies I work with (Matching reference image 1:1) */}
+          <div className="pt-2 space-y-2.5">
+            <p className="text-xs font-mono text-gray-400 tracking-wider">
+              Technologies I work with:
+            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              {/* React */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-cyan-400 text-xs font-semibold hover:border-cyan-500/50 transition-colors shadow-sm">
+                <svg className="w-4 h-4" viewBox="0 0 115.3 100">
+                  <circle cx="57.7" cy="50" r="10" fill="currentColor" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" fill="none" stroke="currentColor" strokeWidth="5" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(60 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(120 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
+                </svg>
+                <span className="text-gray-200">React</span>
+              </div>
+
+              {/* JavaScript */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-yellow-400 text-xs font-semibold hover:border-yellow-500/50 transition-colors shadow-sm">
+                <span className="w-4 h-4 rounded bg-yellow-400 text-black font-black text-[10px] flex items-center justify-center">JS</span>
+                <span className="text-gray-200">JavaScript</span>
+              </div>
+
+              {/* TypeScript */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-blue-400 text-xs font-semibold hover:border-blue-500/50 transition-colors shadow-sm">
+                <span className="w-4 h-4 rounded bg-blue-600 text-white font-black text-[10px] flex items-center justify-center">TS</span>
+                <span className="text-gray-200">TypeScript</span>
+              </div>
+
+              {/* Node.js */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-emerald-400 text-xs font-semibold hover:border-emerald-500/50 transition-colors shadow-sm">
+                <span className="text-emerald-400 font-bold text-sm leading-none">⬡</span>
+                <span className="text-gray-200">Node.js</span>
+              </div>
+
+              {/* Next.js */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-white text-xs font-semibold hover:border-white/40 transition-colors shadow-sm">
+                <span className="w-4 h-4 rounded-full bg-white text-black font-black text-[9px] flex items-center justify-center">N</span>
+                <span className="text-gray-200">Next.js</span>
+              </div>
+
+              {/* MongoDB */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-green-400 text-xs font-semibold hover:border-green-500/50 transition-colors shadow-sm">
+                <span className="text-green-400 text-sm">🍃</span>
+                <span className="text-gray-200">MongoDB</span>
+              </div>
+
+              {/* Tailwind */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-[#11131b] border border-white/[0.08] text-cyan-400 text-xs font-semibold hover:border-cyan-500/50 transition-colors shadow-sm">
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                </svg>
+                <span className="text-gray-200">Tailwind</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Right Column: Seamless Cutout Portrait with Orbital Rings & Floating Badges */}
+        {/* Right Column: Clean Hero Cutout Portrait with Cinematic Rim Light */}
         <div className="lg:col-span-5 flex items-center justify-center relative">
           <div className="relative w-[340px] h-[480px] sm:w-[440px] sm:h-[580px] lg:w-[480px] lg:h-[620px] flex items-center justify-center">
 
-            {/* Ultra-Luxury Modern Architectural Glass Backdrop (Replaced generic circles) */}
-            <div className="absolute inset-2 sm:inset-4 lg:inset-6 pointer-events-none flex items-center justify-center">
-              {/* Warm Volumetric Ambient Backlight */}
-              <div className="absolute w-[280px] sm:w-[380px] h-[360px] sm:h-[460px] bg-gradient-to-t from-orange-500/22 via-amber-500/12 to-transparent blur-[90px] rounded-3xl" />
-
-              {/* Architectural Frosted Glass Shield */}
-              <div className="relative w-full h-full rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.035] via-orange-500/[0.02] to-transparent backdrop-blur-[2px] shadow-[inset_0_1px_1px_rgba(255,255,255,0.12),0_25px_60px_rgba(0,0,0,0.55)] overflow-hidden">
-                {/* Diagonal Ambient Light Sheen */}
-                <div className="absolute -inset-full bg-gradient-to-tr from-transparent via-orange-400/[0.04] to-transparent rotate-45 transform pointer-events-none" />
-
-                {/* Subtle Modern Dot-Matrix Lattice */}
-                <div
-                  className="absolute inset-0 opacity-[0.22]"
-                  style={{
-                    backgroundImage: "radial-gradient(rgba(249, 115, 22, 0.45) 1px, transparent 1px)",
-                    backgroundSize: "22px 22px",
-                    maskImage: "linear-gradient(to bottom, black 30%, transparent 85%)",
-                    WebkitMaskImage: "linear-gradient(to bottom, black 30%, transparent 85%)",
-                  }}
-                />
-
-                {/* High-Tech Precision Corner Accents */}
-                <div className="absolute top-3.5 left-3.5 w-3.5 h-3.5 border-t-2 border-l-2 border-orange-500/60" />
-                <div className="absolute top-3.5 right-3.5 w-3.5 h-3.5 border-t-2 border-r-2 border-orange-500/60" />
-                <div className="absolute bottom-3.5 left-3.5 w-3.5 h-3.5 border-b-2 border-l-2 border-orange-500/40" />
-                <div className="absolute bottom-3.5 right-3.5 w-3.5 h-3.5 border-b-2 border-r-2 border-orange-500/40" />
-
-                {/* Top Status Indicator */}
-                <div className="absolute top-3.5 inset-x-0 flex justify-center items-center gap-1.5 font-mono text-[9px] text-orange-400/60 uppercase tracking-widest">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>DEV_CORE // SYSTEM.01</span>
-                </div>
-
-                {/* Bottom Architectural Edition Watermark */}
-                <div className="absolute bottom-3.5 inset-x-0 flex justify-center items-center font-mono text-[9px] text-gray-500/40 uppercase tracking-widest">
-                  PORTFOLIO &bull; 2026 EDITION
-                </div>
-              </div>
+            {/* Deep Warm Cinematic Rim Spotlight behind Subhash */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[360px] sm:w-[520px] sm:h-[520px] pointer-events-none">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-orange-600/35 via-orange-500/22 to-amber-500/10 blur-[100px]" />
+              <div className="absolute top-8 left-1/2 -translate-x-1/2 w-60 h-60 rounded-full bg-amber-500/25 blur-[55px]" />
             </div>
 
-            {/* Seamless Cutout Portrait of Subash Ketagoda (NO box, NO rectangle border!) */}
+            {/* Seamless Cutout Portrait of Subash Ketagoda (Clean, heroic presentation) */}
             <div className="relative z-10 w-full h-full flex items-center justify-center">
               <Image
                 src="/images/subash-hero.png"
@@ -316,18 +393,16 @@ export default function Hero() {
                 fill
                 priority
                 sizes="(max-width: 768px) 340px, (max-width: 1200px) 440px, 480px"
-                className="object-contain object-bottom drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)] filter contrast-[1.04] brightness-[1.02]"
+                className="object-contain object-bottom drop-shadow-[0_20px_45px_rgba(0,0,0,0.92)] filter contrast-[1.05] brightness-[1.02]"
               />
 
               {/* Soft Bottom Shadow & Fade into background */}
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#080b0f] via-[#080b0f]/60 to-transparent pointer-events-none" />
             </div>
 
-            {/* Floating Badges & Achievement Chips Around Portrait */}
-
-            {/* 1. Top-Left: 6+ Years Experience Achievement Card */}
+            {/* Minimal Experience Floating Chip (Clean top corner, never obscuring silhouette) */}
             <div
-              className="absolute -top-3 -left-2 sm:-left-8 z-20 flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-2xl bg-[#0f1118]/95 border border-orange-500/40 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
+              className="absolute -top-2 -left-2 sm:-left-6 z-20 flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-2xl bg-[#0f1118]/95 border border-orange-500/40 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
               style={{ animationDuration: "6s" }}
             >
               <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white font-bold text-sm shadow-md">
@@ -343,96 +418,16 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* 2. Top-Right: React.js Badge */}
+            {/* Minimal 40+ Projects Floating Chip (Bottom corner) */}
             <div
-              className="absolute top-2 right-0 sm:right-2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-cyan-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "1s", animationDuration: "5.5s" }}
-            >
-              <svg className="w-4 h-4 text-cyan-400" viewBox="0 0 115.3 100">
-                <circle cx="57.7" cy="50" r="10" fill="currentColor" />
-                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" fill="none" stroke="currentColor" strokeWidth="4" />
-                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(60 57.7 50)" fill="none" stroke="currentColor" strokeWidth="4" />
-                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(120 57.7 50)" fill="none" stroke="currentColor" strokeWidth="4" />
-              </svg>
-              <span className="text-xs font-semibold text-gray-200">React.js</span>
-            </div>
-
-            {/* 3. Top-Center-Right: Next.js Pill */}
-            <div
-              className="absolute top-14 right-1/4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#121218]/90 border border-white/20 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "3s", animationDuration: "7s" }}
-            >
-              <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black font-black text-[9px]">
-                N
-              </div>
-              <span className="text-xs font-semibold text-gray-200">Next.js 14</span>
-            </div>
-
-            {/* 4. Mid-Left: Node.js Badge */}
-            <div
-              className="absolute top-1/3 -left-3 sm:-left-8 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-green-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "2s", animationDuration: "6.5s" }}
-            >
-              <div className="w-4 h-4 rounded bg-green-500/20 border border-green-500 flex items-center justify-center text-[9px] font-bold text-green-400">
-                ⬡
-              </div>
-              <span className="text-xs font-semibold text-gray-200">Node.js</span>
-            </div>
-
-            {/* 5. Mid-Right: Custom POS Engines Badge */}
-            <div
-              className="absolute top-[38%] -right-3 sm:-right-8 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/95 border border-orange-500/35 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
-              style={{ animationDelay: "1.5s", animationDuration: "6.2s" }}
-            >
-              <div className="w-4 h-4 rounded bg-orange-500/20 border border-orange-500 flex items-center justify-center text-[9px] font-bold text-orange-400">
-                POS
-              </div>
-              <span className="text-xs font-semibold text-orange-300">Custom POS</span>
-            </div>
-
-            {/* 6. Lower-Left: TypeScript Badge */}
-            <div
-              className="absolute bottom-24 -left-2 sm:-left-6 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-blue-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "2.5s", animationDuration: "5.8s" }}
-            >
-              <div className="w-3.5 h-3.5 rounded-sm bg-blue-600 flex items-center justify-center text-[9px] font-bold text-white">
-                TS
-              </div>
-              <span className="text-xs font-semibold text-gray-200">TypeScript</span>
-            </div>
-
-            {/* 7. Lower-Right: MongoDB Badge */}
-            <div
-              className="absolute bottom-28 -right-2 sm:-right-5 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-emerald-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "3.5s", animationDuration: "7.2s" }}
-            >
-              <div className="w-3.5 h-3.5 rounded-full bg-emerald-600/20 flex items-center justify-center text-[10px] text-emerald-400">
-                🍃
-              </div>
-              <span className="text-xs font-semibold text-gray-200">MongoDB</span>
-            </div>
-
-            {/* 8. Bottom-Left Lower: 40+ Projects Shipped Pill */}
-            <div
-              className="absolute bottom-6 left-1 sm:left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0e1017]/95 border border-amber-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "4s", animationDuration: "6s" }}
+              className="absolute bottom-6 -right-2 sm:-right-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0e1017]/95 border border-amber-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "2.5s", animationDuration: "6.5s" }}
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
               <span className="text-[11px] font-bold text-amber-300">40+ Projects</span>
-            </div>
-
-            {/* 9. Bottom-Right Lower: Tailwind CSS Badge */}
-            <div
-              className="absolute bottom-8 right-2 sm:right-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#121218]/90 border border-cyan-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "2s", animationDuration: "6.8s" }}
-            >
-              <svg className="w-3.5 h-3.5 text-cyan-400 fill-current" viewBox="0 0 24 24">
-                <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-              </svg>
-              <span className="text-[11px] font-semibold text-gray-200">Tailwind</span>
             </div>
 
           </div>
