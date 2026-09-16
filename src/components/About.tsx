@@ -1,0 +1,168 @@
+"use client";
+
+import { Download, User, Mail, MapPin, Clock } from "lucide-react";
+
+function WorldMapBackground() {
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
+      {/* High-Definition Vector World Map with Built-in Colombo Radar */}
+      <img
+        src="/images/world-map.svg"
+        alt="World Map"
+        className="w-full h-full object-cover opacity-75 filter brightness-110 contrast-125"
+      />
+    </div>
+  );
+}
+
+export default function About() {
+  return (
+    <section id="about" className="py-24 md:py-32 px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-1/2 -left-40 w-96 h-96 bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Heading, Bio, Stats & Download Resume */}
+          <div className="lg:col-span-7 space-y-7">
+            {/* Tag matching reference: ABOUT ME — */}
+            <div className="flex items-center gap-2 text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase">
+              <span>ABOUT ME &mdash;</span>
+            </div>
+
+            {/* Heading */}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              Building Digital Solutions That Make a Difference
+            </h2>
+
+            {/* Description */}
+            <p className="text-gray-400 text-base md:text-lg leading-relaxed font-normal">
+              I&apos;m a passionate Full-Stack Developer with 6+ years of experience creating web applications that are fast, scalable, and user-friendly. I specialize in JavaScript technologies across the MERN stack and love solving complex problems with elegant solutions.
+            </p>
+
+            {/* 4 Stat Boxes (Horizontal row matching reference) */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
+              <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
+                  6+
+                </div>
+                <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
+                  Years Experience
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
+                  40+
+                </div>
+                <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
+                  Projects Completed
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
+                  25+
+                </div>
+                <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
+                  Happy Clients
+                </div>
+              </div>
+
+              <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
+                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
+                  100%
+                </div>
+                <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
+                  Client Satisfaction
+                </div>
+              </div>
+            </div>
+
+            {/* Download Resume Button */}
+            <div className="pt-2">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#14141b] border border-white/10 text-gray-200 hover:text-white hover:border-orange-500/50 hover:bg-orange-500/10 font-semibold text-xs tracking-wider transition-all duration-300"
+              >
+                <span>DOWNLOAD RESUME</span>
+                <Download className="w-4 h-4 text-orange-400" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Information Card with World Map & Gold Signature */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="relative rounded-2xl bg-[#13131b] border border-white/[0.08] p-6 sm:p-8 overflow-hidden shadow-2xl">
+              {/* High-Tech World Map Background with pulsing Sri Lanka/Colombo radar pin */}
+              <WorldMapBackground />
+
+              <div className="relative z-10 space-y-5">
+                {/* Name */}
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/[0.06]">
+                  <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
+                    <User className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Name:</div>
+                    <div className="text-sm font-semibold text-white">Subhash Ketagoda</div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/[0.06]">
+                  <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
+                    <Mail className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Email:</div>
+                    <a
+                      href="mailto:subhashketagoda@gmail.com"
+                      className="text-sm font-semibold text-white hover:text-orange-400 transition-colors"
+                    >
+                      subhashketagoda@gmail.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-center gap-3.5 pb-4 border-b border-white/[0.06]">
+                  <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
+                    <MapPin className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Location:</div>
+                    <div className="text-sm font-semibold text-white">Colombo, Sri Lanka</div>
+                  </div>
+                </div>
+
+                {/* Availability */}
+                <div className="flex items-center gap-3.5">
+                  <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0">
+                    <Clock className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Availability:</div>
+                    <div className="text-sm font-semibold text-emerald-400 flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                      Available for Freelance
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Authentic Handwritten Signature */}
+            <div className="pt-2 pl-2">
+              <img
+                src="/images/subhash-signature.png"
+                alt="Subhash Ketagoda Signature"
+                className="h-16 sm:h-20 w-auto object-contain select-none drop-shadow-[0_4px_16px_rgba(249,115,22,0.4)]"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
