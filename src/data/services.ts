@@ -48,7 +48,7 @@ export const personal = {
   availability: "Available for Freelance",
   responseTime: "Within 24 hours",
   socialLinks: {
-    github: "https://github.com",
+    github: "https://github.com/Subashketagoda",
     linkedin: "https://linkedin.com",
     facebook: "https://facebook.com",
     email: "mailto:subhashketagoda@gmail.com",

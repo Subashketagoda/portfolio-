@@ -100,7 +100,7 @@ export default function Footer() {
             </h4>
             <div className="flex items-center gap-2.5">
               <a
-                href="https://github.com"
+                href="https://github.com/Subashketagoda"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

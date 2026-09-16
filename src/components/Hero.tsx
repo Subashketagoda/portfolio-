@@ -202,7 +202,7 @@ export default function Hero() {
           {/* Social Icons Row */}
           <div className="flex items-center gap-3 pt-3">
             <a
-              href="https://github.com"
+              href="https://github.com/Subashketagoda"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub Profile"

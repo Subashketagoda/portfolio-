@@ -84,7 +84,7 @@ const jsonLd = {
         addressCountry: "LK",
       },
       sameAs: [
-        "https://github.com",
+        "https://github.com/Subashketagoda",
         "https://linkedin.com",
         "https://69studiobysubash.online/",
       ],
