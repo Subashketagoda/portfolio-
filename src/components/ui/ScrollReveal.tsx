@@ -15,13 +15,16 @@ export default function ScrollReveal({
   delay = 0,
   direction = "up",
 }: ScrollRevealProps) {
-  const [isVisible, setIsVisible] = useState(false);
+  // On mobile (<768px), start visible immediately to prevent flash of invisible content
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window === "undefined") return false;
+    return window.innerWidth < 768;
+  });
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Reveal immediately on mobile screens (<768px) to prevent viewport freeze or hidden sections
+    // Already visible on mobile via lazy state initializer — just skip observer setup
     if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setIsVisible(true);
       return;
     }
 

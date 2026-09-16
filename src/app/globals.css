@@ -106,3 +106,12 @@ button, a, input, textarea {
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
+
+/* Hide scrollbar but keep scroll functionality (for CORE chips horizontal scroll on mobile) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
