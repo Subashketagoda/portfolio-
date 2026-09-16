@@ -462,9 +462,11 @@ export default function Hero() {
               <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#080b0f] via-[#080b0f]/60 to-transparent pointer-events-none" />
             </div>
 
-            {/* Minimal Experience Floating Chip (Clean top corner, never obscuring silhouette) */}
+            {/* Floating Badges & Achievement Chips Around Portrait (Restored by user request) */}
+
+            {/* 1. Top-Left: 6+ Years Experience Achievement Card */}
             <div
-              className="absolute -top-2 -left-2 sm:-left-6 z-20 flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-2xl bg-[#0f1118]/95 border border-orange-500/40 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
+              className="absolute -top-3 -left-2 sm:-left-8 z-20 flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-2xl bg-[#0f1118]/95 border border-orange-500/40 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
               style={{ animationDuration: "6s" }}
             >
               <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-orange-500 to-amber-400 flex items-center justify-center text-white font-bold text-sm shadow-md">
@@ -480,16 +482,96 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Minimal 40+ Projects Floating Chip (Bottom corner) */}
+            {/* 2. Top-Right: React.js Badge */}
             <div
-              className="absolute bottom-6 -right-2 sm:-right-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0e1017]/95 border border-amber-500/30 shadow-lg backdrop-blur-md animate-float"
-              style={{ animationDelay: "2.5s", animationDuration: "6.5s" }}
+              className="absolute top-2 right-0 sm:right-2 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-cyan-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "1s", animationDuration: "5.5s" }}
+            >
+              <svg className="w-4 h-4 text-cyan-400" viewBox="0 0 115.3 100">
+                <circle cx="57.7" cy="50" r="10" fill="currentColor" />
+                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" fill="none" stroke="currentColor" strokeWidth="4" />
+                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(60 57.7 50)" fill="none" stroke="currentColor" strokeWidth="4" />
+                <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(120 57.7 50)" fill="none" stroke="currentColor" strokeWidth="4" />
+              </svg>
+              <span className="text-xs font-semibold text-gray-200">React.js</span>
+            </div>
+
+            {/* 3. Top-Center-Right: Next.js Pill */}
+            <div
+              className="absolute top-14 right-1/4 z-20 hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#121218]/90 border border-white/20 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "3s", animationDuration: "7s" }}
+            >
+              <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center text-black font-black text-[9px]">
+                N
+              </div>
+              <span className="text-xs font-semibold text-gray-200">Next.js 14</span>
+            </div>
+
+            {/* 4. Mid-Left: Node.js Badge */}
+            <div
+              className="absolute top-1/3 -left-3 sm:-left-8 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-green-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "2s", animationDuration: "6.5s" }}
+            >
+              <div className="w-4 h-4 rounded bg-green-500/20 border border-green-500 flex items-center justify-center text-[9px] font-bold text-green-400">
+                ⬡
+              </div>
+              <span className="text-xs font-semibold text-gray-200">Node.js</span>
+            </div>
+
+            {/* 5. Mid-Right: Custom POS Engines Badge */}
+            <div
+              className="absolute top-[38%] -right-3 sm:-right-8 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/95 border border-orange-500/35 shadow-xl shadow-orange-500/10 backdrop-blur-md animate-float"
+              style={{ animationDelay: "1.5s", animationDuration: "6.2s" }}
+            >
+              <div className="w-4 h-4 rounded bg-orange-500/20 border border-orange-500 flex items-center justify-center text-[9px] font-bold text-orange-400">
+                POS
+              </div>
+              <span className="text-xs font-semibold text-orange-300">Custom POS</span>
+            </div>
+
+            {/* 6. Lower-Left: TypeScript Badge */}
+            <div
+              className="absolute bottom-24 -left-2 sm:-left-6 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-blue-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "2.5s", animationDuration: "5.8s" }}
+            >
+              <div className="w-3.5 h-3.5 rounded-sm bg-blue-600 flex items-center justify-center text-[9px] font-bold text-white">
+                TS
+              </div>
+              <span className="text-xs font-semibold text-gray-200">TypeScript</span>
+            </div>
+
+            {/* 7. Lower-Right: MongoDB Badge */}
+            <div
+              className="absolute bottom-28 -right-2 sm:-right-5 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121218]/90 border border-emerald-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "3.5s", animationDuration: "7.2s" }}
+            >
+              <div className="w-3.5 h-3.5 rounded-full bg-emerald-600/20 flex items-center justify-center text-[10px] text-emerald-400">
+                🍃
+              </div>
+              <span className="text-xs font-semibold text-gray-200">MongoDB</span>
+            </div>
+
+            {/* 8. Bottom-Left Lower: 40+ Projects Shipped Pill */}
+            <div
+              className="absolute bottom-6 left-1 sm:left-4 z-20 flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0e1017]/95 border border-amber-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "4s", animationDuration: "6s" }}
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
               <span className="text-[11px] font-bold text-amber-300">40+ Projects</span>
+            </div>
+
+            {/* 9. Bottom-Right Lower: Tailwind CSS Badge */}
+            <div
+              className="absolute bottom-8 right-2 sm:right-6 z-20 flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#121218]/90 border border-cyan-500/30 shadow-lg backdrop-blur-md animate-float"
+              style={{ animationDelay: "2s", animationDuration: "6.8s" }}
+            >
+              <svg className="w-3.5 h-3.5 text-cyan-400 fill-current" viewBox="0 0 24 24">
+                <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+              </svg>
+              <span className="text-[11px] font-semibold text-gray-200">Tailwind</span>
             </div>
 
           </div>
