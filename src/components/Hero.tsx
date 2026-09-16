@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight, ExternalLink, Github, Linkedin, Twitter, Mail } from "lucide-react";
+import Hero3DCanvas from "@/components/ui/Hero3DCanvas";
 
 export default function Hero() {
   const [typedTitle, setTypedTitle] = useState("Full-Stack Developer");
@@ -77,6 +78,9 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative pt-20 md:pt-24 pb-16 px-6 md:px-12 overflow-hidden bg-[#080b0f]">
+      {/* Interactive 3D Canvas Background Animation */}
+      <Hero3DCanvas />
+
       {/* Top Horizon Line with Center Glow */}
       <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/35 to-transparent pointer-events-none" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent blur-[2px] pointer-events-none" />
