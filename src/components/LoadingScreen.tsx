@@ -19,10 +19,29 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
 
   const handleFinish = useCallback(() => {
     setProgress(100);
+    if (typeof window !== "undefined") {
+      try {
+        sessionStorage.setItem("subhash_portfolio_intro", "seen");
+      } catch {
+        // ignore
+      }
+    }
     setTimeout(() => {
       setIsFinished(true);
       onComplete?.();
-    }, 350);
+    }, 200);
+  }, [onComplete]);
+
+  // If already seen in this session, skip immediately
+  useEffect(() => {
+    try {
+      if (typeof window !== "undefined" && sessionStorage.getItem("subhash_portfolio_intro") === "seen") {
+        setIsFinished(true);
+        onComplete?.();
+      }
+    } catch {
+      // ignore
+    }
   }, [onComplete]);
 
   // Keyboard shortcut to skip intro (Esc, Space, Enter)
@@ -37,9 +56,12 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   }, [handleFinish]);
 
   useEffect(() => {
-    // 3.0s silky-smooth cubic-bezier counter
+    if (isFinished) return;
+
+    // Faster load on mobile devices (<768px: 1.1s, desktop: 2.0s) so it downloads and reveals ultra fast
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    const duration = isMobile ? 1100 : 2000;
     const startTime = Date.now();
-    const duration = 3000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -62,10 +84,10 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
         clearInterval(interval);
         handleFinish();
       }
-    }, 25);
+    }, 20);
 
     return () => clearInterval(interval);
-  }, [handleFinish]);
+  }, [handleFinish, isFinished]);
 
   return (
     <AnimatePresence>

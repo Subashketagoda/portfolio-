@@ -9,6 +9,8 @@ function WorldMapBackground() {
       <img
         src="/images/world-map.svg"
         alt="World Map"
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover opacity-75 filter brightness-110 contrast-125"
       />
     </div>
@@ -157,6 +159,8 @@ export default function About() {
               <img
                 src="/images/subhash-signature.png"
                 alt="Subhash Ketagoda Signature"
+                loading="lazy"
+                decoding="async"
                 className="h-16 sm:h-20 w-auto object-contain select-none drop-shadow-[0_4px_16px_rgba(249,115,22,0.4)]"
               />
             </div>
