@@ -34,49 +34,49 @@ export default function About() {
 
             {/* Heading */}
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-              Building Digital Solutions That Make a Difference
+              Engineering Scalable Systems That Drive Real Technical &amp; Business Impact
             </h2>
 
             {/* Description */}
             <p className="text-gray-400 text-base md:text-lg leading-relaxed font-normal">
-              I&apos;m a passionate Full-Stack Developer with 6+ years of experience creating web applications that are fast, scalable, and user-friendly. I specialize in JavaScript technologies across the MERN stack and love solving complex problems with elegant solutions.
+              With 6+ years of full-stack software engineering experience, I specialize in architecting production-grade web applications, custom transactional POS billing engines, and high-performance APIs. From schema modeling and ACID integrity in PostgreSQL/MongoDB to edge-cached Next.js architectures, I build resilient, secure, and lightning-fast digital solutions.
             </p>
 
-            {/* 4 Stat Boxes (Horizontal row matching reference) */}
+            {/* 4 Stat Boxes (Senior Engineering Telemetry) */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-2">
               <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
-                  6+
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-orange-500 mb-1">
+                  6+ YRS
                 </div>
                 <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
-                  Years Experience
+                  Production Experience
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-orange-500 mb-1">
                   40+
                 </div>
                 <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
-                  Projects Completed
+                  Deployed Systems
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
-                  25+
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-orange-500 mb-1">
+                  120K+
                 </div>
                 <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
-                  Happy Clients
+                  Reqs / Mo Served
                 </div>
               </div>
 
               <div className="p-4 rounded-xl bg-[#14141c] border border-white/[0.07] hover:border-orange-500/30 transition-all duration-300">
-                <div className="text-2xl sm:text-3xl font-bold text-orange-500 mb-1">
-                  100%
+                <div className="text-2xl sm:text-3xl font-bold font-mono text-emerald-400 mb-1">
+                  99.9%
                 </div>
                 <div className="text-[11px] sm:text-xs text-gray-400 font-medium leading-snug">
-                  Client Satisfaction
+                  Fault-Tolerant Uptime
                 </div>
               </div>
             </div>
