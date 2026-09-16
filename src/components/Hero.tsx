@@ -80,15 +80,11 @@ export default function Hero() {
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
         <div className="lg:col-span-7 space-y-7">
-          {/* High-Tech Terminal Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#12141c] border border-orange-500/30 text-orange-400 font-mono text-xs tracking-wider shadow-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="font-semibold text-gray-200">AVAILABLE FOR HIRE &amp; CONTRACT</span>
-            <span className="text-gray-500 font-mono">|</span>
-            <span className="text-orange-400 font-mono text-[11px]">SR. FULL-STACK ARCHITECT</span>
+          {/* Clean Minimal Eyebrow matching reference */}
+          <div className="flex items-center gap-2 text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase">
+            <span>&mdash;</span>
+            <span>HELLO, I&apos;M</span>
+            <span>&mdash;</span>
           </div>
 
           {/* Main Title: Bold, Sharp, Authority */}
