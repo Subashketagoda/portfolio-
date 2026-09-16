@@ -32,10 +32,15 @@ export default function Hero() {
   useEffect(() => {
     const titles = [
       "Full-Stack Developer",
-      "Creative Web Developer",
+      "Next.js & React Architect",
       "Senior Software Engineer",
+      "Creative Web Developer",
+      "MERN Stack Specialist",
+      "Custom POS & Billing Engineer",
       "Digital Systems Architect",
-      "Custom POS Specialist",
+      "TypeScript & API Specialist",
+      "UI/UX Design Technologist",
+      "Distributed Systems Engineer",
     ];
     let titleIndex = 0;
     let charIndex = 0;
