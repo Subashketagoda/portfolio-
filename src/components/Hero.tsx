@@ -77,34 +77,46 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative pt-20 md:pt-24 pb-16 px-6 md:px-12 overflow-hidden bg-[#080b0f]">
-      {/* Top Horizon Line */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/25 to-transparent pointer-events-none" />
+      {/* Top Horizon Line with Center Glow */}
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/35 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent blur-[2px] pointer-events-none" />
 
-      {/* Cinematic Ambient Nebulae & Lighting */}
-      {/* 1. Primary Radiant Orange Aura behind the portrait */}
-      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[140px] pointer-events-none hidden md:block animate-pulse-subtle" />
-      <div className="absolute top-0 right-0 w-60 h-60 rounded-full bg-orange-500/12 blur-[40px] pointer-events-none md:hidden" />
+      {/* 1. Volumetric God-Rays / Angled Luminous Light Beams */}
+      <div className="absolute -top-40 right-1/4 w-[480px] h-[850px] bg-gradient-to-b from-orange-500/16 via-amber-500/[0.04] to-transparent -rotate-[28deg] blur-3xl pointer-events-none" />
+      <div className="absolute -top-52 right-12 w-[340px] h-[720px] bg-gradient-to-b from-amber-400/12 via-orange-500/[0.02] to-transparent -rotate-[38deg] blur-2xl pointer-events-none hidden sm:block" />
 
-      {/* 2. Deep Indigo / Violet Nebula on the left for chromatic depth */}
-      <div className="absolute top-1/4 -left-24 w-[520px] h-[520px] rounded-full bg-indigo-600/[0.06] blur-[160px] pointer-events-none hidden md:block" />
+      {/* 2. Primary Radiant Orange Aura behind the portrait */}
+      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/22 via-amber-500/12 to-transparent blur-[130px] pointer-events-none hidden md:block animate-pulse-subtle" />
+      <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-orange-500/15 blur-[45px] pointer-events-none md:hidden" />
 
-      {/* 3. Subtle Warm Floor Reflection */}
-      <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-orange-500/[0.04] via-amber-500/[0.01] to-transparent pointer-events-none hidden sm:block" />
+      {/* 3. Deep Indigo / Violet Nebula on the left for chromatic luxury depth */}
+      <div className="absolute top-1/4 -left-28 w-[560px] h-[560px] rounded-full bg-indigo-600/[0.08] blur-[160px] pointer-events-none hidden md:block" />
 
-      {/* 4. High-Tech Cyber Dot Matrix with Radial Vignette */}
+      {/* 4. Giant Luxury Editorial Watermark Typography */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.14]"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center text-[13vw] font-black uppercase text-transparent tracking-tighter select-none pointer-events-none whitespace-nowrap opacity-[0.032] -rotate-2 overflow-hidden leading-none"
+        style={{ WebkitTextStroke: "1.5px rgba(255, 255, 255, 0.7)" }}
+      >
+        SUBHASH KETAGODA
+      </div>
+
+      {/* 5. Subtle Warm Floor Grounding Reflection */}
+      <div className="absolute bottom-0 inset-x-0 h-48 bg-gradient-to-t from-orange-500/[0.06] via-amber-500/[0.015] to-transparent pointer-events-none" />
+
+      {/* 6. High-Tech Cyber Dot Matrix with Radial Vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.15]"
         style={{
-          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
-          maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%)",
+          maskImage: "radial-gradient(ellipse 85% 75% at 50% 40%, black 20%, transparent 80%)",
+          WebkitMaskImage: "radial-gradient(ellipse 85% 75% at 50% 40%, black 20%, transparent 80%)",
         }}
       />
 
-      {/* 5. Subtle Technical Grid Lines */}
+      {/* 7. Subtle Architectural Grid Lines */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03] hidden sm:block"
+        className="absolute inset-0 pointer-events-none opacity-[0.035] hidden sm:block"
         style={{
           backgroundImage:
             "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
@@ -114,29 +126,41 @@ export default function Hero() {
         }}
       />
 
-      {/* 6. Precision HUD Coordinate Crosshairs */}
-      <div className="absolute top-28 left-8 sm:left-14 font-mono text-[10px] text-orange-400/20 select-none pointer-events-none hidden sm:block tracking-widest">
-        + 01 / 79.86°E
+      {/* 8. Precision Geometric Constellation Vectors (Desktop only) */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-[0.16] hidden md:block" viewBox="0 0 1440 900" fill="none">
+        <circle cx="1120" cy="450" r="280" stroke="rgba(249, 115, 22, 0.3)" strokeWidth="0.8" strokeDasharray="4 8" />
+        <circle cx="1120" cy="450" r="340" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="0.5" />
+        <line x1="160" y1="180" x2="480" y2="180" stroke="rgba(249, 115, 22, 0.25)" strokeWidth="0.8" strokeDasharray="2 6" />
+        <line x1="160" y1="180" x2="160" y2="340" stroke="rgba(249, 115, 22, 0.25)" strokeWidth="0.8" strokeDasharray="2 6" />
+        <circle cx="160" cy="180" r="3" fill="#ff8a00" />
+        <circle cx="480" cy="180" r="2" fill="#ffa534" />
+      </svg>
+
+      {/* 9. Precision HUD Coordinate Crosshairs */}
+      <div className="absolute top-28 left-8 sm:left-14 font-mono text-[10px] text-orange-400/30 select-none pointer-events-none hidden sm:flex items-center gap-1.5 tracking-widest">
+        <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
+        <span>+ 01 / 79.86°E [COLOMBO]</span>
       </div>
-      <div className="absolute top-28 right-8 sm:right-16 font-mono text-[10px] text-orange-400/20 select-none pointer-events-none hidden sm:block tracking-widest">
-        + 02 / 6.92°N
+      <div className="absolute top-28 right-8 sm:right-16 font-mono text-[10px] text-orange-400/30 select-none pointer-events-none hidden sm:flex items-center gap-1.5 tracking-widest">
+        <span>+ 02 / 6.92°N [DEV]</span>
+        <span className="w-1.5 h-1.5 rounded-full bg-orange-500/50" />
       </div>
-      <div className="absolute bottom-16 left-8 sm:left-14 font-mono text-[10px] text-orange-400/20 select-none pointer-events-none hidden sm:block tracking-widest">
-        + COLOMBO / DEV
+      <div className="absolute bottom-16 left-8 sm:left-14 font-mono text-[10px] text-orange-400/25 select-none pointer-events-none hidden sm:block tracking-widest">
+        + BESPOKE ARCHITECTURE
       </div>
 
-      {/* 7. Floating Ambient Luminous Dust Particles (Desktop only) */}
-      <div className="absolute top-1/3 left-1/4 w-1.5 h-1.5 rounded-full bg-orange-400/50 blur-[0.5px] animate-float pointer-events-none hidden md:block" />
+      {/* 10. Floating Ambient Luminous Dust Particles (Desktop only) */}
+      <div className="absolute top-1/3 left-1/4 w-2 h-2 rounded-full bg-orange-400/60 blur-[0.5px] animate-float pointer-events-none hidden md:block shadow-[0_0_10px_#ff8a00]" />
       <div
-        className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-amber-400/40 blur-[1px] animate-float pointer-events-none hidden md:block"
+        className="absolute top-1/2 right-1/3 w-2.5 h-2.5 rounded-full bg-amber-400/50 blur-[1px] animate-float pointer-events-none hidden md:block shadow-[0_0_12px_#ffa534]"
         style={{ animationDelay: "2s", animationDuration: "7s" }}
       />
       <div
-        className="absolute bottom-1/3 left-1/3 w-1 h-1 rounded-full bg-orange-300/45 blur-[0.5px] animate-float pointer-events-none hidden md:block"
+        className="absolute bottom-1/3 left-1/3 w-1.5 h-1.5 rounded-full bg-orange-300/55 blur-[0.5px] animate-float pointer-events-none hidden md:block"
         style={{ animationDelay: "4s", animationDuration: "8s" }}
       />
       <div
-        className="absolute top-1/4 right-1/4 w-1.5 h-1.5 rounded-full bg-amber-300/40 blur-[0.5px] animate-float pointer-events-none hidden md:block"
+        className="absolute top-1/4 right-1/4 w-2 h-2 rounded-full bg-amber-300/50 blur-[0.5px] animate-float pointer-events-none hidden md:block"
         style={{ animationDelay: "1s", animationDuration: "6.5s" }}
       />
 
