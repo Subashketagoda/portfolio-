@@ -30,9 +30,23 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   }, [onComplete]);
 
   useEffect(() => {
+    // If mobile device or touch viewport (<768px or touch <1024px), bypass preloader entirely so mobile loads instantly with zero freeze
+    if (
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || ("ontouchstart" in window && window.innerWidth < 1024))
+    ) {
+      setIsFinished(true);
+      if (typeof document !== "undefined") {
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      }
+      onComplete?.();
+      return;
+    }
+
     setMounted(true);
 
-    // Prevent body scrolling while loading screen is active
+    // Prevent body scrolling ONLY on desktop while loading screen is active
     if (typeof document !== "undefined") {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
@@ -82,7 +96,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   return (
     <div
       onClick={handleFinish}
-      className={`fixed inset-0 z-[120] flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-[#07070a] text-white select-none overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+      className={`fixed inset-0 z-[120] hidden md:flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-[#07070a] text-white select-none overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
         isRevealing ? "-translate-y-full pointer-events-none" : "translate-y-0 pointer-events-auto"
       }`}
     >

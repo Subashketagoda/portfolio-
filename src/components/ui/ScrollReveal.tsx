@@ -19,6 +19,12 @@ export default function ScrollReveal({
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Reveal immediately on mobile screens (<768px) to prevent viewport freeze or hidden sections
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -27,8 +33,8 @@ export default function ScrollReveal({
         }
       },
       {
-        threshold: 0.12,
-        rootMargin: "0px 0px -40px 0px",
+        threshold: 0.05,
+        rootMargin: "50px 0px 50px 0px",
       }
     );
 
