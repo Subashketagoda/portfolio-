@@ -424,9 +424,9 @@ export default function Hero() {
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
            ========================================================================= */}
-        <div className="lg:col-span-5 flex items-center justify-center relative w-full mt-3 lg:mt-0 lg:self-start">
+        <div className="lg:col-span-5 flex items-center justify-center relative w-full mt-3 lg:-mt-12 xl:-mt-16 lg:self-start">
           <div
-            className="w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/5 backdrop-blur-xl overflow-hidden transition-transform duration-300"
+            className="w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[360px] lg:max-w-[430px] xl:max-w-[450px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/5 backdrop-blur-xl overflow-hidden transition-transform duration-300"
             style={{
               transform:
                 mousePos.tiltX || mousePos.tiltY
@@ -494,18 +494,18 @@ export default function Hero() {
 
             {/* Tab 1: Profile View (Portrait + Compact Telemetry HUD) */}
             {activeTab === "profile" && (
-              <div className="relative p-2.5 sm:p-4 flex flex-col items-center justify-center min-h-[230px] sm:min-h-[280px] lg:min-h-[340px]">
+              <div className="relative p-2.5 sm:p-4 flex flex-col items-center justify-center min-h-[230px] sm:min-h-[280px] lg:min-h-[350px] xl:min-h-[380px]">
                 {/* Subtle Amber Portrait Rim Halo */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 sm:w-52 h-40 sm:h-52 rounded-full bg-orange-500/15 blur-[50px] pointer-events-none" />
 
                 {/* Subhash Hero Cutout Image */}
-                <div className="relative w-[160px] h-[210px] sm:w-[200px] sm:h-[260px] lg:w-[250px] lg:h-[310px] z-10 flex items-end justify-center">
+                <div className="relative w-[160px] h-[210px] sm:w-[200px] sm:h-[260px] lg:w-[260px] lg:h-[320px] xl:w-[280px] xl:h-[350px] z-10 flex items-end justify-center">
                   <Image
                     src="/images/subash-hero.png"
                     alt="Subhash Ketagoda - Senior Full-Stack Engineer"
                     fill
                     priority
-                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, 250px"
+                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, (max-width: 1280px) 260px, 280px"
                     className="object-contain object-bottom drop-shadow-[0_10px_24px_rgba(0,0,0,0.85)] filter contrast-[1.04]"
                   />
                   {/* Subtle fade at the bottom into card */}
@@ -535,7 +535,7 @@ export default function Hero() {
 
             {/* Tab 2: Live Code Inspector View (engineer.ts) */}
             {activeTab === "code" && (
-              <div className="p-2.5 sm:p-4 font-mono text-[10px] sm:text-xs text-gray-300 leading-snug sm:leading-relaxed overflow-x-auto min-h-[230px] sm:min-h-[280px] lg:min-h-[340px] bg-[#090b10]">
+              <div className="p-2.5 sm:p-4 font-mono text-[10px] sm:text-xs text-gray-300 leading-snug sm:leading-relaxed overflow-x-auto min-h-[230px] sm:min-h-[280px] lg:min-h-[350px] xl:min-h-[380px] bg-[#090b10]">
                 <div className="text-gray-500">// Enterprise TypeScript Profile</div>
                 <div className="mt-1">
                   <span className="text-purple-400">export const</span> <span className="text-blue-300">Developer</span> = {"{"}
@@ -570,7 +570,7 @@ export default function Hero() {
 
             {/* Tab 3: Architecture Matrix View (system.json) */}
             {activeTab === "architecture" && (
-              <div className="p-2 sm:p-3 font-mono text-[9px] sm:text-[10px] text-gray-300 leading-snug overflow-x-auto min-h-[230px] sm:min-h-[280px] lg:min-h-[340px] bg-[#090b10] space-y-1.5 sm:space-y-2">
+              <div className="p-2 sm:p-3 font-mono text-[9px] sm:text-[10px] text-gray-300 leading-snug overflow-x-auto min-h-[230px] sm:min-h-[280px] lg:min-h-[350px] xl:min-h-[380px] bg-[#090b10] space-y-1.5 sm:space-y-2">
                 <div className="p-2 sm:p-2.5 rounded-lg bg-[#11141e] border border-white/[0.08] space-y-0.5">
                   <div className="text-orange-400 font-semibold flex items-center gap-1 text-[9px] sm:text-[10px]">
                     <Layers className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
