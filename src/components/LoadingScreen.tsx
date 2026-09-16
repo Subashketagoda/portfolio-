@@ -12,6 +12,14 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     setProgress(100);
     setIsRevealing(true);
 
+    if (typeof window !== "undefined") {
+      try {
+        sessionStorage.setItem("subhash_intro_seen", "1");
+      } catch {
+        // ignore
+      }
+    }
+
     // Unlock body scroll smoothly
     if (typeof document !== "undefined") {
       document.documentElement.style.overflow = "";
@@ -26,15 +34,20 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     setTimeout(() => {
       setIsFinished(true);
       onComplete?.();
-    }, 750);
+    }, 550);
   }, [onComplete]);
 
   useEffect(() => {
-    // If mobile device or touch viewport (<768px or touch <1024px), bypass preloader entirely so mobile loads instantly with zero freeze
-    if (
+    // Comprehensive Mobile & Touch Viewport Detection:
+    // If phone, tablet, or touch device, bypass preloader instantly so page opens in 0ms with zero delay
+    const isMobile =
       typeof window !== "undefined" &&
-      (window.innerWidth < 768 || ("ontouchstart" in window && window.innerWidth < 1024))
-    ) {
+      (window.innerWidth < 1024 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile/i.test(navigator.userAgent) ||
+        ("ontouchstart" in window && window.innerWidth < 1280) ||
+        (typeof navigator !== "undefined" && navigator.maxTouchPoints > 0 && window.innerWidth < 1280));
+
+    if (isMobile) {
       setIsFinished(true);
       if (typeof document !== "undefined") {
         document.documentElement.style.overflow = "";
@@ -42,6 +55,21 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
       onComplete?.();
       return;
+    }
+
+    // On Desktop, check if already seen during this browser session
+    try {
+      if (typeof window !== "undefined" && sessionStorage.getItem("subhash_intro_seen") === "1") {
+        setIsFinished(true);
+        if (typeof document !== "undefined") {
+          document.documentElement.style.overflow = "";
+          document.body.style.overflow = "";
+        }
+        onComplete?.();
+        return;
+      }
+    } catch {
+      // ignore
     }
 
     setMounted(true);
@@ -60,14 +88,14 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     };
     window.addEventListener("keydown", handleKeyDown);
 
-    // Exactly 3.0s (3000ms) luxury smooth easing counter
+    // Desktop 1.8s (1800ms) luxury smooth easing counter
     const startTime = Date.now();
-    const duration = 3000;
+    const duration = 1800;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const t = Math.min(elapsed / duration, 1);
-      // High-end editorial cubic-bezier easing: slow start, swift glide, gentle settling
+      // High-end editorial cubic-bezier easing: swift glide, gentle settling
       const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
       const current = Math.min(Math.round(eased * 100), 100);
 
@@ -96,7 +124,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   return (
     <div
       onClick={handleFinish}
-      className={`fixed inset-0 z-[120] hidden md:flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-[#07070a] text-white select-none overflow-hidden cursor-pointer transition-all duration-700 ease-[cubic-bezier(0.85,0,0.15,1)] ${
+      className={`fixed inset-0 z-[120] hidden lg:flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-[#07070a] text-white select-none overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] ${
         isRevealing ? "-translate-y-full pointer-events-none" : "translate-y-0 pointer-events-auto"
       }`}
     >
