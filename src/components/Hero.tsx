@@ -150,9 +150,12 @@ export default function Hero() {
             <span>&mdash;</span>
           </div>
 
-          {/* Main Title: Subash in white, Ketagoda in orange */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white leading-[1.05]">
-            Subash <span className="text-orange-500">Ketagoda</span>
+          {/* Main Title: Subhash Ketagoda - Large, bold, commanding editorial scale */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] xl:text-[5.85rem] font-black tracking-tight text-white leading-[1.0] drop-shadow-sm">
+            Subhash{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-500 to-amber-400 drop-shadow-[0_0_40px_rgba(255,138,0,0.3)]">
+              Ketagoda
+            </span>
           </h1>
 
           {/* Typing Subtitle with blinking orange cursor */}
