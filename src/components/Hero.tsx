@@ -219,14 +219,49 @@ export default function Hero() {
 
             <div className="h-4 w-px bg-white/10 hidden sm:block" />
 
-            {/* Clean, Refined Stack Chips */}
+            {/* Clean, Refined Stack Chips with Authentic Logos */}
             <div className="flex items-center gap-2 text-xs font-mono text-gray-400 flex-wrap">
-              <span className="text-gray-500 uppercase text-[10px]">CORE:</span>
-              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-gray-300">Next.js 15</span>
-              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-gray-300">TypeScript</span>
-              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-gray-300">Node.js</span>
-              <span className="px-2 py-0.5 rounded bg-white/[0.04] border border-white/[0.06] text-gray-300">PostgreSQL</span>
-              <span className="px-2 py-0.5 rounded bg-orange-500/10 border border-orange-500/30 text-orange-300">Custom POS</span>
+              <span className="text-gray-500 uppercase text-[10px] font-bold tracking-wider">CORE:</span>
+
+              {/* Next.js 15 */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-white/30 hover:shadow-[0_0_12px_rgba(255,255,255,0.15)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center text-black font-black text-[9px] leading-none shrink-0 shadow-sm">
+                  N
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">Next.js 15</span>
+              </div>
+
+              {/* TypeScript */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_0_12px_rgba(49,120,198,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-[#3178C6] text-white font-black text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  TS
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">TypeScript</span>
+              </div>
+
+              {/* Node.js */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(104,160,99,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-[#68A063]/20 border border-[#68A063] text-[#68A063] font-bold text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  ⬡
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">Node.js</span>
+              </div>
+
+              {/* PostgreSQL */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-[#4169E1]/40 hover:shadow-[0_0_12px_rgba(65,105,225,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-[#4169E1]/20 border border-[#4169E1] text-[#4169E1] font-black text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  PG
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">PostgreSQL</span>
+              </div>
+
+              {/* Custom POS */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-orange-500/10 border border-orange-500/30 hover:border-orange-500/60 hover:shadow-[0_0_12px_rgba(255,138,0,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-orange-500/20 border border-orange-500 text-orange-400 font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  POS
+                </div>
+                <span className="text-orange-300 text-xs font-semibold font-sans">Custom POS</span>
+              </div>
             </div>
           </div>
         </div>
