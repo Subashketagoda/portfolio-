@@ -278,65 +278,91 @@ export default function Hero() {
 
             <div className="h-4 w-px bg-white/10 hidden sm:block" />
 
-            {/* Clean, Refined Stack Chips with Authentic Logos */}
+            {/* Clean, Refined Stack Chips with Authentic Official Logos */}
             <div className="flex items-center gap-2 text-xs font-mono text-gray-400 flex-wrap">
               <span className="text-gray-500 uppercase text-[10px] font-bold tracking-wider">CORE:</span>
 
               {/* Next.js 15 */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-white/30 hover:shadow-[0_0_12px_rgba(255,255,255,0.15)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded-full bg-white flex items-center justify-center text-black font-black text-[9px] leading-none shrink-0 shadow-sm">
-                  N
-                </div>
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 180 180" fill="none">
+                  <mask height="180" id="mask-next-core" maskUnits="userSpaceOnUse" width="180" x="0" y="0" style={{ maskType: "alpha" }}>
+                    <circle cx="90" cy="90" fill="black" r="90" />
+                  </mask>
+                  <g mask="url(#mask-next-core)">
+                    <circle cx="90" cy="90" fill="black" stroke="white" strokeWidth="6" r="87" />
+                    <path d="M149.508 157.52L69.142 54H54V125.97H66.1136V69.3836L139.999 164.845C143.333 162.614 146.509 160.165 149.508 157.52Z" fill="url(#grad-next-1)" />
+                    <rect fill="url(#grad-next-2)" height="72" width="12" x="115" y="54" />
+                  </g>
+                  <defs>
+                    <linearGradient id="grad-next-1" x1="109" y1="116.5" x2="144.5" y2="160.5" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="white" />
+                      <stop offset="1" stopColor="white" stopOpacity="0" />
+                    </linearGradient>
+                    <linearGradient id="grad-next-2" x1="121" y1="54" x2="120.799" y2="106.875" gradientUnits="userSpaceOnUse">
+                      <stop stopColor="white" />
+                      <stop offset="1" stopColor="white" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">Next.js 15</span>
               </div>
 
               {/* React 19 */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-cyan-500/40 hover:shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <svg className="w-3.5 h-3.5 text-cyan-400 shrink-0" viewBox="0 0 115.3 100" fill="currentColor">
-                  <circle cx="57.7" cy="50" r="10" />
-                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" fill="none" stroke="currentColor" strokeWidth="5" />
-                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(60 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
-                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(120 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
+                <svg className="w-3.5 h-3.5 text-[#61DAFB] shrink-0" viewBox="-11.5 -10.23174 23 20.46348" fill="currentColor">
+                  <circle cx="0" cy="0" r="2.05" fill="#61DAFB" />
+                  <g stroke="#61DAFB" strokeWidth="1" fill="none">
+                    <ellipse rx="11" ry="4.2" />
+                    <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+                    <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+                  </g>
                 </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">React 19</span>
               </div>
 
               {/* TypeScript */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_0_12px_rgba(49,120,198,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-[#3178C6] text-white font-black text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  TS
-                </div>
+                <svg className="w-3.5 h-3.5 shrink-0 rounded-sm" viewBox="0 0 128 128">
+                  <rect width="128" height="128" rx="16" fill="#3178C6" />
+                  <path d="M72.2 87.8c2.8 3.5 6.8 5.7 11.5 5.7 6.4 0 10.4-3.3 10.4-8.2 0-5.1-4.2-7.3-11.8-10.6-10.8-4.6-17.7-10.1-17.7-20.9 0-11.4 8.9-19.8 22.8-19.8 9 0 16 3.1 20.9 8.6l-6.8 7.7c-3.1-3.6-7.5-5.5-13.8-5.5-6.5 0-9.6 3.1-9.6 7.1 0 4.6 3.8 6.7 12 10.3 11.6 5 17.6 10.8 17.6 21.6 0 12.8-9.9 20.9-24.6 20.9-11.2 0-19.9-4.1-25.2-11.1l7.3-8.8zm-43.7 14.7V46.5H12v-9.5h43.1v9.5H38.5v56H28.5z" fill="#FFF" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">TypeScript</span>
               </div>
 
               {/* Node.js */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(104,160,99,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-[#68A063]/20 border border-[#68A063] text-[#68A063] font-bold text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  ⬡
-                </div>
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 1.5L21.5 7v10L12 22.5 2.5 17V7L12 1.5z" fill="#539E43" />
+                  <path d="M12 1.5L21.5 7v4.5L12 6.5 2.5 11.5V7L12 1.5z" fill="#68A063" />
+                  <path d="M12 14.2c-2.3 0-3.8-1.2-3.8-2.9 0-2.5 2.5-2.9 4.4-3.2 1.5-.2 2.2-.5 2.2-1.2 0-.8-.7-1.3-1.7-1.3-1.3 0-2 .5-2.2 1.5L9 6.2c.5-1.8 2.1-2.7 4.7-2.7 2.3 0 4.1 1.1 4.1 3.1 0 2.3-2.2 2.8-4.1 3.1-1.6.2-2.5.5-2.5 1.3 0 .8.8 1.2 1.8 1.2 1.4 0 2.4-.6 2.7-1.7l2.4 1.1c-.7 1.7-2.3 2.6-4.1 2.6z" fill="#FFF" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">Node.js</span>
               </div>
 
               {/* PostgreSQL */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-[#4169E1]/40 hover:shadow-[0_0_12px_rgba(65,105,225,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-[#4169E1]/20 border border-[#4169E1] text-[#4169E1] font-black text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  PG
-                </div>
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 256 264" fill="none">
+                  <path d="M125.6 0C59.8 0 8.7 48.7 1.2 113.1c-2.3 20 2 37.6 12.8 52.8 9.7 13.6 24.3 22.4 41.5 24.9 3.2.5 6.4.7 9.5.7 1.5 0 3-.1 4.5-.2 0 1.2-.1 2.5-.1 3.7 0 37.9 30.7 68.6 68.6 68.6 15.6 0 30-5.2 41.6-14 11.2-8.5 19.3-20.7 22.9-34.7 17.5-3.5 31.8-14.7 39.5-30.8 7.3-15.3 7.8-32.9 1.3-49.8-3.7-9.5-9.6-17.9-17.3-24.8-1.5-1.3-3-2.6-4.6-3.7-.4-12.7-4.4-25-11.7-35.6C193.3 27 161.7 0 125.6 0z" fill="#336791" />
+                  <path d="M141.5 18.2c28.2 2.5 52.6 22.5 60.1 50.1 4.7 17.2 2.4 34.7-6.2 50.1-2.2 3.9-4.8 7.5-7.8 10.7-3.4 3.7-7.2 6.9-11.4 9.6-1.5 1-3 1.9-4.6 2.8-1.7.9-3.4 1.8-5.2 2.5-3.3 1.3-6.8 2.2-10.4 2.8-2 .3-4 .5-6 .5-1.3 0-2.6-.1-3.9-.2-2.1-.3-4.2-.8-6.1-1.6-4.7-1.8-8.8-4.8-11.8-8.7-2.6-3.4-4.2-7.5-4.6-11.8-.4-4.2.4-8.5 2.2-12.3 2.1-4.4 5.5-8 9.8-10.2 3.8-2 8.1-2.9 12.5-2.6 3.6.3 7.1 1.3 10.2 3 1.3.7 2.5 1.5 3.6 2.5 4.7-5.5 8.1-12 9.9-19 3.2-12.3 2.3-24.8-2.6-36.1-6.1-14.2-17.6-25-31.9-29.6-4.9-1.6-10.1-2.4-15.4-2.4-1.4 0-2.8.1-4.2.2z" fill="#FFF" opacity="0.9" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">PostgreSQL</span>
               </div>
 
               {/* MongoDB */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded-full bg-[#47A248]/20 flex items-center justify-center text-[#47A248] text-[11px] leading-none shrink-0">
-                  🍃
-                </div>
+                <svg className="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none">
+                  <path d="M12.001 0C11.666 0.17 10.518 1.493 9.98 2.345 6.993 6.953 5.485 11.238 6.012 15.688c0.643 5.372 4.417 8.106 5.989 8.312 1.572-0.206 5.346-2.94 5.989-8.312 0.527-4.45-0.981-8.735-3.968-13.343C13.484 1.493 12.336 0.17 12.001 0z" fill="#47A248" />
+                  <path d="M12.001 0.443v23.114c1.47-.215 4.885-2.736 5.48-7.702 0.493-4.156-.917-8.158-3.706-12.463C13.385 1.836 12.31 0.598 12.001 0.443z" fill="#499D4A" />
+                  <path d="M12.001 23.557c-1.47-.215-4.885-2.736-5.48-7.702-0.493-4.156 0.917-8.158 3.706-12.463 0.39-0.556 1.465-1.794 1.774-1.949v22.114z" fill="#3FA037" />
+                  <path d="M11.968 18.236c-.021-.013-.042-.027-.062-.041-1.393-.94-1.737-2.72-1.758-2.833-.213-1.127.17-2.146.591-2.871.378-.65 1.01-1.405 1.229-2.492.015 1.087.647 1.842 1.025 2.492.421.725.804 1.744.591 2.871-.021.113-.365 1.893-1.758 2.833-.02.014-.041.028-.062.041z" fill="#FFF" opacity="0.9" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">MongoDB</span>
               </div>
 
               {/* Tailwind CSS */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-cyan-500/40 hover:shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <svg className="w-3.5 h-3.5 text-cyan-400 fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                <svg className="w-3.5 h-3.5 text-[#06B6D4] fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.577 1.618 2.938 3 5.912 3 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C4.337 20.582 2.976 19.2 0.001 19.2z" />
                 </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">Tailwind</span>
               </div>
@@ -344,40 +370,50 @@ export default function Hero() {
               {/* Docker */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_0_12px_rgba(36,150,237,0.25)] transition-all duration-200 cursor-default shadow-sm">
                 <svg className="w-3.5 h-3.5 text-[#2496ED] fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186" />
+                  <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186m5.893 2.715h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.186v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H5.136a.186.186 0 00-.186.186v1.888c0 .102.084.185.186.185m-2.928 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.185-.186H2.208a.185.185 0 00-.184.186v1.888c0 .102.082.185.184.185m21.737-1.428c-.371-.263-1.228-.386-2.164-.268-.152-.614-.492-1.183-.984-1.636l-.372-.345-.33.385c-.476.554-.785 1.25-.907 1.996-.54.218-1.207.56-1.782.984l-.538.396.444.498c.677.761 1.216 1.624 1.603 2.565.347.842.529 1.745.54 2.686.012 1.05-.183 2.087-.58 3.084-.396.996-.983 1.905-1.746 2.7l-.376.393.438.321c1.821 1.332 4.022 2.046 6.279 2.038 3.992-.014 7.625-2.222 9.479-5.761.164-.313.308-.636.432-.966.368-.985.553-2.023.55-3.093-.004-1.298-.288-2.585-.838-3.79-.55-1.205-1.347-2.28-2.348-3.19z" />
                 </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">Docker</span>
               </div>
 
               {/* AWS */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-amber-500/40 hover:shadow-[0_0_12px_rgba(255,153,0,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-[#FF9900]/20 border border-[#FF9900] text-[#FF9900] font-black text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  AWS
-                </div>
+                <svg className="w-4 h-4 text-[#FF9900] fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M6.864 12.353c0 .545-.091.954-.318 1.227-.227.273-.591.409-1.045.409-.364 0-.682-.136-.909-.364-.227-.227-.364-.591-.364-1.045 0-.5.136-.909.364-1.182.227-.273.545-.409.909-.409.455 0 .818.136 1.045.409.227.273.318.636.318 1.045zm1.59 0c0-.818-.273-1.5-.773-2.045-.5-.545-1.227-.818-2.182-.818-.909 0-1.636.273-2.182.818-.545.545-.818 1.227-.818 2.045 0 .864.273 1.545.818 2.091.545.545 1.273.818 2.182.818.955 0 1.682-.273 2.182-.818.5-.545.773-1.227.773-2.091zm4.954 2.773l-1.591-6.136H9.953l1.864 6.772c.182.636.318 1.273.455 1.864h.045c.136-.591.273-1.227.455-1.864l1.864-6.772h-1.864l-1.364 6.136zm5.818-.864c-.318.455-.773.682-1.364.682-.455 0-.818-.136-1.045-.409-.227-.273-.318-.636-.318-1.091 0-.5.136-.909.409-1.182.273-.273.682-.409 1.227-.409.364 0 .682.045.955.182v2.227zm1.545.591v-4.818c0-.682-.227-1.227-.636-1.591-.409-.364-1.045-.545-1.909-.545-.909 0-1.682.227-2.273.682l.636 1.136c.455-.318.955-.5 1.545-.5.5 0 .864.091 1.091.318.227.227.318.545.318.955v.364c-.364-.091-.818-.136-1.318-.136-1.045 0-1.864.227-2.455.727-.591.5-.864 1.182-.864 2.045 0 .864.273 1.545.864 2.045.591.5 1.364.727 2.273.727.818 0 1.5-.318 2.045-.955h.045v.818h1.682zm-12.773 6.091c5.227 2.545 11.273 1.773 15.364-.818l.409.545c-4.455 2.818-10.955 3.636-16.5.864l.727-.591z"/>
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">AWS</span>
               </div>
 
               {/* Redis */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-red-500/40 hover:shadow-[0_0_12px_rgba(220,56,45,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-[#DC382D]/20 border border-[#DC382D] text-[#DC382D] font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  RD
-                </div>
+                <svg className="w-3.5 h-3.5 text-[#DC382D] fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M2.38 5.615l8.77-5.064c.527-.305 1.173-.305 1.7 0l8.77 5.064c.527.305.85.864.85 1.473v10.128c0 .609-.323 1.168-.85 1.473l-8.77 5.064c-.527.305-1.173.305-1.7 0L2.38 18.69c-.527-.305-.85-.864-.85-1.473V7.088c0-.609.323-1.168.85-1.473zm9.62 1.475v4.544l4.03-2.327-4.03-2.217zm-1.7 0l-4.03 2.217 4.03 2.327V7.09zm0 6.273l-4.03-2.327v4.435l4.03-2.108zm1.7 0v2.108l4.03 2.108v-4.435l-4.03 2.327z" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">Redis</span>
               </div>
 
               {/* REST APIs */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(16,185,129,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-emerald-500/20 border border-emerald-500 text-emerald-400 font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  API
-                </div>
+                <svg className="w-3.5 h-3.5 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="18" cy="5" r="3" />
+                  <circle cx="6" cy="12" r="3" />
+                  <circle cx="18" cy="19" r="3" />
+                  <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                  <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+                </svg>
                 <span className="text-gray-200 text-xs font-semibold font-sans">REST APIs</span>
               </div>
 
               {/* Custom POS */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-orange-500/10 border border-orange-500/30 hover:border-orange-500/60 hover:shadow-[0_0_12px_rgba(255,138,0,0.25)] transition-all duration-200 cursor-default shadow-sm">
-                <div className="w-3.5 h-3.5 rounded bg-orange-500/20 border border-orange-500 text-orange-400 font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
-                  POS
-                </div>
+                <svg className="w-3.5 h-3.5 text-orange-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" />
+                  <line x1="2" y1="8" x2="22" y2="8" />
+                  <rect x="5" y="11" width="3" height="2" fill="currentColor" />
+                  <rect x="10" y="11" width="3" height="2" fill="currentColor" />
+                  <circle cx="17" cy="12" r="1" fill="currentColor" />
+                  <path d="M7 21h10" />
+                  <path d="M12 17v4" />
+                </svg>
                 <span className="text-orange-300 text-xs font-semibold font-sans">Custom POS</span>
               </div>
             </div>
