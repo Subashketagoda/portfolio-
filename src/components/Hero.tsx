@@ -133,11 +133,11 @@ export default function Hero() {
         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center relative z-10">
+      <div className="max-w-[1440px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
         {/* =========================================================================
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
-        <div className="lg:col-span-7 space-y-7">
+        <div className="lg:col-span-6 space-y-7">
           {/* Clean Minimal Eyebrow matching reference */}
           <div className="flex items-center gap-2 text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase">
             <span>&mdash;</span>
@@ -423,162 +423,162 @@ export default function Hero() {
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
            ========================================================================= */}
-        <div className="lg:col-span-5 flex items-center justify-center relative">
+        <div className="lg:col-span-6 flex items-center justify-center relative">
           <div
-            className="w-full max-w-[500px] rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/5 backdrop-blur-xl overflow-hidden transition-all duration-300"
+            className="w-full max-w-[620px] sm:max-w-[680px] lg:max-w-[720px] xl:max-w-[760px] rounded-2xl bg-[#0e1017]/95 border border-white/[0.14] shadow-2xl shadow-orange-500/15 backdrop-blur-xl overflow-hidden transition-all duration-300"
             style={{
               transform: `perspective(1200px) rotateY(${mousePos.tiltX}deg) rotateX(${mousePos.tiltY}deg)`,
             }}
           >
             {/* macOS / Linux Terminal Window Header */}
-            <div className="px-4 py-3 bg-[#131520] border-b border-white/[0.08] flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="w-3 h-3 rounded-full bg-red-500/80 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-amber-500/80 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-emerald-500/80 inline-block" />
-                <span className="ml-2 font-mono text-[11px] text-gray-400 flex items-center gap-1.5">
-                  <Terminal className="w-3 h-3 text-orange-400" />
+            <div className="px-6 py-4 bg-[#131520] border-b border-white/[0.1] flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="w-4 h-4 rounded-full bg-red-500/90 inline-block shadow-sm" />
+                <span className="w-4 h-4 rounded-full bg-amber-500/90 inline-block shadow-sm" />
+                <span className="w-4 h-4 rounded-full bg-emerald-500/90 inline-block shadow-sm" />
+                <span className="ml-2.5 font-mono text-sm sm:text-base text-gray-200 font-semibold flex items-center gap-2.5">
+                  <Terminal className="w-5 h-5 text-orange-400" />
                   subhash-terminal ~ zsh
                 </span>
               </div>
 
               {/* Status indicator */}
-              <div className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm font-semibold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span>main (clean)</span>
               </div>
             </div>
 
             {/* Interactive Tabs Switcher */}
-            <div className="flex border-b border-white/[0.08] bg-[#0c0e14] px-2 pt-2 gap-1 text-xs font-mono">
+            <div className="flex border-b border-white/[0.1] bg-[#0c0e14] px-4 pt-3 gap-2 text-sm sm:text-base font-mono">
               <button
                 onClick={() => setActiveTab("profile")}
-                className={`px-3 py-1.5 rounded-t-lg flex items-center gap-1.5 transition-all ${
+                className={`px-5 py-2.5 rounded-t-xl flex items-center gap-2.5 transition-all text-xs sm:text-sm font-semibold ${
                   activeTab === "profile"
-                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
-                    : "text-gray-400 hover:text-gray-200"
+                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500 font-bold shadow-sm"
+                    : "text-gray-400 hover:text-gray-200 hover:bg-white/[0.03]"
                 }`}
               >
-                <Cpu className="w-3.5 h-3.5" />
+                <Cpu className="w-4 h-4 text-orange-400" />
                 <span>portrait.view</span>
               </button>
 
               <button
                 onClick={() => setActiveTab("code")}
-                className={`px-3 py-1.5 rounded-t-lg flex items-center gap-1.5 transition-all ${
+                className={`px-5 py-2.5 rounded-t-xl flex items-center gap-2.5 transition-all text-xs sm:text-sm font-semibold ${
                   activeTab === "code"
-                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
-                    : "text-gray-400 hover:text-gray-200"
+                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500 font-bold shadow-sm"
+                    : "text-gray-400 hover:text-gray-200 hover:bg-white/[0.03]"
                 }`}
               >
-                <Code2 className="w-3.5 h-3.5" />
+                <Code2 className="w-4 h-4 text-blue-400" />
                 <span>engineer.ts</span>
               </button>
 
               <button
                 onClick={() => setActiveTab("architecture")}
-                className={`px-3 py-1.5 rounded-t-lg flex items-center gap-1.5 transition-all ${
+                className={`px-5 py-2.5 rounded-t-xl flex items-center gap-2.5 transition-all text-xs sm:text-sm font-semibold ${
                   activeTab === "architecture"
-                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
-                    : "text-gray-400 hover:text-gray-200"
+                    ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500 font-bold shadow-sm"
+                    : "text-gray-400 hover:text-gray-200 hover:bg-white/[0.03]"
                 }`}
               >
-                <Layers className="w-3.5 h-3.5" />
+                <Layers className="w-4 h-4 text-purple-400" />
                 <span>architecture.json</span>
               </button>
             </div>
 
             {/* Tab 1: Profile View (Portrait + Telemetry HUD) */}
             {activeTab === "profile" && (
-              <div className="relative p-6 flex flex-col items-center justify-center min-h-[440px]">
+              <div className="relative p-6 sm:p-10 flex flex-col items-center justify-center min-h-[560px] sm:min-h-[640px] lg:min-h-[700px]">
                 {/* Subtle Amber Portrait Rim Halo */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-orange-500/15 blur-[65px] pointer-events-none" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 sm:w-[500px] sm:h-[500px] rounded-full bg-orange-500/25 blur-[100px] pointer-events-none" />
 
-                {/* Subhash Hero Cutout Image */}
-                <div className="relative w-[280px] h-[360px] sm:w-[320px] sm:h-[400px] z-10 flex items-end justify-center">
+                {/* Subhash Hero Cutout Image - Extra Large Scale */}
+                <div className="relative w-[360px] h-[480px] sm:w-[460px] sm:h-[580px] lg:w-[520px] lg:h-[640px] z-10 flex items-end justify-center">
                   <Image
                     src="/images/subash-hero.png"
                     alt="Subhash Ketagoda - Senior Full-Stack Engineer"
                     fill
                     priority
-                    sizes="320px"
-                    className="object-contain object-bottom drop-shadow-[0_15px_35px_rgba(0,0,0,0.85)] filter contrast-[1.04]"
+                    sizes="(max-width: 768px) 360px, (max-width: 1200px) 480px, 540px"
+                    className="object-contain object-bottom drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] filter contrast-[1.04]"
                   />
                   {/* Subtle fade at the bottom into card */}
-                  <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#0e1017] to-transparent pointer-events-none" />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0e1017] via-[#0e1017]/60 to-transparent pointer-events-none" />
                 </div>
 
                 {/* Docked High-Tech Badge HUD Overlay (Top-Right) */}
-                <div className="absolute top-4 right-4 z-20 px-3 py-1.5 rounded-lg bg-[#141724]/90 border border-orange-500/30 font-mono text-[11px] text-orange-300 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>PRODUCTION TESTED</span>
+                <div className="absolute top-6 right-6 z-20 px-4 py-2.5 rounded-xl bg-[#141724]/95 border border-orange-500/40 font-mono text-xs sm:text-sm text-orange-300 flex items-center gap-2.5 shadow-2xl backdrop-blur-md">
+                  <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+                  <span className="font-bold tracking-wide">PRODUCTION TESTED</span>
                 </div>
 
                 {/* Docked High-Tech Badge HUD Overlay (Bottom-Left) */}
-                <div className="absolute bottom-4 left-4 z-20 px-3 py-1.5 rounded-lg bg-[#141724]/90 border border-white/10 font-mono text-[11px] text-gray-200 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                  <span>CUSTOM POS SPECIALIST</span>
+                <div className="absolute bottom-6 left-6 z-20 px-4 py-2.5 rounded-xl bg-[#141724]/95 border border-white/15 font-mono text-xs sm:text-sm text-gray-200 flex items-center gap-2.5 shadow-2xl backdrop-blur-md">
+                  <span className="w-3 h-3 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                  <span className="font-bold tracking-wide">CUSTOM POS SPECIALIST</span>
                 </div>
 
                 {/* Docked High-Tech Badge HUD Overlay (Bottom-Right) */}
-                <div className="absolute bottom-4 right-4 z-20 px-3 py-1.5 rounded-lg bg-[#141724]/90 border border-white/10 font-mono text-[11px] text-gray-200 flex items-center gap-1.5 shadow-lg backdrop-blur-md">
-                  <Globe className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>GLOBAL EDGE DEPLOY</span>
+                <div className="absolute bottom-6 right-6 z-20 px-4 py-2.5 rounded-xl bg-[#141724]/95 border border-white/15 font-mono text-xs sm:text-sm text-gray-200 flex items-center gap-2.5 shadow-2xl backdrop-blur-md">
+                  <Globe className="w-5 h-5 text-cyan-400 shrink-0" />
+                  <span className="font-bold tracking-wide">GLOBAL EDGE DEPLOY</span>
                 </div>
               </div>
             )}
 
             {/* Tab 2: Live Code Inspector View (engineer.ts) */}
             {activeTab === "code" && (
-              <div className="p-5 font-mono text-xs text-gray-300 leading-relaxed overflow-x-auto min-h-[440px] bg-[#090b10]">
-                <div className="text-gray-500">// TypeScript Enterprise Profile Definition</div>
-                <div className="mt-2">
-                  <span className="text-purple-400">interface</span> <span className="text-yellow-300">StaffEngineer</span> {"{"}
+              <div className="p-6 sm:p-9 font-mono text-xs sm:text-sm md:text-[15px] text-gray-300 leading-relaxed overflow-x-auto min-h-[560px] sm:min-h-[640px] lg:min-h-[700px] bg-[#090b10]">
+                <div className="text-gray-500 text-sm">// TypeScript Enterprise Profile Definition</div>
+                <div className="mt-4">
+                  <span className="text-purple-400 font-semibold">interface</span> <span className="text-yellow-300 font-semibold">StaffEngineer</span> {"{"}
                 </div>
-                <div className="pl-4 text-gray-300">
+                <div className="pl-5 text-gray-300">
                   name: <span className="text-emerald-300">&quot;Subhash Ketagoda&quot;</span>;
                 </div>
-                <div className="pl-4 text-gray-300">
+                <div className="pl-5 text-gray-300">
                   role: <span className="text-emerald-300">&quot;Senior Full-Stack &amp; Digital Architect&quot;</span>;
                 </div>
-                <div className="pl-4 text-gray-300">
+                <div className="pl-5 text-gray-300">
                   location: <span className="text-emerald-300">&quot;Colombo, Sri Lanka [Remote Worldwide]&quot;</span>;
                 </div>
-                <div className="pl-4 text-gray-300">
+                <div className="pl-5 text-gray-300">
                   specialization: <span className="text-blue-400">string</span>[];
                 </div>
-                <div className="pl-4 text-gray-300">
-                  status: <span className="text-orange-400">&quot;AVAILABLE_FOR_CONTRACT&quot;</span>;
+                <div className="pl-5 text-gray-300">
+                  status: <span className="text-orange-400 font-semibold">&quot;AVAILABLE_FOR_CONTRACT&quot;</span>;
                 </div>
                 <div>{"}"}</div>
 
-                <div className="mt-4">
-                  <span className="text-purple-400">export const</span> <span className="text-blue-300">Subhash</span>: <span className="text-yellow-300">StaffEngineer</span> = {"{"}
+                <div className="mt-6">
+                  <span className="text-purple-400 font-semibold">export const</span> <span className="text-blue-300 font-semibold">Subhash</span>: <span className="text-yellow-300 font-semibold">StaffEngineer</span> = {"{"}
                 </div>
-                <div className="pl-4">
+                <div className="pl-5">
                   name: <span className="text-emerald-300">&quot;Subhash Ketagoda&quot;</span>,
                 </div>
-                <div className="pl-4">
+                <div className="pl-5">
                   role: <span className="text-emerald-300">&quot;Senior Full-Stack &amp; Digital Architect&quot;</span>,
                 </div>
-                <div className="pl-4">
+                <div className="pl-5">
                   location: <span className="text-emerald-300">&quot;Colombo, Sri Lanka&quot;</span>,
                 </div>
-                <div className="pl-4">
+                <div className="pl-5">
                   specialization: [
                 </div>
-                <div className="pl-8 text-cyan-300">&quot;Next.js 15 App Router &amp; Server Actions&quot;,</div>
-                <div className="pl-8 text-cyan-300">&quot;Distributed REST &amp; GraphQL Architectures&quot;,</div>
-                <div className="pl-8 text-cyan-300">&quot;High-Volume Custom POS Billing Engines&quot;,</div>
-                <div className="pl-8 text-cyan-300">&quot;Database Optimization (Postgres &amp; Mongo)&quot;,</div>
-                <div className="pl-4">],</div>
-                <div className="pl-4">
-                  status: <span className="text-orange-400">&quot;AVAILABLE_FOR_CONTRACT&quot;</span>,
+                <div className="pl-9 text-cyan-300">&quot;Next.js 15 App Router &amp; Server Actions&quot;,</div>
+                <div className="pl-9 text-cyan-300">&quot;Distributed REST &amp; GraphQL Architectures&quot;,</div>
+                <div className="pl-9 text-cyan-300">&quot;High-Volume Custom POS Billing Engines&quot;,</div>
+                <div className="pl-9 text-cyan-300">&quot;Database Optimization (Postgres &amp; Mongo)&quot;,</div>
+                <div className="pl-5">],</div>
+                <div className="pl-5">
+                  status: <span className="text-orange-400 font-semibold">&quot;AVAILABLE_FOR_CONTRACT&quot;</span>,
                 </div>
                 <div>{"};"}</div>
 
-                <div className="mt-4 pt-3 border-t border-white/10 text-emerald-400 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="mt-8 pt-5 border-t border-white/10 text-emerald-400 flex items-center gap-2.5 text-xs sm:text-sm font-semibold">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span>// Build passed: 0 errors, 0 warnings (0.34s)</span>
                 </div>
               </div>
@@ -586,45 +586,45 @@ export default function Hero() {
 
             {/* Tab 3: Architecture Matrix View (architecture.json) */}
             {activeTab === "architecture" && (
-              <div className="p-5 font-mono text-xs text-gray-300 leading-relaxed overflow-x-auto min-h-[440px] bg-[#090b10] space-y-3">
-                <div className="text-gray-500">// System Architecture &amp; Production Stack</div>
+              <div className="p-6 sm:p-9 font-mono text-xs sm:text-sm text-gray-300 leading-relaxed overflow-x-auto min-h-[560px] sm:min-h-[640px] lg:min-h-[700px] bg-[#090b10] space-y-4">
+                <div className="text-gray-500 text-sm">// System Architecture &amp; Production Stack</div>
 
-                <div className="p-3 rounded-lg bg-[#11141e] border border-white/[0.08] space-y-1">
-                  <div className="text-orange-400 font-semibold flex items-center gap-1.5">
-                    <Layers className="w-3.5 h-3.5" />
+                <div className="p-4 sm:p-5 rounded-xl bg-[#11141e] border border-white/[0.09] space-y-2">
+                  <div className="text-orange-400 font-bold flex items-center gap-2.5 text-sm sm:text-base">
+                    <Layers className="w-5 h-5" />
                     <span>01. FRONTEND ARCHITECTURE</span>
                   </div>
-                  <div className="text-gray-400 text-[11px]">
+                  <div className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     Next.js 15 (App Router, Server Actions), React 19, TypeScript, Tailwind CSS, Framer Motion, Core Web Vitals (99+ score).
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#11141e] border border-white/[0.08] space-y-1">
-                  <div className="text-cyan-400 font-semibold flex items-center gap-1.5">
-                    <Server className="w-3.5 h-3.5" />
+                <div className="p-4 sm:p-5 rounded-xl bg-[#11141e] border border-white/[0.09] space-y-2">
+                  <div className="text-cyan-400 font-bold flex items-center gap-2.5 text-sm sm:text-base">
+                    <Server className="w-5 h-5" />
                     <span>02. BACKEND &amp; TRANSACTION ENGINES</span>
                   </div>
-                  <div className="text-gray-400 text-[11px]">
+                  <div className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     Node.js, Express, Microservices, Custom POS Billing &amp; Inventory Engines, Secure JWT/OAuth2 Auth, WebSockets.
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#11141e] border border-white/[0.08] space-y-1">
-                  <div className="text-emerald-400 font-semibold flex items-center gap-1.5">
-                    <Database className="w-3.5 h-3.5" />
+                <div className="p-4 sm:p-5 rounded-xl bg-[#11141e] border border-white/[0.09] space-y-2">
+                  <div className="text-emerald-400 font-bold flex items-center gap-2.5 text-sm sm:text-base">
+                    <Database className="w-5 h-5" />
                     <span>03. DATA LAYER &amp; STORAGE</span>
                   </div>
-                  <div className="text-gray-400 text-[11px]">
+                  <div className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     PostgreSQL, MongoDB, Redis In-Memory Caching, ACID compliance for financial POS operations, Prisma ORM.
                   </div>
                 </div>
 
-                <div className="p-3 rounded-lg bg-[#11141e] border border-white/[0.08] space-y-1">
-                  <div className="text-purple-400 font-semibold flex items-center gap-1.5">
-                    <Globe className="w-3.5 h-3.5" />
+                <div className="p-4 sm:p-5 rounded-xl bg-[#11141e] border border-white/[0.09] space-y-2">
+                  <div className="text-purple-400 font-bold flex items-center gap-2.5 text-sm sm:text-base">
+                    <Globe className="w-5 h-5" />
                     <span>04. INFRASTRUCTURE &amp; CI/CD</span>
                   </div>
-                  <div className="text-gray-400 text-[11px]">
+                  <div className="text-gray-300 text-xs sm:text-sm leading-relaxed">
                     Docker, AWS S3/EC2, Vercel Edge Network, GitHub Actions, Automated Testing, Cloudflare CDN.
                   </div>
                 </div>
@@ -632,13 +632,13 @@ export default function Hero() {
             )}
 
             {/* Console Footer Status Bar */}
-            <div className="px-4 py-2 bg-[#0c0e14] border-t border-white/[0.08] flex items-center justify-between text-[10px] font-mono text-gray-400">
-              <div className="flex items-center gap-2">
-                <span className="text-orange-400">UTF-8</span>
-                <span>TypeScript</span>
+            <div className="px-6 py-4 bg-[#0c0e14] border-t border-white/[0.1] flex items-center justify-between text-xs sm:text-sm font-mono text-gray-300">
+              <div className="flex items-center gap-4">
+                <span className="text-orange-400 font-bold tracking-wider">UTF-8</span>
+                <span className="text-gray-300 font-medium">TypeScript</span>
               </div>
-              <div className="flex items-center gap-2 text-emerald-400">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+              <div className="flex items-center gap-2.5 text-emerald-400 font-bold tracking-wider bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
                 <span>P99: 24ms</span>
               </div>
             </div>
