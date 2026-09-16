@@ -15,16 +15,16 @@ export default function ScrollReveal({
   delay = 0,
   direction = "up",
 }: ScrollRevealProps) {
-  // On mobile (<768px), start visible immediately to prevent flash of invisible content
-  const [isVisible, setIsVisible] = useState(() => {
-    if (typeof window === "undefined") return false;
-    return window.innerWidth < 768;
-  });
+  const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Already visible on mobile via lazy state initializer — just skip observer setup
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
+    // Reveal immediately on mobile screens (<768px) or if user prefers reduced motion
+    if (
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+    ) {
+      setIsVisible(true);
       return;
     }
 
@@ -37,7 +37,7 @@ export default function ScrollReveal({
       },
       {
         threshold: 0.05,
-        rootMargin: "50px 0px 50px 0px",
+        rootMargin: "80px 0px 80px 0px",
       }
     );
 
@@ -71,7 +71,7 @@ export default function ScrollReveal({
   return (
     <div
       ref={ref}
-      className={className}
+      className={`scroll-reveal-box ${className}`.trim()}
       style={{
         opacity: isVisible ? 1 : 0,
         transform: isVisible ? "translate3d(0, 0, 0)" : getInitialTransform(),

@@ -88,9 +88,9 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     };
     window.addEventListener("keydown", handleKeyDown);
 
-    // Desktop 1.8s (1800ms) luxury smooth easing counter
+    // Desktop 1.5s luxury smooth easing counter with hard fallback
     const startTime = Date.now();
-    const duration = 1800;
+    const duration = 1500;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
@@ -107,8 +107,14 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
     }, 20);
 
+    // Hard fallback: unconditionally unlock and finish within 2.2s under all circumstances
+    const safetyTimeout = setTimeout(() => {
+      handleFinish();
+    }, 2200);
+
     return () => {
       clearInterval(interval);
+      clearTimeout(safetyTimeout);
       window.removeEventListener("keydown", handleKeyDown);
       if (typeof document !== "undefined") {
         document.documentElement.style.overflow = "";

@@ -248,9 +248,9 @@ export default function Hero() {
           </div>
 
           {/* Socials & Tech Dock */}
-          <div className="pt-1 sm:pt-2 space-y-2.5 sm:space-y-0">
+          <div className="pt-1 sm:pt-2 space-y-3 sm:space-y-0 sm:flex sm:items-center sm:gap-3">
             {/* Social Icons Row */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 shrink-0">
               <a
                 href="https://github.com/Subashketagoda"
                 target="_blank"
@@ -277,12 +277,13 @@ export default function Hero() {
                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
 
-              <div className="h-4 w-px bg-white/10 mx-1" />
+              <div className="h-4 w-px bg-white/10 mx-1 hidden sm:block" />
+            </div>
 
-              {/* CORE chips: scroll horizontally on mobile, wrap on desktop */}
-              <div className="overflow-x-auto no-scrollbar flex-1 min-w-0">
-                <div className="flex items-center gap-1.5 text-[11px] font-mono text-gray-400 flex-nowrap sm:flex-wrap">
-                  <span className="text-gray-500 uppercase text-[9px] font-bold tracking-wider shrink-0">CORE:</span>
+            {/* CORE chips: scroll horizontally with full width on mobile, wrap on desktop */}
+            <div className="overflow-x-auto no-scrollbar w-full min-w-0 py-0.5">
+              <div className="flex items-center gap-1.5 text-[11px] font-mono text-gray-400 flex-nowrap sm:flex-wrap">
+                <span className="text-gray-500 uppercase text-[9px] font-bold tracking-wider shrink-0">CORE:</span>
 
               {/* Next.js 15 */}
               <div className="flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-white/30 hover:shadow-[0_0_12px_rgba(255,255,255,0.15)] transition-all duration-200 cursor-default shadow-sm">
@@ -421,8 +422,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-          </div>
-        </div>
+      </div>
 
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
