@@ -82,19 +82,20 @@ export default function Hero() {
 
       {/* Cinematic Ambient Nebulae & Lighting */}
       {/* 1. Primary Radiant Orange Aura behind the portrait */}
-      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[140px] pointer-events-none animate-pulse-subtle" />
+      <div className="absolute -top-12 right-0 sm:right-12 w-[620px] h-[620px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[140px] pointer-events-none hidden md:block animate-pulse-subtle" />
+      <div className="absolute top-0 right-0 w-60 h-60 rounded-full bg-orange-500/12 blur-[40px] pointer-events-none md:hidden" />
 
       {/* 2. Deep Indigo / Violet Nebula on the left for chromatic depth */}
-      <div className="absolute top-1/4 -left-24 w-[520px] h-[520px] rounded-full bg-indigo-600/[0.06] blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/4 -left-24 w-[520px] h-[520px] rounded-full bg-indigo-600/[0.06] blur-[160px] pointer-events-none hidden md:block" />
 
       {/* 3. Subtle Warm Floor Reflection */}
-      <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-orange-500/[0.04] via-amber-500/[0.01] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 inset-x-0 h-44 bg-gradient-to-t from-orange-500/[0.04] via-amber-500/[0.01] to-transparent pointer-events-none hidden sm:block" />
 
       {/* 4. High-Tech Cyber Dot Matrix with Radial Vignette */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.18]"
+        className="absolute inset-0 pointer-events-none opacity-[0.14]"
         style={{
-          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.45) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)",
           backgroundSize: "28px 28px",
           maskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%)",
           WebkitMaskImage: "radial-gradient(ellipse 80% 70% at 50% 40%, black 20%, transparent 80%)",
@@ -103,7 +104,7 @@ export default function Hero() {
 
       {/* 5. Subtle Technical Grid Lines */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.04]"
+        className="absolute inset-0 pointer-events-none opacity-[0.03] hidden sm:block"
         style={{
           backgroundImage:
             "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
@@ -124,18 +125,18 @@ export default function Hero() {
         + COLOMBO / DEV
       </div>
 
-      {/* 7. Floating Ambient Luminous Dust Particles */}
-      <div className="absolute top-1/3 left-1/4 w-1.5 h-1.5 rounded-full bg-orange-400/50 blur-[0.5px] animate-float pointer-events-none" />
+      {/* 7. Floating Ambient Luminous Dust Particles (Desktop only) */}
+      <div className="absolute top-1/3 left-1/4 w-1.5 h-1.5 rounded-full bg-orange-400/50 blur-[0.5px] animate-float pointer-events-none hidden md:block" />
       <div
-        className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-amber-400/40 blur-[1px] animate-float pointer-events-none"
+        className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-amber-400/40 blur-[1px] animate-float pointer-events-none hidden md:block"
         style={{ animationDelay: "2s", animationDuration: "7s" }}
       />
       <div
-        className="absolute bottom-1/3 left-1/3 w-1 h-1 rounded-full bg-orange-300/45 blur-[0.5px] animate-float pointer-events-none"
+        className="absolute bottom-1/3 left-1/3 w-1 h-1 rounded-full bg-orange-300/45 blur-[0.5px] animate-float pointer-events-none hidden md:block"
         style={{ animationDelay: "4s", animationDuration: "8s" }}
       />
       <div
-        className="absolute top-1/4 right-1/4 w-1.5 h-1.5 rounded-full bg-amber-300/40 blur-[0.5px] animate-float pointer-events-none"
+        className="absolute top-1/4 right-1/4 w-1.5 h-1.5 rounded-full bg-amber-300/40 blur-[0.5px] animate-float pointer-events-none hidden md:block"
         style={{ animationDelay: "1s", animationDuration: "6.5s" }}
       />
 
@@ -253,8 +254,8 @@ export default function Hero() {
               {/* Dashed Orbital Track */}
               <div className="absolute inset-6 rounded-full border border-dashed border-orange-500/25 animate-spin-slow" />
 
-              {/* Glowing High-Intensity Orange Arc */}
-              <svg className="absolute inset-0 w-full h-full animate-pulse-subtle" viewBox="0 0 100 100">
+              {/* Glowing High-Intensity Orange Arc (Desktop only, avoids mobile SVG filter CPU stalling) */}
+              <svg className="absolute inset-0 w-full h-full animate-pulse-subtle hidden md:block" viewBox="0 0 100 100">
                 <defs>
                   <linearGradient id="orbitGlow" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" stopColor="#ff8a00" stopOpacity="1" />

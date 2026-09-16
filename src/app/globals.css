@@ -16,6 +16,7 @@
 html {
   scroll-behavior: smooth;
   touch-action: manipulation;
+  overflow-x: clip;
 }
 
 body {
@@ -23,7 +24,7 @@ body {
   background: var(--background);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-overflow-scrolling: touch;
   touch-action: manipulation;
 }
