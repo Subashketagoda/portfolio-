@@ -225,6 +225,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
+        {/* Preload critical above-the-fold hero image to eliminate LCP delay */}
+        <link
+          rel="preload"
+          href="/images/subash-hero.png"
+          as="image"
+          fetchPriority="high"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
