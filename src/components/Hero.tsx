@@ -227,6 +227,17 @@ export default function Hero() {
                 <span className="text-gray-200 text-xs font-semibold font-sans">Next.js 15</span>
               </div>
 
+              {/* React 19 */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-cyan-500/40 hover:shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <svg className="w-3.5 h-3.5 text-cyan-400 shrink-0" viewBox="0 0 115.3 100" fill="currentColor">
+                  <circle cx="57.7" cy="50" r="10" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" fill="none" stroke="currentColor" strokeWidth="5" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(60 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
+                  <ellipse cx="57.7" cy="50" rx="50" ry="18.5" transform="rotate(120 57.7 50)" fill="none" stroke="currentColor" strokeWidth="5" />
+                </svg>
+                <span className="text-gray-200 text-xs font-semibold font-sans">React 19</span>
+              </div>
+
               {/* TypeScript */}
               <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_0_12px_rgba(49,120,198,0.25)] transition-all duration-200 cursor-default shadow-sm">
                 <div className="w-3.5 h-3.5 rounded bg-[#3178C6] text-white font-black text-[9px] flex items-center justify-center leading-none shrink-0 shadow-sm">
@@ -249,6 +260,54 @@ export default function Hero() {
                   PG
                 </div>
                 <span className="text-gray-200 text-xs font-semibold font-sans">PostgreSQL</span>
+              </div>
+
+              {/* MongoDB */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(34,197,94,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded-full bg-[#47A248]/20 flex items-center justify-center text-[#47A248] text-[11px] leading-none shrink-0">
+                  🍃
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">MongoDB</span>
+              </div>
+
+              {/* Tailwind CSS */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-cyan-500/40 hover:shadow-[0_0_12px_rgba(6,182,212,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <svg className="w-3.5 h-3.5 text-cyan-400 fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
+                </svg>
+                <span className="text-gray-200 text-xs font-semibold font-sans">Tailwind</span>
+              </div>
+
+              {/* Docker */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-blue-500/40 hover:shadow-[0_0_12px_rgba(36,150,237,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <svg className="w-3.5 h-3.5 text-[#2496ED] fill-current shrink-0" viewBox="0 0 24 24">
+                  <path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.186.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.186.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.186.186.186" />
+                </svg>
+                <span className="text-gray-200 text-xs font-semibold font-sans">Docker</span>
+              </div>
+
+              {/* AWS */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-amber-500/40 hover:shadow-[0_0_12px_rgba(255,153,0,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-[#FF9900]/20 border border-[#FF9900] text-[#FF9900] font-black text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  AWS
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">AWS</span>
+              </div>
+
+              {/* Redis */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-red-500/40 hover:shadow-[0_0_12px_rgba(220,56,45,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-[#DC382D]/20 border border-[#DC382D] text-[#DC382D] font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  RD
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">Redis</span>
+              </div>
+
+              {/* REST APIs */}
+              <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-emerald-500/40 hover:shadow-[0_0_12px_rgba(16,185,129,0.25)] transition-all duration-200 cursor-default shadow-sm">
+                <div className="w-3.5 h-3.5 rounded bg-emerald-500/20 border border-emerald-500 text-emerald-400 font-bold text-[8px] flex items-center justify-center leading-none shrink-0 shadow-sm">
+                  API
+                </div>
+                <span className="text-gray-200 text-xs font-semibold font-sans">REST APIs</span>
               </div>
 
               {/* Custom POS */}
