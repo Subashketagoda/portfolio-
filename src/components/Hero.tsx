@@ -26,6 +26,59 @@ export default function Hero() {
   const [activeTab, setActiveTab] = useState<"profile" | "code" | "architecture">("profile");
   const [copied, setCopied] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, tiltX: 0, tiltY: 0 });
+  const [typedTitle, setTypedTitle] = useState("Full-Stack Developer");
+  const [showCursor, setShowCursor] = useState(true);
+
+  useEffect(() => {
+    const titles = [
+      "Full-Stack Developer",
+      "Creative Web Developer",
+      "Senior Software Engineer",
+      "Digital Systems Architect",
+      "Custom POS Specialist",
+    ];
+    let titleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    const cursorInterval = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+
+    let typingTimer: NodeJS.Timeout;
+
+    const tick = () => {
+      const currentTitle = titles[titleIndex];
+
+      if (!isDeleting) {
+        setTypedTitle(currentTitle.slice(0, charIndex + 1));
+        charIndex++;
+        if (charIndex === currentTitle.length) {
+          isDeleting = true;
+          typingTimer = setTimeout(tick, 1800);
+          return;
+        }
+        typingTimer = setTimeout(tick, 85);
+      } else {
+        setTypedTitle(currentTitle.slice(0, charIndex - 1));
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          titleIndex = (titleIndex + 1) % titles.length;
+          typingTimer = setTimeout(tick, 400);
+          return;
+        }
+        typingTimer = setTimeout(tick, 45);
+      }
+    };
+
+    typingTimer = setTimeout(tick, 400);
+
+    return () => {
+      clearTimeout(typingTimer);
+      clearInterval(cursorInterval);
+    };
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -95,11 +148,16 @@ export default function Hero() {
                 Ketagoda
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-300 font-mono tracking-tight flex items-center gap-2 flex-wrap">
-              <span className="text-orange-400">//</span> Senior Full-Stack Engineer
-              <span className="text-gray-600 text-sm hidden sm:inline">&amp;</span>
-              <span className="text-gray-400 text-lg sm:text-xl font-normal">Digital Systems Architect</span>
-            </p>
+            {/* Dynamic Typewriter Subtitle with blinking orange cursor */}
+            <div className="h-9 sm:h-12 flex items-center">
+              <span className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 font-mono tracking-tight flex items-center">
+                <span className="text-orange-400 mr-2 font-bold">//</span>
+                <span>{typedTitle}</span>
+                <span className={`text-orange-500 font-normal ml-1 ${showCursor ? "opacity-100" : "opacity-0"}`}>
+                  |
+                </span>
+              </span>
+            </div>
           </div>
 
           {/* Senior Bio Paragraph */}
