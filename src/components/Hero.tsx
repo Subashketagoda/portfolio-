@@ -134,7 +134,7 @@ export default function Hero() {
         <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center lg:items-start relative z-10">
         {/* =========================================================================
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
@@ -424,7 +424,7 @@ export default function Hero() {
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
            ========================================================================= */}
-        <div className="lg:col-span-5 flex items-center justify-center relative w-full mt-3 lg:mt-0">
+        <div className="lg:col-span-5 flex items-center justify-center relative w-full mt-3 lg:mt-0 lg:self-start">
           <div
             className="w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[360px] lg:max-w-[420px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/5 backdrop-blur-xl overflow-hidden transition-transform duration-300"
             style={{
