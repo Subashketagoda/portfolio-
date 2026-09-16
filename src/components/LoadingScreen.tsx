@@ -74,8 +74,11 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
           key="preloader-overlay"
           initial={{ y: 0 }}
           exit={{ y: "-100%" }}
-          transition={{ duration: 0.85, ease: [0.76, 0, 0.24, 1] }}
-          className="fixed inset-0 z-[120] flex flex-col justify-between p-6 sm:p-10 md:p-14 bg-[#06070a] select-none overflow-hidden"
+          transition={{ duration: 0.65, ease: [0.76, 0, 0.24, 1] }}
+          onClick={handleFinish}
+          className={`fixed inset-0 z-[120] flex flex-col justify-between p-6 sm:p-10 md:p-14 bg-[#06070a] select-none overflow-hidden cursor-pointer ${
+            progress >= 100 || isFinished ? "pointer-events-none" : "pointer-events-auto"
+          }`}
         >
           {/* Cyber Grid Background */}
           <div
@@ -210,10 +213,13 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
 
             {/* Bottom-Right: Skip Prompt */}
             <button
-              onClick={handleFinish}
-              className="px-3 py-1.5 rounded-lg border border-white/10 hover:border-orange-500/50 hover:bg-orange-500/10 text-[10px] text-gray-400 hover:text-white transition-all tracking-widest uppercase cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleFinish();
+              }}
+              className="px-3.5 py-1.5 rounded-lg border border-orange-500/40 bg-orange-500/10 hover:border-orange-500/70 hover:bg-orange-500/20 active:scale-95 text-[11px] text-orange-300 hover:text-white transition-all tracking-wider font-mono cursor-pointer"
             >
-              [ PRESS ESC TO ENTER ]
+              [ TAP TO ENTER ]
             </button>
           </div>
         </motion.div>

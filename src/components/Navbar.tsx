@@ -95,7 +95,7 @@ export default function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-gray-400 hover:text-white transition-colors"
+          className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-400 hover:text-white active:text-orange-500 transition-colors cursor-pointer"
           aria-label="Toggle Menu"
         >
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -104,13 +104,13 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0c0c11]/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 space-y-4">
+        <div className="lg:hidden bg-[#0c0c11]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-3 shadow-2xl">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold tracking-wider text-gray-300 hover:text-orange-500 py-1"
+              className="block text-sm font-semibold tracking-wider text-gray-300 active:text-orange-500 hover:text-orange-500 py-2 min-h-[44px] flex items-center transition-colors"
             >
               {link.name}
             </a>
@@ -119,7 +119,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center py-3 px-4 rounded-full bg-orange-500 text-white font-semibold text-xs tracking-wider"
+              className="block text-center py-3.5 px-4 rounded-full bg-orange-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform"
             >
               LET&apos;S TALK
             </a>

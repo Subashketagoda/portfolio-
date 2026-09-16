@@ -5,7 +5,19 @@ import Lenis from "lenis";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Only enable smooth scrolling on non-touch desktop devices or modern screens
+    // Detect mobile and touch devices
+    const isTouchDevice =
+      typeof window !== "undefined" &&
+      ("ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        window.matchMedia("(pointer: coarse)").matches ||
+        window.innerWidth < 1024);
+
+    // Strictly disable Lenis on mobile/touch screens to ensure 100% native 120Hz touch scrolling and tap responsiveness
+    if (isTouchDevice) {
+      return;
+    }
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -13,7 +25,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       gestureOrientation: "vertical",
       smoothWheel: true,
       wheelMultiplier: 1.0,
-      touchMultiplier: 1.5,
+      touchMultiplier: 0,
+      syncTouch: false,
     });
 
     let rafId: number;
