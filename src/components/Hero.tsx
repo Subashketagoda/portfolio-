@@ -282,10 +282,10 @@ export default function Hero() {
               <div className="h-4 w-px bg-white/10 mx-1 hidden sm:block" />
             </div>
 
-            {/* CORE chips: scroll horizontally with full width on mobile, wrap on desktop */}
-            <div className="overflow-x-auto no-scrollbar w-full min-w-0 py-0.5">
-              <div className="flex items-center gap-1.5 text-[11px] font-mono text-gray-400 flex-nowrap sm:flex-wrap">
-                <span className="text-gray-500 uppercase text-[9px] font-bold tracking-wider shrink-0">CORE:</span>
+            {/* CORE chips: wrap neatly on mobile and desktop so all technologies are visible */}
+            <div className="w-full min-w-0 py-0.5">
+              <div className="flex items-center gap-1.5 text-[11px] font-mono text-gray-400 flex-wrap">
+                <span className="text-gray-500 uppercase text-[9px] font-bold tracking-wider shrink-0 mr-0.5">CORE:</span>
 
               {/* Next.js 15 */}
               <div className="flex items-center gap-1.5 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg bg-[#10131d] border border-white/[0.08] hover:border-white/30 hover:shadow-[0_0_12px_rgba(255,255,255,0.15)] transition-all duration-200 cursor-default shadow-sm">
