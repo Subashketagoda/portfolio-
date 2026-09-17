@@ -72,14 +72,14 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Smooth swift 1.2s counter (1200ms) - snappy & responsive on both mobile and PC
+    // Smooth 3.0s counter (3000ms) - luxury editorial intro experience
     const startTime = Date.now();
-    const duration = 1200;
+    const duration = 3000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const t = Math.min(elapsed / duration, 1);
-      // High-end editorial cubic-bezier easing: swift glide, gentle settling
+      // High-end editorial cubic-bezier easing: smooth organic build-up, gentle settling
       const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
       const current = Math.min(Math.round(eased * 100), 100);
 
@@ -91,11 +91,11 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
     }, 20);
 
-    // Hard fallback: unconditionally unlock and finish within 1.8s under all circumstances
+    // Hard fallback: unconditionally unlock and finish within 3.6s under all circumstances
     const safetyTimeout = setTimeout(() => {
       clearInterval(interval);
       handleFinish();
-    }, 1800);
+    }, 3600);
 
     return () => {
       clearInterval(interval);
@@ -199,8 +199,16 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
         {/* Footer info: Coordinates / Skip prompt */}
         <div className="flex items-center justify-between font-mono text-[9px] sm:text-[11px] text-gray-400">
           <div className="flex items-center gap-1.5 sm:gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            <span className="tracking-wider">EXPERIENCE LOADING</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="tracking-wider text-gray-300">
+              {progress < 25
+                ? "INITIALIZING KERNEL..."
+                : progress < 55
+                ? "LOADING NEURAL ASSETS..."
+                : progress < 85
+                ? "CALIBRATING WORKSPACE..."
+                : "SYSTEMS ONLINE"}
+            </span>
           </div>
 
           <button
