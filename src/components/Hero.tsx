@@ -119,10 +119,10 @@ export default function Hero() {
            ========================================================================= */}
         <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
           {/* Clean Prominent Eyebrow */}
-          <div className="flex items-center gap-2 text-orange-500 font-mono text-xs sm:text-xs md:text-sm font-bold tracking-[0.22em] uppercase">
-            <span className="text-orange-400 font-bold">&mdash;</span>
+          <div className="flex items-center gap-2.5 text-orange-500 font-mono text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] uppercase">
+            <span className="text-orange-400 font-black text-lg sm:text-xl">&mdash;</span>
             <span className="tracking-[0.22em]">HELLO, I&apos;M</span>
-            <span className="text-orange-400 font-bold">&mdash;</span>
+            <span className="text-orange-400 font-black text-lg sm:text-xl">&mdash;</span>
           </div>
 
           {/* Main Title: Bold, Majestic, Larger on Mobile */}
