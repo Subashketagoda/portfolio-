@@ -118,16 +118,16 @@ export default function Hero() {
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
         <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
-          {/* Clean Minimal Eyebrow */}
-          <div className="flex items-center gap-2 text-orange-500 font-mono text-[11px] sm:text-xs md:text-sm font-semibold tracking-widest uppercase">
-            <span>&mdash;</span>
-            <span>HELLO, I&apos;M</span>
-            <span>&mdash;</span>
+          {/* Clean Prominent Eyebrow */}
+          <div className="flex items-center gap-2 text-orange-500 font-mono text-xs sm:text-xs md:text-sm font-bold tracking-[0.22em] uppercase">
+            <span className="text-orange-400 font-bold">&mdash;</span>
+            <span className="tracking-[0.22em]">HELLO, I&apos;M</span>
+            <span className="text-orange-400 font-bold">&mdash;</span>
           </div>
 
-          {/* Main Title: Bold, Sharp, Responsive */}
-          <div className="space-y-1 sm:space-y-2">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.08] sm:leading-[1.0] break-words">
+          {/* Main Title: Bold, Majestic, Larger on Mobile */}
+          <div className="space-y-1.5 sm:space-y-2">
+            <h1 className="text-[2.65rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.05] sm:leading-[1.0] break-words">
               Subhash{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
                 Ketagoda
