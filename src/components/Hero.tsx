@@ -430,7 +430,7 @@ export default function Hero() {
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
            ========================================================================= */}
-        <div className="lg:col-span-5 min-w-0 flex items-center justify-center relative w-full mt-3 lg:-mt-10 xl:-mt-14 lg:self-start">
+        <div className="lg:col-span-5 min-w-0 flex items-center justify-center relative w-full mt-3 lg:-mt-5 xl:-mt-9 lg:self-start">
           <div
             className="w-full max-w-full sm:max-w-[360px] lg:max-w-[480px] xl:max-w-[530px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/10 backdrop-blur-xl overflow-hidden transition-transform duration-300"
             style={{
