@@ -21,6 +21,7 @@ import {
   Database,
   Globe,
 } from "lucide-react";
+import HeroBackground from "./HeroBackground";
 
 export default function Hero() {
   const [activeTab, setActiveTab] = useState<"profile" | "code" | "architecture">("profile");
@@ -109,31 +110,8 @@ export default function Hero() {
       onMouseMove={handleMouseMove}
       className="relative min-h-screen pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-[#080b0f]"
     >
-      {/* 1. Precision Cyber Grid Background with Radial Mask */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.14]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right, rgba(255, 255, 255, 0.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
-          maskImage: "radial-gradient(ellipse 75% 65% at 50% 40%, black 20%, transparent 80%)",
-          WebkitMaskImage: "radial-gradient(ellipse 75% 65% at 50% 40%, black 20%, transparent 80%)",
-        }}
-      />
-
-      {/* 2. Ambient Studio Rim Light behind work area */}
-      <div className="absolute top-1/4 right-0 lg:right-1/12 w-[280px] sm:w-[450px] lg:w-[650px] h-[280px] sm:h-[450px] lg:h-[650px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[80px] sm:blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-0 w-[220px] sm:w-[350px] lg:w-[450px] h-[220px] sm:h-[350px] lg:h-[450px] rounded-full bg-orange-600/[0.06] blur-[90px] sm:blur-[150px] pointer-events-none" />
-
-      {/* 3. High-Tech Precision Vector Crosshairs & Telemetry */}
-      <div className="absolute top-20 sm:top-24 left-4 sm:left-14 font-mono text-[9px] sm:text-[10px] text-orange-400/40 select-none pointer-events-none hidden sm:flex items-center gap-2 tracking-widest">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-        <span>SYS_STATUS: LIVE IN PRODUCTION [79.86°E : COLOMBO]</span>
-      </div>
-      <div className="absolute top-20 sm:top-24 right-4 sm:right-16 font-mono text-[9px] sm:text-[10px] text-orange-400/40 select-none pointer-events-none hidden sm:flex items-center gap-2 tracking-widest">
-        <span>ARCH: NEXT.JS 15 // TS 5 // DISTRIBUTED</span>
-        <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-      </div>
+      {/* Interactive High-Tech Cyber Hero Background & Effects */}
+      <HeroBackground mousePos={{ x: mousePos.x, y: mousePos.y }} />
 
       <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center lg:items-start relative z-10">
         {/* =========================================================================
