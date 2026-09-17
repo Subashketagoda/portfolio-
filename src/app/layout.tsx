@@ -244,44 +244,16 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
 
-        {/* Cal.com element-click embed initialization with forced dark theme */}
+        {/* Cal.com element-click embed initialization */}
         <Script
           id="cal-embed-init"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "secret", {origin:"https://app.cal.com"});
+Cal("init", "30min", {origin:"https://app.cal.com"});
 Cal.config = Cal.config || {};
 Cal.config.forwardQueryParams = true;
-Cal.ns.secret("ui", {
-  theme: "dark",
-  hideEventTypeDetails: false,
-  layout: "month_view",
-  styles: {
-    body: { background: "#0c0f17" },
-    eventTypeListItem: { background: "#0c0f17" }
-  },
-  cssVarsPerTheme: {
-    dark: {
-      "cal-brand": "#f97316",
-      "cal-bg": "#0c0f17",
-      "cal-bg-emphasis": "#141824",
-      "cal-border": "rgba(255,255,255,0.1)",
-      "cal-border-subtle": "rgba(255,255,255,0.08)",
-      "cal-text": "#ffffff",
-      "cal-text-muted": "#9ca3af"
-    },
-    light: {
-      "cal-brand": "#f97316",
-      "cal-bg": "#0c0f17",
-      "cal-bg-emphasis": "#141824",
-      "cal-border": "rgba(255,255,255,0.1)",
-      "cal-border-subtle": "rgba(255,255,255,0.08)",
-      "cal-text": "#ffffff",
-      "cal-text-muted": "#9ca3af"
-    }
-  }
-});`,
+Cal.ns["30min"]("ui", {"theme":"dark","cssVarsPerTheme":{"light":{"cal-brand":"#FFA500"},"dark":{"cal-brand":"#FFA500"}},"hideEventTypeDetails":false,"layout":"month_view"});`,
           }}
         />
       </body>

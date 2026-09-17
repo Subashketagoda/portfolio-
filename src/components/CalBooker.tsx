@@ -54,8 +54,8 @@ export default function CalBooker() {
           </div>
 
           <button
-            data-cal-link="subash-ketagoda-egs2ht/secret?theme=dark"
-            data-cal-namespace="secret"
+            data-cal-link="subash-ketagoda-egs2ht/30min"
+            data-cal-namespace="30min"
             data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
             className="relative group overflow-hidden inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-[length:200%_auto] hover:bg-right text-white font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(249,115,22,0.35)] hover:shadow-[0_0_45px_rgba(249,115,22,0.55)] active:scale-98 sm:hover:scale-[1.02] transition-all duration-500 cursor-pointer w-full sm:w-auto"
           >
