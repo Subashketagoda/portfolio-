@@ -6,8 +6,8 @@ export default function CalEmbed() {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const Cal = (window as any).Cal;
-      if (Cal?.ns?.["30min"]) {
-        Cal.ns["30min"]("ui", {
+      if (Cal?.ns?.portfolio) {
+        Cal.ns.portfolio("ui", {
           theme: "dark",
           cssVarsPerTheme: {
             light: { "cal-brand": "#FFA500" },

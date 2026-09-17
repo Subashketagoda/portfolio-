@@ -210,10 +210,7 @@ export default function Hero() {
           <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
-                href="#contact"
-                data-cal-link="subash-ketagoda-egs2ht/30min"
-                data-cal-namespace="30min"
-                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
+                href="#booking"
                 className="relative group overflow-hidden inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-[length:200%_auto] hover:bg-right text-white font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(249,115,22,0.35)] hover:shadow-[0_0_45px_rgba(249,115,22,0.55)] active:scale-98 sm:hover:scale-[1.02] transition-all duration-500 w-full sm:w-auto text-center cursor-pointer"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12 pointer-events-none" />

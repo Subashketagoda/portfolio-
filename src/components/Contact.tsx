@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle, ChevronDown, Sparkles, Send, MessageSquare, CalendarDays } from "lucide-react";
+import CalBooker from "@/components/CalBooker";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -83,16 +84,13 @@ export default function Contact() {
               <p className="text-xs text-gray-300">
                 Prefer an immediate meeting? Pick a convenient time on my calendar for an architectural advisory or project kickoff.
               </p>
-              <button
-                type="button"
-                data-cal-link="subash-ketagoda-egs2ht/30min"
-                data-cal-namespace="30min"
-                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
+              <a
+                href="#booking"
                 className="w-full py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 text-orange-400 hover:text-orange-300 font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-500/10"
               >
                 <CalendarDays className="w-4 h-4" />
                 <span>SCHEDULE VIDEO CALL</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -214,6 +212,9 @@ export default function Contact() {
             </div>
           </div>
         </div>
+
+        {/* Live Interactive Cal.com Booking Calendar */}
+        <CalBooker />
       </div>
     </section>
   );
