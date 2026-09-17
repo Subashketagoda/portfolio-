@@ -134,14 +134,16 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right CTA Button: LET'S TALK */}
+          {/* Right CTA Button: BOOK A CALL */}
           <div className="hidden sm:flex items-center gap-4">
             <a
               href="#contact"
-              onClick={(e) => handleNavClick(e, "#contact")}
-              className="px-6 py-2 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wider text-gray-200 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-300"
+              data-cal-link="subash-ketagoda-egs2ht/secret"
+              data-cal-namespace="secret"
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+              className="px-6 py-2 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wider text-gray-200 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-300 cursor-pointer"
             >
-              LET&apos;S TALK
+              BOOK A CALL
             </a>
           </div>
 
@@ -217,10 +219,13 @@ export default function Navbar() {
             <div className="pt-5">
               <a
                 href="#contact"
-                onClick={(e) => handleNavClick(e, "#contact")}
-                className="flex items-center justify-center w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform"
+                data-cal-link="subash-ketagoda-egs2ht/secret"
+                data-cal-namespace="secret"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform cursor-pointer"
               >
-                LET&apos;S TALK
+                BOOK A CALL
               </a>
             </div>
 

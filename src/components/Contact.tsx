@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle, ChevronDown, Sparkles, Send, MessageSquare } from "lucide-react";
+import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle, ChevronDown, Sparkles, Send, MessageSquare, CalendarDays } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -70,6 +70,29 @@ export default function Contact() {
                 <span>ESTIMATED RESPONSE:</span>
                 <span className="text-orange-400 font-semibold">&lt; 4 HOURS</span>
               </div>
+            </div>
+
+            {/* Direct Calendar Booking Action */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#131622]/90 to-[#0c0e16]/95 border border-white/[0.09] shadow-xl space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">DIRECT CALENDAR</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-500/15 border border-orange-500/30 text-orange-400 font-mono text-[11px] font-bold">
+                  30 MIN CALL
+                </span>
+              </div>
+              <p className="text-xs text-gray-300">
+                Prefer an immediate meeting? Pick a convenient time on my calendar for an architectural advisory or project kickoff.
+              </p>
+              <button
+                type="button"
+                data-cal-link="subash-ketagoda-egs2ht/secret"
+                data-cal-namespace="secret"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                className="w-full py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 text-orange-400 hover:text-orange-300 font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-500/10"
+              >
+                <CalendarDays className="w-4 h-4" />
+                <span>SCHEDULE VIDEO CALL</span>
+              </button>
             </div>
           </div>
 
