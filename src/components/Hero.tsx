@@ -152,39 +152,55 @@ export default function Hero() {
           </p>
 
           {/* Developer Telemetry Grid (Real Engineering Metrics) */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 pt-1">
-            <div className="p-2.5 sm:p-3.5 rounded-xl bg-[#0f1118] border border-white/[0.08] hover:border-orange-500/40 transition-all duration-300 group">
-              <div className="text-xl sm:text-3xl font-bold font-mono text-orange-400 group-hover:scale-105 transition-transform">
-                6+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5 pt-1">
+            <div className="relative p-3 sm:p-4 rounded-xl bg-gradient-to-b from-[#141824]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-orange-500/50 transition-all duration-300 group shadow-lg hover:shadow-[0_0_20px_rgba(249,115,22,0.18)] overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xl sm:text-3xl font-bold font-mono text-white group-hover:text-orange-400 group-hover:scale-105 transition-all">
+                  6<span className="text-orange-500">+</span>
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
               </div>
-              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider">
                 Years Experience
               </div>
             </div>
 
-            <div className="p-2.5 sm:p-3.5 rounded-xl bg-[#0f1118] border border-white/[0.08] hover:border-orange-500/40 transition-all duration-300 group">
-              <div className="text-xl sm:text-3xl font-bold font-mono text-orange-400 group-hover:scale-105 transition-transform">
-                40+
+            <div className="relative p-3 sm:p-4 rounded-xl bg-gradient-to-b from-[#141824]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-orange-500/50 transition-all duration-300 group shadow-lg hover:shadow-[0_0_20px_rgba(249,115,22,0.18)] overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xl sm:text-3xl font-bold font-mono text-white group-hover:text-orange-400 group-hover:scale-105 transition-all">
+                  40<span className="text-orange-500">+</span>
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               </div>
-              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider">
                 Production Shipped
               </div>
             </div>
 
-            <div className="p-2.5 sm:p-3.5 rounded-xl bg-[#0f1118] border border-white/[0.08] hover:border-orange-500/40 transition-all duration-300 group">
-              <div className="text-xl sm:text-3xl font-bold font-mono text-emerald-400 group-hover:scale-105 transition-transform">
-                99.9%
+            <div className="relative p-3 sm:p-4 rounded-xl bg-gradient-to-b from-[#141824]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-emerald-500/50 transition-all duration-300 group shadow-lg hover:shadow-[0_0_20px_rgba(16,185,129,0.18)] overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-emerald-500/50 to-transparent" />
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xl sm:text-3xl font-bold font-mono text-emerald-400 group-hover:scale-105 transition-all">
+                  99.9<span className="text-emerald-300">%</span>
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
               </div>
-              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider">
                 Uptime &amp; SLA
               </div>
             </div>
 
-            <div className="p-2.5 sm:p-3.5 rounded-xl bg-[#0f1118] border border-white/[0.08] hover:border-orange-500/40 transition-all duration-300 group">
-              <div className="text-xl sm:text-3xl font-bold font-mono text-amber-400 group-hover:scale-105 transition-transform">
-                &lt;45ms
+            <div className="relative p-3 sm:p-4 rounded-xl bg-gradient-to-b from-[#141824]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-amber-500/50 transition-all duration-300 group shadow-lg hover:shadow-[0_0_20px_rgba(245,158,11,0.18)] overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent" />
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-xl sm:text-3xl font-bold font-mono text-amber-400 group-hover:scale-105 transition-all">
+                  &lt;45<span className="text-xs text-gray-400">ms</span>
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               </div>
-              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider mt-0.5">
+              <div className="text-[10px] sm:text-[11px] font-mono text-gray-400 uppercase tracking-wider">
                 P99 Edge Latency
               </div>
             </div>
@@ -195,33 +211,37 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="relative group overflow-hidden inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs sm:text-sm tracking-wider hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/45 active:scale-98 sm:hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto text-center"
+                className="relative group overflow-hidden inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-[length:200%_auto] hover:bg-right text-white font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(249,115,22,0.35)] hover:shadow-[0_0_45px_rgba(249,115,22,0.55)] active:scale-98 sm:hover:scale-[1.02] transition-all duration-500 w-full sm:w-auto text-center"
               >
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none" />
-                <span className="relative z-10">HIRE SENIOR DEV</span>
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 relative z-10 group-hover:translate-x-1 transition-transform" />
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12 pointer-events-none" />
+                <span className="relative z-10 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-white animate-pulse" />
+                  <span>HIRE SENIOR DEV</span>
+                </span>
+                <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1.5 transition-transform" />
               </a>
 
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-[#12141d] border border-white/10 text-gray-200 font-semibold text-xs sm:text-sm tracking-wider hover:border-orange-500/50 hover:text-white hover:bg-[#1a1c28] transition-all duration-300 shadow-md w-full sm:w-auto text-center"
+                className="inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-4 rounded-xl bg-[#121520]/80 backdrop-blur-md border border-white/12 text-gray-200 font-semibold text-xs sm:text-sm tracking-wider hover:border-orange-500/60 hover:text-white hover:bg-[#191e2e] transition-all duration-300 shadow-md hover:shadow-orange-500/15 w-full sm:w-auto text-center group"
               >
                 <span>EXPLORE SYSTEMS</span>
-                <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400" />
+                <ExternalLink className="w-4 h-4 text-orange-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
             </div>
 
             {/* Interactive Developer CLI Prompt with Copy Feature */}
-            <div className="inline-flex items-center justify-between sm:justify-start gap-2 sm:gap-3 px-3.5 sm:px-4 py-2 rounded-xl bg-[#0c0e15] border border-white/[0.08] text-[11px] sm:text-xs font-mono text-gray-300 max-w-full overflow-hidden">
+            <div className="inline-flex items-center justify-between sm:justify-start gap-2.5 sm:gap-3.5 px-4 py-2.5 rounded-xl bg-[#0c0f18]/95 border border-orange-500/20 text-[11px] sm:text-xs font-mono text-gray-300 max-w-full overflow-hidden shadow-inner shadow-orange-500/5">
               <div className="flex items-center gap-2 truncate">
-                <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-400 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
+                <Terminal className="w-3.5 h-3.5 text-orange-400 shrink-0" />
                 <span className="text-gray-500 shrink-0">$</span>
-                <span className="text-gray-200 truncate">npx subhash-ketagoda</span>
+                <span className="text-orange-200 font-semibold truncate">npx subhash-ketagoda</span>
               </div>
               <button
                 onClick={copyCommand}
                 aria-label="Copy npx command"
-                className="ml-1 sm:ml-2 p-1 rounded hover:bg-white/10 text-gray-400 hover:text-white transition-colors shrink-0"
+                className="ml-1 sm:ml-2 p-1.5 rounded-lg hover:bg-white/10 text-gray-400 hover:text-white transition-colors shrink-0 bg-white/5 border border-white/5"
                 title="Copy to clipboard"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
