@@ -16,6 +16,7 @@
 html {
   /* Only smooth scroll if not reduced motion */
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   overflow-x: clip;
   max-width: 100%;
 }
