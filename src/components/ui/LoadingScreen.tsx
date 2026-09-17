@@ -8,7 +8,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   const [isFinished, setIsFinished] = useState(false);
 
   useEffect(() => {
-    const duration = 3000; // 3.0s smooth initialization
+    const duration = 1600; // 1.6s smooth initialization
     const interval = 20;
     const increment = 100 / (duration / interval);
 

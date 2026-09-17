@@ -3,7 +3,6 @@
 import { useEffect, useState, useCallback, useRef } from "react";
 
 export default function LoadingScreen({ onComplete }: { onComplete?: () => void }) {
-  const [mounted, setMounted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [isRevealing, setIsRevealing] = useState(false);
   const [isFinished, setIsFinished] = useState(false);
@@ -42,8 +41,6 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   }, [unlockScroll, onComplete]);
 
   useEffect(() => {
-    setMounted(true);
-
     // Prevent body scrolling while loading screen is active
     if (typeof document !== "undefined") {
       document.documentElement.style.overflow = "hidden";
@@ -72,14 +69,14 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Smooth 3.0s counter (3000ms) - luxury editorial intro experience
+    // Smooth swift 1.2s counter (1200ms) - snappy & responsive on both mobile and PC
     const startTime = Date.now();
-    const duration = 3000;
+    const duration = 1200;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const t = Math.min(elapsed / duration, 1);
-      // High-end editorial cubic-bezier easing: smooth organic build-up, gentle settling
+      // High-end editorial cubic-bezier easing: swift glide, gentle settling
       const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
       const current = Math.min(Math.round(eased * 100), 100);
 
@@ -91,11 +88,11 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
     }, 20);
 
-    // Hard fallback: unconditionally unlock and finish within 3.6s under all circumstances
+    // Hard fallback: unconditionally unlock and finish within 1.8s under all circumstances
     const safetyTimeout = setTimeout(() => {
       clearInterval(interval);
       handleFinish();
-    }, 3600);
+    }, 1800);
 
     return () => {
       clearInterval(interval);
@@ -107,7 +104,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     };
   }, [handleFinish, unlockScroll]);
 
-  if (!mounted || isFinished) {
+  if (isFinished) {
     return null;
   }
 
@@ -115,7 +112,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     <div
       onClick={handleFinish}
       className={`fixed inset-0 z-[120] flex flex-col justify-between p-5 sm:p-10 md:p-16 bg-[#07070a] text-white select-none overflow-hidden cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] ${
-        isRevealing ? "-translate-y-full pointer-events-none" : "translate-y-0 pointer-events-auto"
+        isRevealing ? "-translate-y-full pointer-events-none" : "translate-y-0 pointer-events-auto touch-none"
       }`}
     >
       {/* Subtle Warm Amber Atmosphere Glow */}
@@ -202,11 +199,11 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <span className="tracking-wider text-gray-300">
               {progress < 25
-                ? "INITIALIZING KERNEL..."
+                ? "INITIALIZING WORKSPACE..."
                 : progress < 55
-                ? "LOADING NEURAL ASSETS..."
+                ? "CALIBRATING ASSETS..."
                 : progress < 85
-                ? "CALIBRATING WORKSPACE..."
+                ? "LOADING NEURAL ENGINE..."
                 : "SYSTEMS ONLINE"}
             </span>
           </div>
