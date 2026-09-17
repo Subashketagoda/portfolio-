@@ -6,7 +6,6 @@ import CalEmbed from "@/components/CalEmbed";
 
 export const viewport: Viewport = {
   themeColor: "#080b0f",
-  colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -259,7 +258,8 @@ Cal.ns.secret("ui", {
   hideEventTypeDetails: false,
   layout: "month_view",
   styles: {
-    body: { background: "transparent" }
+    body: { background: "#0c0f17" },
+    eventTypeListItem: { background: "#0c0f17" }
   },
   cssVarsPerTheme: {
     dark: {

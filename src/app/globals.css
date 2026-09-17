@@ -164,16 +164,17 @@ button, a, input, textarea {
   animation: reverseSpin 35s linear infinite;
 }
 
-/* Cal.com Dark Modal & Embed Background Fix */
+/* Cal.com Dark Modal & Embed Background Fix (CAL-2129 / Chromium Safety Canvas Fix) */
 cal-modal-box {
-  color-scheme: dark !important;
+  color-scheme: normal !important;
+  background-color: transparent !important;
 }
 
 iframe.cal-embed,
 iframe[name*="cal-embed"],
 iframe[src*="cal.com"] {
   background-color: #0c0f17 !important;
-  color-scheme: dark !important;
+  color-scheme: normal !important;
   border-radius: 16px !important;
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }

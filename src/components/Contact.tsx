@@ -85,7 +85,7 @@ export default function Contact() {
               </p>
               <button
                 type="button"
-                data-cal-link="subash-ketagoda-egs2ht/secret"
+                data-cal-link="subash-ketagoda-egs2ht/secret?theme=dark"
                 data-cal-namespace="secret"
                 data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
                 className="w-full py-3 px-4 rounded-xl bg-orange-500/15 hover:bg-orange-500/25 border border-orange-500/40 text-orange-400 hover:text-orange-300 font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-orange-500/10"
