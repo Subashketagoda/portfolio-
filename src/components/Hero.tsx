@@ -118,21 +118,23 @@ export default function Hero() {
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
         <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
-          {/* Clean Prominent Eyebrow */}
-          <div className="flex items-center gap-2.5 text-orange-500 font-mono text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] uppercase">
-            <span className="text-orange-400 font-black text-lg sm:text-xl">&mdash;</span>
-            <span className="tracking-[0.22em]">HELLO, I&apos;M</span>
-            <span className="text-orange-400 font-black text-lg sm:text-xl">&mdash;</span>
-          </div>
+          {/* Main Title & Eyebrow Group with tight, compact spacing */}
+          <div className="flex flex-col gap-0 sm:gap-0.5">
+            {/* Clean Prominent Eyebrow */}
+            <div className="flex items-center gap-2 text-orange-500 font-mono text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] uppercase leading-none">
+              <span className="text-orange-400 font-black text-lg sm:text-xl leading-none">&mdash;</span>
+              <span className="tracking-[0.22em] leading-none">HELLO, I&apos;M</span>
+              <span className="text-orange-400 font-black text-lg sm:text-xl leading-none">&mdash;</span>
+            </div>
 
-          {/* Main Title: Bold, Majestic, Larger on Mobile */}
-          <div className="space-y-1.5 sm:space-y-2">
-            <h1 className="text-[2.65rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.05] sm:leading-[1.0] break-words">
+            {/* Main Title: Bold, Majestic, Larger on Mobile */}
+            <h1 className="text-[2.65rem] xs:text-[2.85rem] sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.02] sm:leading-[1.0] break-words mt-0">
               Subhash{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
                 Ketagoda
               </span>
             </h1>
+          </div>
             {/* Dynamic Typewriter Subtitle with blinking orange cursor */}
             <div className="min-h-[2.25rem] sm:min-h-[2.75rem] flex items-center">
               <span className="text-base sm:text-2xl md:text-3xl font-semibold text-gray-200 font-mono tracking-tight flex items-center flex-wrap break-words max-w-full">
@@ -143,7 +145,6 @@ export default function Hero() {
                 </span>
               </span>
             </div>
-          </div>
 
           {/* Senior Bio Paragraph */}
           <p className="text-gray-400 text-sm sm:text-base md:text-lg max-w-2xl font-normal leading-relaxed">
