@@ -140,7 +140,7 @@ export default function Navbar() {
               href="#contact"
               data-cal-link="subash-ketagoda-egs2ht/secret"
               data-cal-namespace="secret"
-              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+              data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
               className="px-6 py-2 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wider text-gray-200 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-300 cursor-pointer"
             >
               BOOK A CALL
@@ -221,7 +221,7 @@ export default function Navbar() {
                 href="#contact"
                 data-cal-link="subash-ketagoda-egs2ht/secret"
                 data-cal-namespace="secret"
-                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"dark"}'
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform cursor-pointer"
               >

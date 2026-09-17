@@ -245,7 +245,7 @@ export default function RootLayout({
           {children}
         </SmoothScroll>
 
-        {/* Cal.com element-click embed initialization */}
+        {/* Cal.com element-click embed initialization with forced dark theme */}
         <Script
           id="cal-embed-init"
           strategy="afterInteractive"
@@ -254,7 +254,34 @@ export default function RootLayout({
 Cal("init", "secret", {origin:"https://app.cal.com"});
 Cal.config = Cal.config || {};
 Cal.config.forwardQueryParams = true;
-Cal.ns.secret("ui", {"hideEventTypeDetails":false,"layout":"month_view"});`,
+Cal.ns.secret("ui", {
+  theme: "dark",
+  hideEventTypeDetails: false,
+  layout: "month_view",
+  styles: {
+    body: { background: "transparent" }
+  },
+  cssVarsPerTheme: {
+    dark: {
+      "cal-brand": "#f97316",
+      "cal-bg": "#0c0f17",
+      "cal-bg-emphasis": "#141824",
+      "cal-border": "rgba(255,255,255,0.1)",
+      "cal-border-subtle": "rgba(255,255,255,0.08)",
+      "cal-text": "#ffffff",
+      "cal-text-muted": "#9ca3af"
+    },
+    light: {
+      "cal-brand": "#f97316",
+      "cal-bg": "#0c0f17",
+      "cal-bg-emphasis": "#141824",
+      "cal-border": "rgba(255,255,255,0.1)",
+      "cal-border-subtle": "rgba(255,255,255,0.08)",
+      "cal-text": "#ffffff",
+      "cal-text-muted": "#9ca3af"
+    }
+  }
+});`,
           }}
         />
       </body>
