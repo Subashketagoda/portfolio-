@@ -145,22 +145,22 @@ export default function Skills() {
   });
 
   return (
-    <section id="skills" className="py-24 md:py-32 px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/2 -right-32 w-96 h-96 bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 -left-32 w-96 h-96 bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 -right-32 w-72 sm:w-96 h-72 sm:h-96 bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-10 -left-32 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           {/* Left Column: Eyebrow, Heading, 8 Progress Bars */}
-          <div className="lg:col-span-5 space-y-7">
+          <div className="lg:col-span-5 min-w-0 space-y-6 sm:space-y-7">
             <div className="space-y-3">
               <div className="text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
                 <span>&mdash;</span>
                 <span>TECHNICAL EXPERTISE</span>
                 <span>&mdash;</span>
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                 Skills &amp; Engineering Disciplines
               </h2>
               <p className="text-xs text-gray-400">
@@ -168,7 +168,7 @@ export default function Skills() {
               </p>
             </div>
 
-            <div className="space-y-4 pt-1">
+            <div className="space-y-3 sm:space-y-4 pt-1">
               {skillsProgress.map((skill: SkillProgress) => (
                 <SkillBar
                   key={skill.name}
@@ -180,7 +180,7 @@ export default function Skills() {
           </div>
 
           {/* Right Column: Interactive Tech Stack Cards Grid with Category Filter */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 min-w-0 space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 pb-2 border-b border-white/[0.06]">
               <div className="text-xs font-mono uppercase tracking-wider text-gray-400">
                 STACK &amp; TOOLS (20 TECHNOLOGIES)
@@ -190,7 +190,7 @@ export default function Skills() {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-3 py-1 rounded-md text-[11px] font-semibold transition-all ${
+                    className={`px-3 py-1.5 rounded-md text-[11px] font-semibold transition-all min-h-[32px] flex items-center ${
                       activeCategory === cat
                         ? "bg-orange-500 text-white"
                         : "bg-[#14141c] text-gray-400 hover:text-white"
@@ -202,7 +202,7 @@ export default function Skills() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3 sm:gap-3.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-2.5 sm:gap-3.5">
               {filteredTech.map((tech: TechItem) => (
                 <div
                   key={tech.name}

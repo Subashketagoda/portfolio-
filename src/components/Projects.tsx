@@ -29,21 +29,21 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0e] relative overflow-hidden">
+    <section id="projects" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0a0a0e] relative overflow-hidden">
       {/* Ambient background glow */}
-      <div className="absolute top-1/3 left-1/4 w-[600px] h-[400px] bg-orange-500/[0.04] blur-[170px] pointer-events-none rounded-full" />
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[350px] bg-amber-500/[0.03] blur-[150px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/3 left-1/4 w-[320px] sm:w-[500px] lg:w-[600px] h-[300px] sm:h-[400px] bg-orange-500/[0.04] blur-[170px] pointer-events-none rounded-full" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[450px] lg:w-[500px] h-[280px] sm:h-[350px] bg-amber-500/[0.03] blur-[150px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-6">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-8 sm:mb-10 gap-6">
           <div className="space-y-3">
             <div className="text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
               <span>&mdash;</span>
               <span>FEATURED WORK &amp; CLIENT PROJECTS</span>
               <span>&mdash;</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
               Real-World Digital Platforms <br className="hidden sm:block" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
                 Engineered for Impact
@@ -52,12 +52,12 @@ export default function Projects() {
           </div>
 
           {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar w-full sm:w-auto pb-1 sm:pb-0">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveFilter(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 ${
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 shrink-0 min-h-[36px] flex items-center ${
                   activeFilter === cat
                     ? "bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/25 scale-[1.02]"
                     : "bg-[#14141d] text-gray-400 hover:text-white hover:bg-[#1c1c28] border border-white/[0.06]"
@@ -70,7 +70,7 @@ export default function Projects() {
         </div>
 
         {/* 6 Real Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {filteredProjects.map((project: Project) => (
             <div
               key={project.id}

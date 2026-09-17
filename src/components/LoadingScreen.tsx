@@ -127,10 +127,10 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       />
 
       {/* TOP EDITORIAL ROW */}
-      <div className="relative z-10 flex items-center justify-between font-mono text-[10px] sm:text-xs tracking-[0.2em] sm:tracking-[0.25em] uppercase text-gray-400">
+      <div className="relative z-10 flex items-center justify-between font-mono text-[9px] sm:text-xs tracking-wider sm:tracking-[0.25em] uppercase text-gray-400">
         <div className="flex items-center gap-2 sm:gap-2.5">
           <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-ping" />
-          <span className="text-white font-semibold tracking-[0.25em] sm:tracking-[0.3em]">SUBHASH KETAGODA</span>
+          <span className="text-white font-semibold tracking-wider sm:tracking-[0.3em]">SUBHASH KETAGODA</span>
         </div>
         <div className="hidden sm:block text-gray-400 tracking-[0.25em]">
           CREATIVE TECHNOLOGIST &mdash; &apos;24
@@ -140,7 +140,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       {/* CENTERPIECE: Signature Unveiling & Soft Golden Light */}
       <div className="relative z-10 flex flex-col items-center justify-center my-auto space-y-4 sm:space-y-6 md:space-y-8">
         {/* Signature Container with Liquid Gold Reveal Effect */}
-        <div className="relative w-56 sm:w-72 md:w-96 h-20 sm:h-32 md:h-44 flex items-center justify-center">
+        <div className="relative w-48 sm:w-72 md:w-96 h-16 sm:h-32 md:h-44 flex items-center justify-center">
           {/* Ambient Signature Backlight Pulse */}
           <div
             className="absolute inset-0 rounded-full bg-orange-500/20 blur-[40px] sm:blur-[70px] pointer-events-none transition-all duration-300"
@@ -166,8 +166,8 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
         </div>
 
         {/* Minimal Editorial Title */}
-        <div className="text-center space-y-1">
-          <div className="font-mono text-[9px] sm:text-xs tracking-[0.3em] sm:tracking-[0.35em] uppercase text-gray-400 font-medium">
+        <div className="text-center space-y-1 px-2">
+          <div className="font-mono text-[9px] sm:text-xs tracking-wider sm:tracking-[0.35em] uppercase text-gray-400 font-medium">
             WEB DESIGNER &amp; FULL-STACK DEVELOPER
           </div>
         </div>

@@ -4,11 +4,11 @@ import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#07070a] border-t border-white/[0.06] pt-16 pb-12 px-6 md:px-12 text-gray-400">
+    <footer className="bg-[#07070a] border-t border-white/[0.06] pt-12 sm:pt-16 pb-10 sm:pb-12 px-4 sm:px-6 md:px-12 text-gray-400">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-8 pb-10 sm:pb-14 border-b border-white/[0.06]">
           {/* Col 1: Brand Info matching screenshot */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 min-w-0 space-y-4">
             <a href="#home" className="flex items-center group py-1">
               <img
                 src="/images/subhash-signature.png"
@@ -138,7 +138,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar matching screenshot */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 text-xs text-gray-500 text-center sm:text-left">
           <div>
             &copy; 2026 Subhash Ketagoda. All rights reserved.
           </div>

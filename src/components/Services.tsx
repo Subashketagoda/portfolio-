@@ -39,19 +39,19 @@ const servicesList = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 md:py-32 px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-orange-500/[0.04] blur-[160px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[500px] lg:w-[700px] h-[300px] sm:h-[350px] bg-orange-500/[0.04] blur-[160px] pointer-events-none rounded-full" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Centered Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-3">
           <div className="text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase flex items-center justify-center gap-2">
             <span>&mdash;</span>
             <span>CAPABILITIES &amp; SPECIALTIES</span>
             <span>&mdash;</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
             Comprehensive Digital Craftsmanship
           </h2>
           <p className="text-xs sm:text-sm text-gray-400 max-w-xl mx-auto font-normal leading-relaxed pt-1">
@@ -60,28 +60,28 @@ export default function Services() {
         </div>
 
         {/* 4 Premium Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {servicesList.map((service, idx) => {
             const Icon = service.icon;
 
             return (
               <div
                 key={idx}
-                className="group relative rounded-2xl p-7 flex flex-col justify-between bg-[#121218] border border-white/[0.08] hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden"
+                className="group relative rounded-2xl p-5 sm:p-7 flex flex-col justify-between bg-[#121218] border border-white/[0.08] hover:border-orange-500/50 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden"
               >
                 {/* Background Watermark Number */}
-                <div className="absolute -bottom-3 -right-2 font-mono text-7xl font-black text-white/[0.03] group-hover:text-orange-500/[0.07] transition-colors pointer-events-none select-none">
+                <div className="absolute -bottom-3 -right-2 font-mono text-6xl sm:text-7xl font-black text-white/[0.03] group-hover:text-orange-500/[0.07] transition-colors pointer-events-none select-none">
                   {service.number}
                 </div>
 
-                <div className="relative z-10 space-y-5">
+                <div className="relative z-10 space-y-4 sm:space-y-5">
                   {/* Service Icon in Glowing rounded box */}
-                  <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center justify-center text-orange-400 group-hover:scale-110 group-hover:bg-orange-500/20 group-hover:border-orange-500 transition-all duration-300 shadow-md">
-                    <Icon className="w-6 h-6 text-orange-400" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-orange-500/10 border border-orange-500/25 flex items-center justify-center text-orange-400 group-hover:scale-110 group-hover:bg-orange-500/20 group-hover:border-orange-500 transition-all duration-300 shadow-md">
+                    <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-white group-hover:text-orange-400 transition-colors leading-snug">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-orange-400 transition-colors leading-snug">
                     {service.title}
                   </h3>
 
@@ -95,7 +95,7 @@ export default function Services() {
                     {service.deliverables.map((item, dIdx) => (
                       <div key={dIdx} className="flex items-center gap-2 text-[11px] text-gray-300">
                         <CheckCircle2 className="w-3.5 h-3.5 text-orange-500/80 shrink-0" />
-                        <span className="truncate">{item}</span>
+                        <span className="leading-tight">{item}</span>
                       </div>
                     ))}
                   </div>

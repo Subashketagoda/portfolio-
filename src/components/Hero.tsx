@@ -121,8 +121,8 @@ export default function Hero() {
       />
 
       {/* 2. Ambient Studio Rim Light behind work area */}
-      <div className="absolute top-1/4 right-1/12 w-[650px] h-[650px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 left-0 w-[450px] h-[450px] rounded-full bg-orange-600/[0.06] blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 lg:right-1/12 w-[280px] sm:w-[450px] lg:w-[650px] h-[280px] sm:h-[450px] lg:h-[650px] rounded-full bg-gradient-to-br from-orange-500/18 via-amber-500/10 to-transparent blur-[80px] sm:blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-[220px] sm:w-[350px] lg:w-[450px] h-[220px] sm:h-[350px] lg:h-[450px] rounded-full bg-orange-600/[0.06] blur-[90px] sm:blur-[150px] pointer-events-none" />
 
       {/* 3. High-Tech Precision Vector Crosshairs & Telemetry */}
       <div className="absolute top-20 sm:top-24 left-4 sm:left-14 font-mono text-[9px] sm:text-[10px] text-orange-400/40 select-none pointer-events-none hidden sm:flex items-center gap-2 tracking-widest">
@@ -138,7 +138,7 @@ export default function Hero() {
         {/* =========================================================================
             LEFT COLUMN: Commanding Senior Developer Identity, Telemetry & Actions
            ========================================================================= */}
-        <div className="lg:col-span-7 space-y-5 sm:space-y-6">
+        <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
           {/* Clean Minimal Eyebrow */}
           <div className="flex items-center gap-2 text-orange-500 font-mono text-[11px] sm:text-xs md:text-sm font-semibold tracking-widest uppercase">
             <span>&mdash;</span>
@@ -148,18 +148,18 @@ export default function Hero() {
 
           {/* Main Title: Bold, Sharp, Responsive */}
           <div className="space-y-1 sm:space-y-2">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.05] sm:leading-[1.0]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[5.2rem] font-black tracking-tight text-white leading-[1.08] sm:leading-[1.0] break-words">
               Subhash{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
                 Ketagoda
               </span>
             </h1>
             {/* Dynamic Typewriter Subtitle with blinking orange cursor */}
-            <div className="h-8 sm:h-11 flex items-center">
-              <span className="text-lg sm:text-2xl md:text-3xl font-semibold text-gray-200 font-mono tracking-tight flex items-center">
-                <span className="text-orange-400 mr-2 font-bold">//</span>
-                <span>{typedTitle}</span>
-                <span className={`text-orange-500 font-normal ml-1 ${showCursor ? "opacity-100" : "opacity-0"}`}>
+            <div className="min-h-[2.25rem] sm:min-h-[2.75rem] flex items-center">
+              <span className="text-base sm:text-2xl md:text-3xl font-semibold text-gray-200 font-mono tracking-tight flex items-center flex-wrap break-words max-w-full">
+                <span className="text-orange-400 mr-2 font-bold shrink-0">//</span>
+                <span className="break-all sm:break-normal">{typedTitle}</span>
+                <span className={`text-orange-500 font-normal ml-1 shrink-0 ${showCursor ? "opacity-100" : "opacity-0"}`}>
                   |
                 </span>
               </span>
@@ -212,10 +212,10 @@ export default function Hero() {
 
           {/* Action CTAs + Interactive Terminal Quick Command */}
           <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <a
                 href="#contact"
-                className="relative group overflow-hidden inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs sm:text-sm tracking-wider hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/45 hover:scale-[1.02] transition-all duration-300"
+                className="relative group overflow-hidden inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs sm:text-sm tracking-wider hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/45 active:scale-98 sm:hover:scale-[1.02] transition-all duration-300 w-full sm:w-auto text-center"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 pointer-events-none" />
                 <span className="relative z-10">HIRE SENIOR DEV</span>
@@ -224,7 +224,7 @@ export default function Hero() {
 
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 rounded-xl bg-[#12141d] border border-white/10 text-gray-200 font-semibold text-xs sm:text-sm tracking-wider hover:border-orange-500/50 hover:text-white hover:bg-[#1a1c28] transition-all duration-300 shadow-md"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 rounded-xl bg-[#12141d] border border-white/10 text-gray-200 font-semibold text-xs sm:text-sm tracking-wider hover:border-orange-500/50 hover:text-white hover:bg-[#1a1c28] transition-all duration-300 shadow-md w-full sm:w-auto text-center"
               >
                 <span>EXPLORE SYSTEMS</span>
                 <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400" />
@@ -232,14 +232,16 @@ export default function Hero() {
             </div>
 
             {/* Interactive Developer CLI Prompt with Copy Feature */}
-            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#0c0e15] border border-white/[0.08] text-[11px] sm:text-xs font-mono text-gray-300">
-              <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-400" />
-              <span className="text-gray-500">$</span>
-              <span className="text-gray-200">npx subhash-ketagoda</span>
+            <div className="inline-flex items-center justify-between sm:justify-start gap-2 sm:gap-3 px-3.5 sm:px-4 py-2 rounded-xl bg-[#0c0e15] border border-white/[0.08] text-[11px] sm:text-xs font-mono text-gray-300 max-w-full overflow-hidden">
+              <div className="flex items-center gap-2 truncate">
+                <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange-400 shrink-0" />
+                <span className="text-gray-500 shrink-0">$</span>
+                <span className="text-gray-200 truncate">npx subhash-ketagoda</span>
+              </div>
               <button
                 onClick={copyCommand}
                 aria-label="Copy npx command"
-                className="ml-1.5 sm:ml-2 p-1 rounded hover:bg-white/10 text-gray-400 hover:text-white transition-colors"
+                className="ml-1 sm:ml-2 p-1 rounded hover:bg-white/10 text-gray-400 hover:text-white transition-colors shrink-0"
                 title="Copy to clipboard"
               >
                 {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
@@ -427,9 +429,9 @@ export default function Hero() {
         {/* =========================================================================
             RIGHT COLUMN: The Senior Developer Bento Workstation / Interactive IDE Console
            ========================================================================= */}
-        <div className="lg:col-span-5 flex items-center justify-center relative w-full mt-3 lg:-mt-10 xl:-mt-14 lg:self-start">
+        <div className="lg:col-span-5 min-w-0 flex items-center justify-center relative w-full mt-3 lg:-mt-10 xl:-mt-14 lg:self-start">
           <div
-            className="w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[480px] xl:max-w-[530px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/10 backdrop-blur-xl overflow-hidden transition-transform duration-300"
+            className="w-full max-w-full sm:max-w-[360px] lg:max-w-[480px] xl:max-w-[530px] mx-auto rounded-2xl bg-[#0e1017]/95 border border-white/[0.12] shadow-2xl shadow-orange-500/10 backdrop-blur-xl overflow-hidden transition-transform duration-300"
             style={{
               transform:
                 mousePos.tiltX || mousePos.tiltY
@@ -457,10 +459,10 @@ export default function Hero() {
             </div>
 
             {/* Interactive Tabs Switcher */}
-            <div className="flex border-b border-white/[0.08] bg-[#0c0e14] px-1.5 pt-1 sm:px-2 sm:pt-1.5 lg:px-3 lg:pt-2 gap-1 text-[10px] sm:text-xs lg:text-xs font-mono">
+            <div className="flex border-b border-white/[0.08] bg-[#0c0e14] px-1.5 pt-1 sm:px-2 sm:pt-1.5 lg:px-3 lg:pt-2 gap-1 text-[10px] sm:text-xs lg:text-xs font-mono overflow-x-auto no-scrollbar">
               <button
                 onClick={() => setActiveTab("profile")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all min-h-[34px] sm:min-h-0 shrink-0 ${
                   activeTab === "profile"
                     ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
                     : "text-gray-400 hover:text-gray-200"
@@ -472,7 +474,7 @@ export default function Hero() {
 
               <button
                 onClick={() => setActiveTab("code")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all min-h-[34px] sm:min-h-0 shrink-0 ${
                   activeTab === "code"
                     ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
                     : "text-gray-400 hover:text-gray-200"
@@ -484,7 +486,7 @@ export default function Hero() {
 
               <button
                 onClick={() => setActiveTab("architecture")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all ${
+                className={`px-2 py-1 sm:px-2.5 sm:py-1 lg:px-3.5 lg:py-1.5 rounded-t-lg flex items-center gap-1 sm:gap-1.5 transition-all min-h-[34px] sm:min-h-0 shrink-0 ${
                   activeTab === "architecture"
                     ? "bg-[#0e1017] text-orange-400 border-t-2 border-orange-500"
                     : "text-gray-400 hover:text-gray-200"
@@ -497,18 +499,18 @@ export default function Hero() {
 
             {/* Tab 1: Profile View (Portrait + Compact Telemetry HUD) */}
             {activeTab === "profile" && (
-              <div className="relative p-2.5 sm:p-4 lg:p-6 flex flex-col items-center justify-center min-h-[230px] sm:min-h-[280px] lg:min-h-[430px] xl:min-h-[470px]">
+              <div className="relative p-2.5 sm:p-4 lg:p-6 flex flex-col items-center justify-center min-h-[210px] sm:min-h-[280px] lg:min-h-[430px] xl:min-h-[470px]">
                 {/* Subtle Amber Portrait Rim Halo */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 sm:w-52 lg:w-72 xl:w-80 h-40 sm:h-52 lg:h-72 xl:h-80 rounded-full bg-orange-500/15 blur-[60px] pointer-events-none" />
 
                 {/* Subhash Hero Cutout Image */}
-                <div className="relative w-[160px] h-[210px] sm:w-[200px] sm:h-[260px] lg:w-[320px] lg:h-[390px] xl:w-[360px] xl:h-[440px] z-10 flex items-end justify-center">
+                <div className="relative w-[140px] h-[190px] sm:w-[200px] sm:h-[260px] lg:w-[320px] lg:h-[390px] xl:w-[360px] xl:h-[440px] z-10 flex items-end justify-center">
                   <Image
                     src="/images/subash-hero.png"
                     alt="Subhash Ketagoda - Senior Full-Stack Engineer"
                     fill
                     priority
-                    sizes="(max-width: 640px) 160px, (max-width: 1024px) 200px, (max-width: 1280px) 320px, 360px"
+                    sizes="(max-width: 640px) 140px, (max-width: 1024px) 200px, (max-width: 1280px) 320px, 360px"
                     className="object-contain object-bottom drop-shadow-[0_12px_28px_rgba(0,0,0,0.9)] filter contrast-[1.04]"
                   />
                   {/* Subtle fade at the bottom into card */}

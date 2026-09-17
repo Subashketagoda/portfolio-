@@ -34,7 +34,7 @@ export default function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Back to Top"
-      className={`fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-[#0d0f17]/95 border border-white/10 hover:border-orange-500/60 flex items-center justify-center text-gray-400 hover:text-orange-400 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer ${
+      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#0d0f17]/95 border border-white/10 hover:border-orange-500/60 flex items-center justify-center text-gray-400 hover:text-orange-400 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer ${
         isVisible ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
     >
@@ -61,7 +61,7 @@ export default function BackToTop() {
         />
       </svg>
 
-      <ArrowUp className="w-4 h-4 transition-transform group-hover:-translate-y-0.5 relative z-10" />
+      <ArrowUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform group-hover:-translate-y-0.5 relative z-10" />
     </button>
   );
 }

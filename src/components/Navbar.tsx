@@ -51,13 +51,13 @@ export default function Navbar() {
           : "py-4 bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo: Authentic Subhash Ketagoda signature */}
         <a href="#home" className="flex items-center group py-1">
           <img
             src="/images/subhash-signature.png"
             alt="Subhash Ketagoda"
-            className="h-9 sm:h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(249,115,22,0.35)] group-hover:scale-105 transition-transform duration-300"
+            className="h-8 sm:h-10 md:h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(249,115,22,0.35)] group-hover:scale-105 transition-transform duration-300"
           />
         </a>
 
@@ -102,29 +102,35 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Menu Dropdown & Backdrop */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0c0c11]/98 backdrop-blur-2xl border-b border-white/10 px-6 py-5 space-y-3 shadow-2xl">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-semibold tracking-wider text-gray-300 active:text-orange-500 hover:text-orange-500 py-2 min-h-[44px] flex items-center transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-2">
-            <a
-              href="#contact"
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-center py-3.5 px-4 rounded-full bg-orange-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform"
-            >
-              LET&apos;S TALK
-            </a>
+        <>
+          <div
+            className="fixed inset-0 top-[60px] bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <div className="relative z-50 lg:hidden bg-[#0c0c11]/98 backdrop-blur-2xl border-b border-white/10 px-5 sm:px-6 py-5 space-y-2 shadow-2xl max-h-[calc(100dvh-64px)] overflow-y-auto">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-sm font-semibold tracking-wider text-gray-300 active:text-orange-500 hover:text-orange-500 py-2.5 min-h-[44px] flex items-center transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+            <div className="pt-3">
+              <a
+                href="#contact"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-center py-3.5 px-4 rounded-full bg-orange-500 text-white font-semibold text-xs tracking-wider shadow-lg active:scale-98 transition-transform"
+              >
+                LET&apos;S TALK
+              </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

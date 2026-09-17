@@ -29,18 +29,18 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 md:px-12 bg-[#0a0a0e] relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0a0a0e] relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-orange-500/[0.05] rounded-full blur-[170px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-orange-500/[0.05] rounded-full blur-[170px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Eyebrow, Title, Description */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-4 min-w-0 space-y-4">
             <div className="text-orange-500 font-mono text-xs md:text-sm font-semibold tracking-widest uppercase">
               GET IN TOUCH
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
               Let&apos;s Build Something Amazing Together
             </h2>
             <p className="text-gray-400 text-sm sm:text-base leading-relaxed font-normal pt-2">
@@ -49,7 +49,7 @@ export default function Contact() {
           </div>
 
           {/* Middle Column: Form matching screenshot */}
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 min-w-0">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
@@ -58,7 +58,7 @@ export default function Contact() {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-base sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
                 />
                 <input
                   type="email"
@@ -66,7 +66,7 @@ export default function Contact() {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-base sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
 
@@ -75,7 +75,7 @@ export default function Contact() {
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-sm text-gray-400 focus:text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-base sm:text-sm text-gray-400 focus:text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer appearance-none"
                   >
                     <option value="" disabled>Project Type</option>
                     <option value="web" className="bg-[#13131b] text-white">Web Development</option>
@@ -90,7 +90,7 @@ export default function Contact() {
                   <select
                     value={formData.budgetRange}
                     onChange={(e) => setFormData({ ...formData, budgetRange: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-sm text-gray-400 focus:text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer appearance-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-base sm:text-sm text-gray-400 focus:text-white focus:outline-none focus:border-orange-500 transition-colors cursor-pointer appearance-none"
                   >
                     <option value="" disabled>Budget Range</option>
                     <option value="1k-3k" className="bg-[#13131b] text-white">&lt; $1,000</option>
@@ -109,7 +109,7 @@ export default function Contact() {
                   placeholder="Tell me about your project..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-[#13131b] border border-white/[0.08] text-base sm:text-sm text-white placeholder-gray-500 focus:outline-none focus:border-orange-500 transition-colors resize-none"
                 />
               </div>
 
@@ -117,7 +117,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={submitted}
-                  className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs tracking-wider hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 hover:scale-[1.02] transition-all duration-300 disabled:opacity-75"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs tracking-wider hover:from-orange-600 hover:to-amber-600 shadow-lg shadow-orange-500/25 hover:shadow-orange-500/40 active:scale-98 sm:hover:scale-[1.02] transition-all duration-300 disabled:opacity-75"
                 >
                   {submitted ? (
                     <>
@@ -136,8 +136,8 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Contact Info Card matching screenshot */}
-          <div className="lg:col-span-3">
-            <div className="rounded-2xl bg-[#13131b] border border-white/[0.08] p-6 space-y-6 shadow-xl">
+          <div className="lg:col-span-3 min-w-0 w-full">
+            <div className="rounded-2xl bg-[#13131b] border border-white/[0.08] p-5 sm:p-6 space-y-5 sm:space-y-6 shadow-xl">
               <div className="flex items-start gap-3.5">
                 <div className="w-9 h-9 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-orange-400 shrink-0 mt-0.5">
                   <Mail className="w-4 h-4" />

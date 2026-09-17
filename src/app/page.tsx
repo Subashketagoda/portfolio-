@@ -24,11 +24,11 @@ export default function Home() {
       <ScrollProgressBar />
       <BackToTop />
 
-      <div className="min-h-screen bg-[#080b0f] text-white selection:bg-orange-500 selection:text-white">
+      <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#080b0f] text-white selection:bg-orange-500 selection:text-white">
         <MouseSpotlight />
         <Navbar />
 
-        <main>
+        <main className="w-full max-w-full overflow-x-clip">
           <Hero />
 
           <MarqueeBanner />
