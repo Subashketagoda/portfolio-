@@ -119,19 +119,7 @@ export default function Hero() {
            ========================================================================= */}
         <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
           {/* Main Title & Eyebrow Group with tight, compact spacing */}
-          <div className="flex flex-col gap-2 sm:gap-2.5">
-            {/* Top Verified Fiverr Gig Pill */}
-            <a
-              href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1dbf73]/10 border border-[#1dbf73]/30 text-[#1dbf73] font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase hover:bg-[#1dbf73]/20 hover:border-[#1dbf73]/60 transition-all w-fit shadow-[0_0_15px_rgba(29,191,115,0.15)] group"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#1dbf73] animate-pulse" />
-              <span>OFFICIAL FIVERR GIG &mdash; ORDER ONLINE</span>
-              <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-            </a>
-
+          <div className="flex flex-col gap-0 sm:gap-0.5">
             {/* Clean Prominent Eyebrow */}
             <div className="flex items-center gap-2 text-orange-500 font-mono text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] uppercase leading-none">
               <span className="text-orange-400 font-black text-lg sm:text-xl leading-none">&mdash;</span>
