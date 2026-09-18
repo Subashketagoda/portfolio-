@@ -11,12 +11,18 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
+import dynamic from "next/dynamic";
+
 // Client-only ambient indicators
 import LoadingScreen from "@/components/LoadingScreen";
 import MouseSpotlight from "@/components/MouseSpotlight";
-import Background3D from "@/components/Background3D";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import BackToTop from "@/components/ui/BackToTop";
+
+// Dynamically import Three.js 3D Background with ssr: false so heavy WebGL/Three bundle does not block mobile initial load
+const Background3D = dynamic(() => import("@/components/Background3D"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (

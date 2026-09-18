@@ -1,0 +1,28 @@
+{
+  "name": "subhash-ketagoda",
+  "version": "1.0.0",
+  "description": "Interactive CLI portfolio & business card for Subhash Ketagoda — Full-Stack Developer & Software Engineer",
+  "main": "bin/index.js",
+  "bin": {
+    "subhash-ketagoda": "bin/index.js"
+  },
+  "keywords": [
+    "subhash",
+    "subhash-ketagoda",
+    "portfolio",
+    "developer",
+    "card",
+    "cli",
+    "npx"
+  ],
+  "author": "Subhash Ketagoda <contact@subhashketagoda.com>",
+  "license": "MIT",
+  "homepage": "https://subhashketagoda.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Subashketagoda/portfolio-.git"
+  },
+  "files": [
+    "bin"
+  ]
+}

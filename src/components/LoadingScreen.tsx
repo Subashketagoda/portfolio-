@@ -43,15 +43,29 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     }
 
     // Unmount after all 5 shutter slats complete sliding off-screen
-    // Column 4 has 280ms delay + 650ms duration = 930ms
+    // Column 4 has 200ms delay + 450ms duration = 650ms
     setTimeout(() => {
       setIsFinished(true);
       unlockScroll();
       onComplete?.();
-    }, 950);
+    }, 700);
   }, [unlockScroll, onComplete]);
 
   useEffect(() => {
+    // If the visitor already experienced the intro during this browser session, skip immediately
+    if (typeof window !== "undefined") {
+      try {
+        if (sessionStorage.getItem("subhash_intro_seen") === "1") {
+          setIsFinished(true);
+          unlockScroll();
+          onComplete?.();
+          return;
+        }
+      } catch {
+        // ignore
+      }
+    }
+
     // Prevent body scrolling while loading screen is active
     if (typeof document !== "undefined") {
       document.documentElement.style.overflow = "hidden";
@@ -73,21 +87,24 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     };
     const handleTouchMove = (e: TouchEvent) => {
       const touchEndY = e.touches[0].clientY;
-      if (touchStartY - touchEndY > 50) {
+      if (touchStartY - touchEndY > 40) {
         handleFinish();
       }
     };
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Smooth 4-second cinematic counter (4000ms) as requested
+    // Snappy, high-octane pacing: 1.2s on mobile for instant feel, 1.6s on desktop
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 || navigator.maxTouchPoints > 1);
+    const duration = isMobile ? 1200 : 1600;
     const startTime = Date.now();
-    const duration = 4000;
 
     const interval = setInterval(() => {
       const elapsed = Date.now() - startTime;
       const t = Math.min(elapsed / duration, 1);
-      // Smooth cubic easing: steady cinematic acceleration with graceful finish
+      // Smooth cubic easing: swift acceleration with sleek settle
       const eased = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
       const current = Math.min(Math.round(eased * 100), 100);
 
@@ -110,13 +127,13 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
         clearInterval(interval);
         handleFinish();
       }
-    }, 20);
+    }, 16);
 
-    // Hard fallback: unconditionally unlock and finish within 4.8s under all circumstances
+    // Hard fallback: unconditionally unlock and finish within 2.2s under all circumstances
     const safetyTimeout = setTimeout(() => {
       clearInterval(interval);
       handleFinish();
-    }, 4800);
+    }, 2200);
 
     return () => {
       clearInterval(interval);
@@ -144,19 +161,20 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       {/* ========================================================================= */}
       <div className="absolute inset-0 z-0 flex w-full h-full pointer-events-none">
         {[0, 1, 2, 3, 4].map((index) => {
-          // Staggered delay for each column (left-to-right cascade)
+          // Snappy staggered delay for each column (left-to-right cascade)
           const delays = [
             "delay-[0ms]",
-            "delay-[70ms]",
-            "delay-[140ms]",
-            "delay-[210ms]",
-            "delay-[280ms]",
+            "delay-[50ms]",
+            "delay-[100ms]",
+            "delay-[150ms]",
+            "delay-[200ms]",
           ];
 
           return (
             <div
               key={index}
-              className={`relative h-full w-1/5 bg-[#06070a] border-r border-white/[0.04] transition-transform duration-[650ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${
+              style={{ willChange: "transform" }}
+              className={`relative h-full w-1/5 bg-[#06070a] border-r border-white/[0.04] transition-transform duration-[450ms] ease-[cubic-bezier(0.85,0,0.15,1)] ${
                 delays[index]
               } ${isRevealing ? "-translate-y-full" : "translate-y-0"}`}
             >

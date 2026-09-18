@@ -226,10 +226,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
-        {/* Preload critical above-the-fold hero image to eliminate LCP delay */}
+        {/* Preload critical above-the-fold hero image and loading signature to eliminate mobile delay */}
         <link
           rel="preload"
           href="/images/subash-hero.png"
+          as="image"
+          fetchPriority="high"
+        />
+        <link
+          rel="preload"
+          href="/images/subhash-signature.png"
           as="image"
           fetchPriority="high"
         />
