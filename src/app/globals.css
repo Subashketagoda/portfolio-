@@ -32,8 +32,17 @@ body {
   position: relative;
 }
 
-/* Instant visibility on mobile and tablet: prevents any blank/frozen sections during initial load or hydration */
+/* Instant visibility & ultra-smooth 120Hz native touch scrolling on mobile and tablet */
 @media (max-width: 1024px) {
+  html {
+    scroll-behavior: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+
   .scroll-reveal-box {
     opacity: 1 !important;
     transform: none !important;

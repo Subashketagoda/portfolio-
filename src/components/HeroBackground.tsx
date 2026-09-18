@@ -22,16 +22,20 @@ export default function HeroBackground({ mousePos }: HeroBackgroundProps) {
     let width = (canvas.width = canvas.parentElement?.offsetWidth || window.innerWidth);
     let height = (canvas.height = canvas.parentElement?.offsetHeight || window.innerHeight);
 
+    const isMobile = width < 768 || (typeof navigator !== "undefined" && navigator.maxTouchPoints > 1);
+    if (isMobile) {
+      return; // Free mobile CPU & GPU entirely for 120Hz native silk scroll
+    }
+
     // High DPI scaling
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
     canvas.width = width * dpr;
     canvas.height = height * dpr;
     ctx.scale(dpr, dpr);
 
-    const isMobile = width < 768;
-    const particleCount = isMobile ? 22 : 48;
-    const connectionDistance = isMobile ? 70 : 100;
-    const mouseRadius = isMobile ? 80 : 130;
+    const particleCount = 42;
+    const connectionDistance = 100;
+    const mouseRadius = 130;
 
     // Track mouse on canvas coordinates
     let localMouse = { x: -1000, y: -1000 };
@@ -116,10 +120,7 @@ export default function HeroBackground({ mousePos }: HeroBackgroundProps) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fillStyle = `${this.color}${Math.max(0.1, this.alpha)})`;
-        ctx.shadowColor = "#ff8a00";
-        ctx.shadowBlur = this.radius * 4;
         ctx.fill();
-        ctx.shadowBlur = 0; // reset
       }
     }
 
