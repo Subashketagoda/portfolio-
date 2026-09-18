@@ -52,20 +52,6 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   }, [unlockScroll, onComplete]);
 
   useEffect(() => {
-    // If the visitor already experienced the intro during this browser session, skip immediately
-    if (typeof window !== "undefined") {
-      try {
-        if (sessionStorage.getItem("subhash_intro_seen") === "1") {
-          setIsFinished(true);
-          unlockScroll();
-          onComplete?.();
-          return;
-        }
-      } catch {
-        // ignore
-      }
-    }
-
     // Prevent body scrolling while loading screen is active
     if (typeof document !== "undefined") {
       document.documentElement.style.overflow = "hidden";
@@ -94,11 +80,8 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     window.addEventListener("touchstart", handleTouchStart, { passive: true });
     window.addEventListener("touchmove", handleTouchMove, { passive: true });
 
-    // Snappy, high-octane pacing: 1.2s on mobile for instant feel, 1.6s on desktop
-    const isMobile =
-      typeof window !== "undefined" &&
-      (window.innerWidth < 768 || navigator.maxTouchPoints > 1);
-    const duration = isMobile ? 1200 : 1600;
+    // Cinematic 4-second pacing for loading screen
+    const duration = 4000;
     const startTime = Date.now();
 
     const interval = setInterval(() => {
@@ -129,11 +112,11 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
     }, 16);
 
-    // Hard fallback: unconditionally unlock and finish within 2.2s under all circumstances
+    // Hard fallback: unconditionally unlock and finish within 4.8s under all circumstances
     const safetyTimeout = setTimeout(() => {
       clearInterval(interval);
       handleFinish();
-    }, 2200);
+    }, 4800);
 
     return () => {
       clearInterval(interval);
