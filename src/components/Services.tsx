@@ -47,7 +47,7 @@ const servicesList = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#080b0f] relative overflow-hidden">
+    <section id="services" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-transparent relative overflow-hidden">
       {/* Precision cyber grid & ambient lighting */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.06]"

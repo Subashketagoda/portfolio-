@@ -145,7 +145,7 @@ export default function Skills() {
   });
 
   return (
-    <section id="skills" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0c0c11] relative overflow-hidden">
+    <section id="skills" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-transparent relative overflow-hidden">
       {/* Ambient background glow */}
       <div className="absolute top-1/2 -right-32 w-72 sm:w-96 h-72 sm:h-96 bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-10 -left-32 w-72 sm:w-96 h-72 sm:h-96 bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />

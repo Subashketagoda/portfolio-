@@ -14,6 +14,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 // Client-only ambient indicators
 import LoadingScreen from "@/components/LoadingScreen";
 import MouseSpotlight from "@/components/MouseSpotlight";
+import Background3D from "@/components/Background3D";
 import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import BackToTop from "@/components/ui/BackToTop";
 
@@ -25,6 +26,7 @@ export default function Home() {
       <BackToTop />
 
       <div className="min-h-screen w-full max-w-full overflow-x-clip bg-[#080b0f] text-white selection:bg-orange-500 selection:text-white">
+        <Background3D />
         <MouseSpotlight />
         <Navbar />
 

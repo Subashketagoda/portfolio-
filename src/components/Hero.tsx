@@ -108,7 +108,7 @@ export default function Hero() {
     <section
       id="home"
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-[#080b0f]"
+      className="relative min-h-screen pt-20 sm:pt-28 pb-12 sm:pb-16 px-4 sm:px-6 md:px-12 flex flex-col justify-center overflow-hidden bg-transparent"
     >
       {/* Interactive High-Tech Cyber Hero Background & Effects */}
       <HeroBackground mousePos={{ x: mousePos.x, y: mousePos.y }} />

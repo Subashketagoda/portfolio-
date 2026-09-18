@@ -43,7 +43,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0a0a0f] relative overflow-hidden">
+    <section id="process" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-transparent relative overflow-hidden">
       {/* Ambient background glows */}
       <div className="absolute top-1/2 left-1/3 w-[350px] sm:w-[500px] lg:w-[650px] h-[300px] sm:h-[400px] bg-orange-500/[0.05] blur-[170px] pointer-events-none rounded-full" />
       <div className="absolute bottom-10 right-10 w-[300px] sm:w-[450px] h-[300px] bg-amber-500/[0.04] blur-[160px] pointer-events-none rounded-full" />

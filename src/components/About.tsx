@@ -28,7 +28,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#0a0a0f] relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-transparent relative overflow-hidden">
       {/* Atmospheric cyber grid & ambient lighting */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.08]"

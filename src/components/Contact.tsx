@@ -30,7 +30,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-[#080b0f] relative overflow-hidden">
+    <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 bg-transparent relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute bottom-0 right-1/4 w-[350px] sm:w-[600px] h-[300px] sm:h-[550px] bg-orange-500/[0.06] rounded-full blur-[170px] pointer-events-none animate-pulse-slow" />
       <div className="absolute top-1/3 left-0 w-80 h-80 bg-amber-500/[0.04] rounded-full blur-[150px] pointer-events-none" />

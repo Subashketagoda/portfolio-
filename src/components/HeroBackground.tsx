@@ -197,14 +197,7 @@ export default function HeroBackground({ mousePos }: HeroBackgroundProps) {
         }}
       />
 
-      {/* 2. Horizontal Cyber Scanner Laser Line */}
-      <div className="absolute left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-orange-500/40 to-transparent shadow-[0_0_15px_rgba(255,138,0,0.5)] animate-scanline pointer-events-none" />
 
-      {/* 3. HTML5 Canvas Particles & Constellations */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full pointer-events-none"
-      />
 
       {/* 4. Ambient Pulsing Aurora Light Orbs */}
       {/* Primary Warm Solar Amber (behind workstation) */}
