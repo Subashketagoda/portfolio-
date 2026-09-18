@@ -75,6 +75,34 @@ button, a, input, textarea {
   backdrop-filter: blur(18px);
 }
 
+/* Premium Liquid Glass Effect */
+.liquid-glass-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(16, 20, 30, 0.45) 25%, rgba(9, 12, 18, 0.6) 65%, rgba(255, 255, 255, 0.05) 100%);
+  backdrop-filter: blur(28px) saturate(190%);
+  -webkit-backdrop-filter: blur(28px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 
+    0 24px 60px -12px rgba(0, 0, 0, 0.75),
+    0 0 50px -10px rgba(255, 138, 0, 0.18),
+    inset 0 1px 1.5px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 2px 0 rgba(0, 0, 0, 0.5),
+    inset 0 0 28px 0 rgba(255, 255, 255, 0.03);
+}
+
+.liquid-glass-card::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: -30%;
+  width: 170%;
+  height: 170%;
+  background: radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.1), transparent 45%),
+              radial-gradient(circle at 80% 85%, rgba(255, 138, 0, 0.08), transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
 .orange-glow {
   box-shadow:
     0 0 25px rgba(255, 138, 0, 0.12),
