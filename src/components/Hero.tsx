@@ -119,7 +119,19 @@ export default function Hero() {
            ========================================================================= */}
         <div className="lg:col-span-7 min-w-0 w-full space-y-5 sm:space-y-6">
           {/* Main Title & Eyebrow Group with tight, compact spacing */}
-          <div className="flex flex-col gap-0 sm:gap-0.5">
+          <div className="flex flex-col gap-2 sm:gap-2.5">
+            {/* Top Verified Fiverr Gig Pill */}
+            <a
+              href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1dbf73]/10 border border-[#1dbf73]/30 text-[#1dbf73] font-mono text-[10px] sm:text-[11px] font-bold tracking-wider uppercase hover:bg-[#1dbf73]/20 hover:border-[#1dbf73]/60 transition-all w-fit shadow-[0_0_15px_rgba(29,191,115,0.15)] group"
+            >
+              <span className="w-2 h-2 rounded-full bg-[#1dbf73] animate-pulse" />
+              <span>OFFICIAL FIVERR GIG &mdash; ORDER ONLINE</span>
+              <ExternalLink className="w-3 h-3 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </a>
+
             {/* Clean Prominent Eyebrow */}
             <div className="flex items-center gap-2 text-orange-500 font-mono text-base sm:text-lg md:text-xl font-bold tracking-[0.22em] uppercase leading-none">
               <span className="text-orange-400 font-black text-lg sm:text-xl leading-none">&mdash;</span>
@@ -208,10 +220,10 @@ export default function Hero() {
 
           {/* Action CTAs + Interactive Terminal Quick Command */}
           <div className="space-y-3 sm:space-y-4 pt-1 sm:pt-2">
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 flex-wrap">
               <a
                 href="#booking"
-                className="relative group overflow-hidden inline-flex items-center justify-center gap-2.5 px-7 sm:px-9 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-[length:200%_auto] hover:bg-right text-white font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(249,115,22,0.35)] hover:shadow-[0_0_45px_rgba(249,115,22,0.55)] active:scale-98 sm:hover:scale-[1.02] transition-all duration-500 w-full sm:w-auto text-center cursor-pointer"
+                className="relative group overflow-hidden inline-flex items-center justify-center gap-2.5 px-6 sm:px-8 py-4 rounded-xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 bg-[length:200%_auto] hover:bg-right text-white font-bold text-xs sm:text-sm tracking-wider shadow-[0_0_30px_rgba(249,115,22,0.35)] hover:shadow-[0_0_45px_rgba(249,115,22,0.55)] active:scale-98 sm:hover:scale-[1.02] transition-all duration-500 w-full sm:w-auto text-center cursor-pointer"
               >
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/35 to-transparent skew-x-12 pointer-events-none" />
                 <span className="relative z-10 flex items-center gap-2">
@@ -219,6 +231,19 @@ export default function Hero() {
                   <span>BOOK A CALL / HIRE</span>
                 </span>
                 <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1.5 transition-transform" />
+              </a>
+
+              <a
+                href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-xl bg-[#1dbf73]/15 hover:bg-[#1dbf73]/25 border border-[#1dbf73]/50 text-[#1dbf73] hover:text-[#26d884] font-bold text-xs sm:text-sm tracking-wider shadow-lg shadow-[#1dbf73]/15 hover:shadow-[#1dbf73]/30 transition-all duration-300 w-full sm:w-auto text-center group cursor-pointer"
+              >
+                <svg className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path d="M23.002 12c0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11 11 4.925 11 11zm-5.04-3.667h-2.12v-.785c0-.528.273-.787.82-.787h1.3v-2.02h-1.92c-1.932 0-2.88 1.058-2.88 3.125v.467h-1.428v2.02h1.428v6.905h2.68v-6.905h1.868l.252-2.02zm-8.828 0h-2.68v8.925h2.68V8.333zm-1.34-1.442c.86 0 1.558-.698 1.558-1.558 0-.86-.698-1.558-1.558-1.558-.86 0-1.558.698-1.558 1.558 0 .86.698 1.558 1.558 1.558z" />
+                </svg>
+                <span>ORDER ON FIVERR</span>
+                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
