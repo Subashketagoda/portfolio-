@@ -92,6 +92,28 @@ export default function Contact() {
                 <span>SCHEDULE VIDEO CALL</span>
               </a>
             </div>
+
+            {/* Direct Fiverr Gig Escrow Action */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#131622]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-[#1dbf73]/40 shadow-xl space-y-3 transition-all duration-300">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">FIVERR ESCROW</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1dbf73]/15 border border-[#1dbf73]/30 text-[#1dbf73] font-mono text-[11px] font-bold">
+                  BUYER PROTECTION
+                </span>
+              </div>
+              <p className="text-xs text-gray-300">
+                Prefer milestone escrow and buyer protection? Order directly through my verified Fiverr gig for modern business websites.
+              </p>
+              <a
+                href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 px-4 rounded-xl bg-[#1dbf73]/15 hover:bg-[#1dbf73]/25 border border-[#1dbf73]/40 text-[#1dbf73] hover:text-[#26d884] font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-[#1dbf73]/10 group"
+              >
+                <span>ORDER ON FIVERR</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
 
           {/* Right Column: High-End Contact Form */}

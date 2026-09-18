@@ -9,7 +9,7 @@ function WorldMapBackground() {
       {/* High-Definition Vector World Map with Built-in Colombo Radar */}
       <img
         src="/images/world-map.svg"
-        alt="World Map"
+        alt="Global Client Operations & Colombo Sri Lanka Radar Map — Subhash Ketagoda"
         loading="lazy"
         decoding="async"
         className="w-full h-full object-cover opacity-75 filter brightness-110 contrast-125"
@@ -213,7 +213,7 @@ export default function About() {
             <div className="pt-2 pl-2 flex items-center justify-between">
               <img
                 src="/images/subhash-signature.png"
-                alt="Subhash Ketagoda Signature"
+                alt="Subhash Ketagoda Official Signature — Senior Full-Stack Engineer"
                 loading="lazy"
                 decoding="async"
                 className="h-12 sm:h-16 md:h-20 w-auto object-contain select-none drop-shadow-[0_4px_16px_rgba(249,115,22,0.45)]"

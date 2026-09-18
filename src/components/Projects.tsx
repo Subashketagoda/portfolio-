@@ -82,7 +82,7 @@ export default function Projects() {
               <div className="relative w-full h-56 sm:h-64 bg-[#141724] overflow-hidden">
                 <Image
                   src={project.image}
-                  alt={`${project.title} Preview`}
+                  alt={`Subhash Ketagoda Project — ${project.title} (${project.category})`}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-top group-hover:scale-105 transition-transform duration-500 ease-out"

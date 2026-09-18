@@ -12,7 +12,7 @@ export default function Footer() {
             <a href="#home" className="flex items-center group py-1">
               <img
                 src="/images/subhash-signature.png"
-                alt="Subhash Ketagoda"
+                alt="Subhash Ketagoda — Full-Stack Developer & Software Engineer"
                 className="h-10 w-auto object-contain drop-shadow-[0_2px_10px_rgba(249,115,22,0.35)] group-hover:scale-105 transition-transform duration-300"
               />
             </a>
@@ -132,6 +132,18 @@ export default function Footer() {
                 className="w-8 h-8 rounded-lg bg-[#14141c] border border-white/10 flex items-center justify-center text-gray-400 hover:text-orange-500 hover:border-orange-500/40 transition-colors"
               >
                 <Mail className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fiverr Gig"
+                title="Order on Fiverr"
+                className="w-8 h-8 rounded-lg bg-[#14141c] border border-white/10 flex items-center justify-center text-gray-400 hover:text-[#1dbf73] hover:border-[#1dbf73]/50 transition-colors group"
+              >
+                <svg className="w-3.5 h-3.5 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path d="M23.002 12c0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11 11 4.925 11 11zm-5.04-3.667h-2.12v-.785c0-.528.273-.787.82-.787h1.3v-2.02h-1.92c-1.932 0-2.88 1.058-2.88 3.125v.467h-1.428v2.02h1.428v6.905h2.68v-6.905h1.868l.252-2.02zm-8.828 0h-2.68v8.925h2.68V8.333zm-1.34-1.442c.86 0 1.558-.698 1.558-1.558 0-.86-.698-1.558-1.558-1.558-.86 0-1.558.698-1.558 1.558 0 .86.698 1.558 1.558 1.558z" />
+                </svg>
               </a>
             </div>
           </div>

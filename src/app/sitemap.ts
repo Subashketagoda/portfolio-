@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://subhashketagoda.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio-two-zeta-97.vercel.app";
   return [
     {
       url: baseUrl,
@@ -11,3 +12,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
+

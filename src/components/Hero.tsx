@@ -278,6 +278,18 @@ export default function Hero() {
               >
                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </a>
+              <a
+                href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Fiverr Gig"
+                title="Order on Fiverr"
+                className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-[#12141c] border border-white/[0.08] hover:border-[#1dbf73]/60 hover:text-[#1dbf73] flex items-center justify-center text-gray-400 transition-all shadow-sm group"
+              >
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
+                  <path d="M23.002 12c0 6.075-4.925 11-11 11s-11-4.925-11-11 4.925-11 11-11 11 4.925 11 11zm-5.04-3.667h-2.12v-.785c0-.528.273-.787.82-.787h1.3v-2.02h-1.92c-1.932 0-2.88 1.058-2.88 3.125v.467h-1.428v2.02h1.428v6.905h2.68v-6.905h1.868l.252-2.02zm-8.828 0h-2.68v8.925h2.68V8.333zm-1.34-1.442c.86 0 1.558-.698 1.558-1.558 0-.86-.698-1.558-1.558-1.558-.86 0-1.558.698-1.558 1.558 0 .86.698 1.558 1.558 1.558z" />
+                </svg>
+              </a>
 
               <div className="h-4 w-px bg-white/10 mx-1 hidden sm:block" />
             </div>
