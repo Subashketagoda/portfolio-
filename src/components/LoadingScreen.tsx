@@ -42,18 +42,35 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       window.scrollTo(0, 0);
     }
 
-    // Unmount after all 5 shutter slats complete sliding off-screen
-    // Column 4 has 200ms delay + 450ms duration = 650ms
+    // Unmount after shutter slats complete sliding off-screen
     setTimeout(() => {
       setIsFinished(true);
       unlockScroll();
       onComplete?.();
-    }, 700);
+    }, 450);
   }, [unlockScroll, onComplete]);
 
   useEffect(() => {
-    // Prevent body scrolling while loading screen is active
-    if (typeof document !== "undefined") {
+    // 1. Instant skip on mobile / touch devices or if already visited in this session
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0);
+
+    const alreadySeen =
+      typeof window !== "undefined" &&
+      sessionStorage.getItem("subhash_intro_seen") === "1";
+
+    if (isMobile || alreadySeen) {
+      setIsFinished(true);
+      unlockScroll();
+      onComplete?.();
+      return;
+    }
+
+    // Only lock scroll on desktop during the brief intro
+    if (typeof document !== "undefined" && !isMobile) {
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
     }
@@ -66,22 +83,8 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
     };
     window.addEventListener("keydown", handleKeyDown);
 
-    // Touch swipe-up to skip intro on mobile
-    let touchStartY = 0;
-    const handleTouchStart = (e: TouchEvent) => {
-      touchStartY = e.touches[0].clientY;
-    };
-    const handleTouchMove = (e: TouchEvent) => {
-      const touchEndY = e.touches[0].clientY;
-      if (touchStartY - touchEndY > 40) {
-        handleFinish();
-      }
-    };
-    window.addEventListener("touchstart", handleTouchStart, { passive: true });
-    window.addEventListener("touchmove", handleTouchMove, { passive: true });
-
-    // Cinematic 4-second pacing for loading screen
-    const duration = 4000;
+    // Snappy 1.2-second pacing for desktop loading screen
+    const duration = 1200;
     const startTime = Date.now();
 
     const interval = setInterval(() => {
@@ -112,21 +115,19 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
       }
     }, 16);
 
-    // Hard fallback: unconditionally unlock and finish within 4.8s under all circumstances
+    // Hard fallback: unconditionally unlock and finish within 1.5s
     const safetyTimeout = setTimeout(() => {
       clearInterval(interval);
       handleFinish();
-    }, 4800);
+    }, 1500);
 
     return () => {
       clearInterval(interval);
       clearTimeout(safetyTimeout);
       window.removeEventListener("keydown", handleKeyDown);
-      window.removeEventListener("touchstart", handleTouchStart);
-      window.removeEventListener("touchmove", handleTouchMove);
       unlockScroll();
     };
-  }, [handleFinish, unlockScroll]);
+  }, [handleFinish, unlockScroll, onComplete]);
 
   if (isFinished) {
     return null;
@@ -137,7 +138,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   return (
     <div
       onClick={handleFinish}
-      className="fixed inset-0 z-[120] pointer-events-auto select-none overflow-hidden cursor-pointer touch-none"
+      className="fixed inset-0 z-[120] pointer-events-auto select-none overflow-hidden cursor-pointer"
     >
       {/* ========================================================================= */}
       {/* 5-COLUMN VERTICAL SHUTTER SLATS (Awwwards Staggered Wipe)                 */}

@@ -5,7 +5,7 @@ const nextConfig = {
   poweredByHeader: false,
 
   experimental: {
-    optimizePackageImports: ["framer-motion", "lucide-react"],
+    optimizePackageImports: ["framer-motion", "lucide-react", "three", "clsx"],
   },
 
   images: {

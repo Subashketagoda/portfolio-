@@ -10,6 +10,17 @@ export default function Background3D() {
     const container = containerRef.current;
     if (!container) return;
 
+    const isMobile =
+      typeof window !== "undefined" &&
+      (window.innerWidth < 768 ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0);
+
+    // Completely bypass Three.js / WebGL on mobile devices for instant load & 0 CPU overhead
+    if (isMobile) {
+      return;
+    }
+
     // --- 1. Scene & Atmospheric Fog ---
     const scene = new THREE.Scene();
     // Gentle fog that preserves foreground clarity while fading distant horizon dots
@@ -24,16 +35,12 @@ export default function Background3D() {
     // Adjusted camera height and angle so the dot wave is immediately visible across the Hero section
     camera.position.set(0, 35, 520);
 
-    const isMobile =
-      typeof window !== "undefined" &&
-      (window.innerWidth < 768 || navigator.maxTouchPoints > 1);
-
     // --- 2. High-Performance WebGL Renderer ---
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
-      antialias: !isMobile,
+      antialias: true,
       powerPreference: "high-performance",
-      precision: isMobile ? "mediump" : "highp",
+      precision: "highp",
     });
     renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -287,6 +294,9 @@ export default function Background3D() {
       ref={containerRef}
       aria-hidden="true"
       className="fixed inset-0 pointer-events-none z-[1] overflow-hidden select-none"
-    />
+    >
+      {/* Mobile-only pure CSS ambient silk glow (zero JS, 0 KB WebGL overhead, instant 120Hz native scroll) */}
+      <div className="md:hidden absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_15%,rgba(255,138,0,0.08),transparent_70%)] pointer-events-none" />
+    </div>
   );
 }
