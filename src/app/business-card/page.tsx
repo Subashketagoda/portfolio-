@@ -8,6 +8,8 @@ import {
   Download,
   Share2,
   Mail,
+  Phone,
+  MessageCircle,
   MapPin,
   Globe,
   Github,
@@ -25,6 +27,7 @@ import {
 export default function BusinessCardPage() {
   const [isFlipped, setIsFlipped] = useState(false);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
 
   // Download .vcf file directly for phone address book
@@ -36,6 +39,9 @@ export default function BusinessCardPage() {
       "N:Ketagoda;Subhash;;;",
       "TITLE:Senior Full-Stack Architect",
       "ORG:Subhash Ketagoda Tech",
+      "TEL;TYPE=CELL,VOICE;VALUE=uri:tel:+94789656969",
+      "TEL;TYPE=WORK,VOICE:+94789656969",
+      "TEL;TYPE=WHATSAPP:+94789656969",
       "EMAIL;TYPE=INTERNET,WORK:subhashketagoda@gmail.com",
       "ADR;TYPE=WORK:;;Colombo;;;Sri Lanka",
       "URL:https://subhashketagoda.com",
@@ -87,12 +93,21 @@ export default function BusinessCardPage() {
     }
   };
 
+  const handleCopyPhone = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (typeof navigator !== "undefined" && navigator.clipboard) {
+      navigator.clipboard.writeText("+94789656969");
+      setCopiedPhone(true);
+      setTimeout(() => setCopiedPhone(false), 2500);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full bg-[#080b0f] text-white selection:bg-orange-500 selection:text-white flex flex-col justify-between relative overflow-x-hidden">
       {/* Background Ambient Glow Gradients */}
       <div className="fixed inset-0 pointer-events-none z-0">
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[600px] h-[500px] bg-gradient-to-b from-orange-500/20 via-amber-500/10 to-transparent rounded-full blur-[140px]" />
-        <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] bg-cyan-500/12 rounded-full blur-[150px]" />
+        <div className="absolute bottom-[-15%] right-[-10%] w-[500px] h-[500px] bg-cyan-500/12 rounded-full blur-[160px]" />
         <div className="absolute top-1/2 left-[-15%] w-[450px] h-[450px] bg-emerald-500/8 rounded-full blur-[150px]" />
         {/* Subtle grid pattern overlay */}
         <div
@@ -142,15 +157,15 @@ export default function BusinessCardPage() {
            ========================================================================= */}
         <div
           onClick={() => setIsFlipped(!isFlipped)}
-          className="perspective-1000 w-full cursor-pointer select-none group min-h-[440px] xs:min-h-[430px]"
+          className="perspective-1000 w-full cursor-pointer select-none group min-h-[450px] xs:min-h-[440px]"
         >
           <div
-            className={`w-full relative transition-transform duration-700 transform-style-3d min-h-[440px] xs:min-h-[430px]`}
+            className={`w-full relative transition-transform duration-700 transform-style-3d min-h-[450px] xs:min-h-[440px]`}
           >
             {/* =========================================================================
                 FRONT SIDE OF THE CARD
                ========================================================================= */}
-            <div className="backface-hidden w-full h-full min-h-[440px] xs:min-h-[430px] rounded-3xl bg-gradient-to-br from-[#161a29]/95 via-[#0e121d]/98 to-[#090b12] border border-white/[0.12] p-4 xs:p-5 sm:p-6 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.85)] relative overflow-hidden flex flex-col justify-between group-hover:border-orange-500/40 transition-colors duration-300">
+            <div className="backface-hidden w-full h-full min-h-[450px] xs:min-h-[440px] rounded-3xl bg-gradient-to-br from-[#161a29]/95 via-[#0e121d]/98 to-[#090b12] border border-white/[0.12] p-4 xs:p-5 sm:p-6 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.85)] relative overflow-hidden flex flex-col justify-between group-hover:border-orange-500/40 transition-colors duration-300">
               {/* Luxury Accent Glow Lines */}
               <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-orange-500/70 to-transparent" />
               <div className="absolute -top-24 -right-24 w-44 h-44 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -216,9 +231,10 @@ export default function BusinessCardPage() {
                     <MapPin className="w-3 h-3 text-orange-400 shrink-0" />
                     <span className="truncate">Colombo, Sri Lanka</span>
                   </div>
-                  <div className="flex items-center gap-1 text-gray-400 text-[11px] xs:text-xs mt-0.5 truncate">
-                    <ShieldCheck className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span className="truncate">6+ Years &bull; 40+ Shipped</span>
+                  {/* Phone & WhatsApp direct trigger */}
+                  <div className="flex items-center gap-1 text-emerald-400 text-[11px] xs:text-xs mt-0.5 truncate font-mono font-semibold">
+                    <Phone className="w-3 h-3 shrink-0 text-emerald-400" />
+                    <span>+94 78 965 6969</span>
                   </div>
                 </div>
               </div>
@@ -250,7 +266,7 @@ export default function BusinessCardPage() {
             {/* =========================================================================
                 BACK SIDE OF THE CARD
                ========================================================================= */}
-            <div className="backface-hidden rotate-y-180 absolute inset-0 w-full h-full min-h-[440px] xs:min-h-[430px] rounded-3xl bg-gradient-to-br from-[#161a29]/95 via-[#0e121d]/98 to-[#090b12] border border-white/[0.12] p-4 xs:p-5 sm:p-6 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col justify-between group-hover:border-orange-500/40 transition-colors duration-300">
+            <div className="backface-hidden rotate-y-180 absolute inset-0 w-full h-full min-h-[450px] xs:min-h-[440px] rounded-3xl bg-gradient-to-br from-[#161a29]/95 via-[#0e121d]/98 to-[#090b12] border border-white/[0.12] p-4 xs:p-5 sm:p-6 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.85)] overflow-hidden flex flex-col justify-between group-hover:border-orange-500/40 transition-colors duration-300">
               {/* Luxury Accent Glow Lines */}
               <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-cyan-400/70 to-transparent" />
               <div className="absolute -top-24 -left-24 w-44 h-44 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
@@ -268,9 +284,9 @@ export default function BusinessCardPage() {
               </div>
 
               {/* Middle Section: QR Code + Quick Contact Channels */}
-              <div className="flex items-center gap-2.5 xs:gap-3 my-2.5 relative z-10">
+              <div className="flex items-center gap-2.5 xs:gap-3 my-2 relative z-10">
                 {/* Built-in High-Contrast QR Code */}
-                <div className="w-[100px] xs:w-[110px] sm:w-[120px] p-2 rounded-2xl bg-white flex flex-col items-center justify-center shrink-0 shadow-lg">
+                <div className="w-[95px] xs:w-[105px] sm:w-[115px] p-2 rounded-2xl bg-white flex flex-col items-center justify-center shrink-0 shadow-lg">
                   <svg className="w-full h-auto aspect-square text-black" viewBox="0 0 100 100" fill="currentColor">
                     {/* Top-Left Corner Box */}
                     <rect x="10" y="10" width="24" height="24" rx="3" fill="black" />
@@ -317,23 +333,47 @@ export default function BusinessCardPage() {
                 </div>
 
                 {/* Direct Channel Action List */}
-                <div className="flex-1 min-w-0 space-y-1.5 xs:space-y-2">
-                  <button
-                    type="button"
-                    onClick={handleCopyEmail}
+                <div className="flex-1 min-w-0 space-y-1.5">
+                  {/* WhatsApp Direct Chat */}
+                  <a
+                    href="https://wa.me/94789656969"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#25d366]/10 hover:bg-[#25d366]/20 active:bg-[#25d366]/30 border border-[#25d366]/30 flex items-center justify-between text-left text-[#25d366] transition-colors"
+                  >
+                    <div className="flex items-center gap-1.5 min-w-0">
+                      <MessageCircle className="w-3.5 h-3.5 text-[#25d366] shrink-0" />
+                      <span className="truncate text-[10px] xs:text-[11px] font-bold">WhatsApp Chat</span>
+                    </div>
+                    <ExternalLink className="w-3 h-3 text-[#25d366] shrink-0 ml-1" />
+                  </a>
+
+                  {/* Direct Phone Call */}
+                  <a
+                    href="tel:+94789656969"
+                    onClick={(e) => e.stopPropagation()}
                     className="w-full px-2.5 py-1.5 rounded-lg bg-white/[0.04] hover:bg-white/[0.08] active:bg-white/[0.12] border border-white/[0.08] flex items-center justify-between text-left transition-colors"
                   >
                     <div className="flex items-center gap-1.5 text-gray-300 min-w-0">
-                      <Mail className="w-3.5 h-3.5 text-orange-400 shrink-0" />
-                      <span className="truncate text-[10px] xs:text-[11px]">Email Me</span>
+                      <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                      <span className="truncate text-[10px] xs:text-[11px] font-mono font-semibold">+94 78 965 6969</span>
                     </div>
-                    {copiedEmail ? (
-                      <Check className="w-3 h-3 text-emerald-400 shrink-0 ml-1" />
-                    ) : (
-                      <Copy className="w-3 h-3 text-gray-500 shrink-0 ml-1" />
-                    )}
-                  </button>
+                    <button
+                      type="button"
+                      onClick={handleCopyPhone}
+                      className="ml-1 p-0.5 hover:text-white text-gray-400"
+                      title="Copy phone"
+                    >
+                      {copiedPhone ? (
+                        <Check className="w-3 h-3 text-emerald-400 shrink-0" />
+                      ) : (
+                        <Copy className="w-3 h-3 text-gray-500 shrink-0" />
+                      )}
+                    </button>
+                  </a>
 
+                  {/* Email Me */}
                   <a
                     href="mailto:subhashketagoda@gmail.com"
                     onClick={(e) => e.stopPropagation()}
@@ -341,17 +381,29 @@ export default function BusinessCardPage() {
                   >
                     <div className="flex items-center gap-1.5 text-gray-300 min-w-0">
                       <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span className="truncate text-[10px] xs:text-[11px]">Direct Message</span>
+                      <span className="truncate text-[10px] xs:text-[11px]">Email Message</span>
                     </div>
-                    <ExternalLink className="w-3 h-3 text-gray-500 shrink-0 ml-1" />
+                    <button
+                      type="button"
+                      onClick={handleCopyEmail}
+                      className="ml-1 p-0.5 hover:text-white text-gray-400"
+                      title="Copy email"
+                    >
+                      {copiedEmail ? (
+                        <Check className="w-3 h-3 text-emerald-400 shrink-0" />
+                      ) : (
+                        <Copy className="w-3 h-3 text-gray-500 shrink-0" />
+                      )}
+                    </button>
                   </a>
 
+                  {/* Fiverr Escrow */}
                   <a
                     href="https://www.fiverr.com/apexgendigital/design-and-develop-a-modern-premium-business-website"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#1dbf73]/10 hover:bg-[#1dbf73]/20 active:bg-[#1dbf73]/30 border border-[#1dbf73]/30 flex items-center justify-between text-left text-[#25d366] transition-colors"
+                    className="w-full px-2.5 py-1.5 rounded-lg bg-[#1dbf73]/10 hover:bg-[#1dbf73]/20 active:bg-[#1dbf73]/30 border border-[#1dbf73]/30 flex items-center justify-between text-left text-[#1dbf73] transition-colors"
                   >
                     <div className="flex items-center gap-1.5 min-w-0">
                       <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24">
@@ -366,6 +418,26 @@ export default function BusinessCardPage() {
 
               {/* Social Channels Row */}
               <div className="flex items-center justify-around py-1.5 border-t border-white/[0.08] relative z-10">
+                <a
+                  href="https://wa.me/94789656969"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] active:bg-white/[0.15] text-[#25d366] transition-colors"
+                  aria-label="WhatsApp"
+                  title="Chat on WhatsApp"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                </a>
+                <a
+                  href="tel:+94789656969"
+                  onClick={(e) => e.stopPropagation()}
+                  className="p-2 rounded-lg bg-white/[0.04] hover:bg-white/[0.1] active:bg-white/[0.15] text-emerald-400 transition-colors"
+                  aria-label="Call"
+                  title="Direct Call"
+                >
+                  <Phone className="w-4 h-4" />
+                </a>
                 <a
                   href="https://github.com/Subashketagoda"
                   target="_blank"
@@ -421,14 +493,35 @@ export default function BusinessCardPage() {
             ACTION BUTTONS BELOW CARD
            ========================================================================= */}
         <div className="w-full mt-4 sm:mt-6 space-y-2.5 sm:space-y-3">
+          {/* WhatsApp & Call Quick Actions */}
+          <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
+            <a
+              href="https://wa.me/94789656969"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="py-3 px-3 rounded-xl bg-[#25d366]/15 hover:bg-[#25d366]/25 border border-[#25d366]/40 text-[#25d366] font-bold text-xs tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-md shadow-[#25d366]/10"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WHATSAPP CHAT</span>
+            </a>
+
+            <a
+              href="tel:+94789656969"
+              className="py-3 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-400 font-bold text-xs tracking-wider flex items-center justify-center gap-2 transition-all active:scale-[0.98] shadow-md shadow-emerald-500/10"
+            >
+              <Phone className="w-4 h-4" />
+              <span>CALL DIRECT</span>
+            </a>
+          </div>
+
           {/* Primary Action: Save Contact (.vcf) */}
           <button
             type="button"
             onClick={handleSaveContact}
-            className="w-full py-3 sm:py-3.5 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.55)] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3.5 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-orange-500 via-amber-500 to-orange-500 text-white font-bold text-xs sm:text-sm tracking-wide shadow-[0_0_25px_rgba(249,115,22,0.35)] hover:shadow-[0_0_35px_rgba(249,115,22,0.55)] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <Download className="w-4 h-4" />
-            <span>SAVE CONTACT (.VCF)</span>
+            <span>SAVE CONTACT TO PHONE (.VCF)</span>
           </button>
 
           {/* Secondary Action Grid: Flip Card + Share Card */}
@@ -449,12 +542,12 @@ export default function BusinessCardPage() {
             >
               {copiedLink ? (
                 <>
-                  <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <Check className="w-3.5 h-3.5 text-emerald-400" />
                   <span className="text-emerald-300">COPIED</span>
                 </>
               ) : (
                 <>
-                  <Share2 className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                  <Share2 className="w-3.5 h-3.5 text-cyan-400" />
                   <span>SHARE</span>
                 </>
               )}

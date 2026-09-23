@@ -93,6 +93,37 @@ export default function Contact() {
               </a>
             </div>
 
+            {/* Direct Phone & WhatsApp Action */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#131622]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-[#25d366]/40 shadow-xl space-y-3 transition-all duration-300">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-gray-400 uppercase tracking-wider">INSTANT CONNECT</span>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#25d366]/15 border border-[#25d366]/30 text-[#25d366] font-mono text-[11px] font-bold">
+                  PHONE &amp; WHATSAPP
+                </span>
+              </div>
+              <p className="text-xs text-gray-300">
+                Need an immediate response or quick project consultation? Call or message directly on WhatsApp.
+              </p>
+              <div className="grid grid-cols-2 gap-2 pt-1">
+                <a
+                  href="https://wa.me/94789656969"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="py-2.5 px-3 rounded-xl bg-[#25d366]/15 hover:bg-[#25d366]/25 border border-[#25d366]/40 text-[#25d366] font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-[#25d366]/10"
+                >
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>WHATSAPP</span>
+                </a>
+                <a
+                  href="tel:+94789656969"
+                  className="py-2.5 px-3 rounded-xl bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/40 text-emerald-400 font-mono text-xs font-bold tracking-wider uppercase transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-md shadow-emerald-500/10"
+                >
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>CALL DIRECT</span>
+                </a>
+              </div>
+            </div>
+
             {/* Direct Fiverr Gig Escrow Action */}
             <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#131622]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-[#1dbf73]/40 shadow-xl space-y-3 transition-all duration-300">
               <div className="flex items-center justify-between">

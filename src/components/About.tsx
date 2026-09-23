@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Download, User, Mail, MapPin, Clock, Copy, Check, Sparkles } from "lucide-react";
+import { Download, User, Mail, MapPin, Clock, Copy, Check, Sparkles, Phone } from "lucide-react";
 
 function WorldMapBackground() {
   return (
@@ -191,6 +191,32 @@ export default function About() {
                     <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Location:</div>
                     <div className="text-sm font-bold text-white">Colombo, Sri Lanka <span className="text-xs text-orange-400 font-mono">[79.86°E]</span></div>
                   </div>
+                </div>
+
+                {/* Phone & WhatsApp */}
+                <div className="flex items-center justify-between gap-3 pb-4 border-b border-white/[0.06]">
+                  <div className="flex items-center gap-3.5 min-w-0 flex-1">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 shrink-0 shadow-md">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-[11px] text-gray-400 font-mono uppercase tracking-wider">Phone / WhatsApp:</div>
+                      <a
+                        href="https://wa.me/94789656969"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition-colors font-mono block"
+                      >
+                        +94 78 965 6969
+                      </a>
+                    </div>
+                  </div>
+                  <a
+                    href="tel:+94789656969"
+                    className="px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-mono text-xs font-semibold border border-emerald-500/25 shrink-0 transition-colors"
+                  >
+                    Call
+                  </a>
                 </div>
 
                 {/* Availability */}
