@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { Menu, X, CreditCard } from "lucide-react";
 
 const navLinks = [
   { name: "HOME", href: "#home" },
@@ -134,11 +135,19 @@ export default function Navbar() {
             })}
           </nav>
 
-          {/* Right CTA Button: BOOK A CALL */}
-          <div className="hidden sm:flex items-center gap-4">
+          {/* Right CTA Button: CARD & BOOK A CALL */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Link
+              href="/card"
+              className="px-4 py-2 rounded-full bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-xs font-semibold tracking-wider text-gray-200 hover:text-white transition-all flex items-center gap-1.5 shadow-sm active:scale-95"
+            >
+              <CreditCard className="w-3.5 h-3.5 text-orange-400" />
+              <span>DIGITAL CARD</span>
+            </Link>
+
             <a
               href="#booking"
-              className="px-6 py-2 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wider text-gray-200 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-300 cursor-pointer"
+              className="px-5 py-2 rounded-full border border-orange-500/30 text-xs font-semibold tracking-wider text-gray-200 hover:text-white hover:border-orange-500 hover:bg-orange-500/10 transition-all duration-300 cursor-pointer"
             >
               BOOK A CALL
             </a>
@@ -213,7 +222,16 @@ export default function Navbar() {
               );
             })}
 
-            <div className="pt-5">
+            <div className="pt-4 space-y-2.5">
+              <Link
+                href="/card"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 w-full py-3.5 px-4 rounded-full bg-white/[0.08] hover:bg-white/[0.14] border border-white/15 text-white font-semibold text-xs tracking-wider transition-all"
+              >
+                <CreditCard className="w-4 h-4 text-orange-400" />
+                <span>OPEN DIGITAL CARD HUB</span>
+              </Link>
+
               <a
                 href="#booking"
                 onClick={() => setMobileMenuOpen(false)}

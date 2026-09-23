@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   ArrowRight,
   ExternalLink,
@@ -20,6 +21,7 @@ import {
   Server,
   Database,
   Globe,
+  CreditCard,
 } from "lucide-react";
 import HeroBackground from "./HeroBackground";
 import HeroCard from "./HeroCard";
@@ -495,6 +497,14 @@ export default function Hero() {
                 <span>ORDER ON FIVERR</span>
                 <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
+
+              <Link
+                href="/card"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-4 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] border border-white/15 text-white font-bold text-xs sm:text-sm tracking-wider shadow-md hover:shadow-white/10 transition-all duration-300 w-full sm:w-auto text-center group cursor-pointer active:scale-98"
+              >
+                <CreditCard className="w-4 h-4 text-orange-400 group-hover:scale-110 transition-transform" />
+                <span>DIGITAL CARD</span>
+              </Link>
 
               <a
                 href="#projects"
