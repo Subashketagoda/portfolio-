@@ -24,6 +24,7 @@ import {
   ArrowLeft,
   QrCode,
   CheckCircle2,
+  X,
 } from "lucide-react";
 
 export default function BusinessCardPage() {
@@ -31,6 +32,7 @@ export default function BusinessCardPage() {
   const [copiedEmail, setCopiedEmail] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [showQrModal, setShowQrModal] = useState(false);
 
   // Mouse / Touch 3D Tilt Coordinates
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
@@ -419,51 +421,27 @@ export default function BusinessCardPage() {
 
                 {/* 3. Middle Section: QR Code + Quick Contact Channels */}
                 <div className="flex items-center gap-3 my-1 relative z-10">
-                  {/* Built-in High-Contrast QR Code in Gold Frame */}
-                  <div className="w-[102px] xs:w-[110px] sm:w-[118px] p-2 rounded-2xl bg-white border-2 border-amber-400/70 flex flex-col items-center justify-center shrink-0 shadow-lg shadow-black/60">
-                    <svg className="w-full h-auto aspect-square text-black" viewBox="0 0 100 100" fill="currentColor">
-                      {/* Top-Left Corner Box */}
-                      <rect x="10" y="10" width="24" height="24" rx="3" fill="black" />
-                      <rect x="14" y="14" width="16" height="16" rx="2" fill="white" />
-                      <rect x="18" y="18" width="8" height="8" rx="1" fill="black" />
-
-                      {/* Top-Right Corner Box */}
-                      <rect x="66" y="10" width="24" height="24" rx="3" fill="black" />
-                      <rect x="70" y="14" width="16" height="16" rx="2" fill="white" />
-                      <rect x="74" y="18" width="8" height="8" rx="1" fill="black" />
-
-                      {/* Bottom-Left Corner Box */}
-                      <rect x="10" y="66" width="24" height="24" rx="3" fill="black" />
-                      <rect x="14" y="70" width="16" height="16" rx="2" fill="white" />
-                      <rect x="18" y="74" width="8" height="8" rx="1" fill="black" />
-
-                      {/* Data Points Matrix Pattern */}
-                      <rect x="40" y="12" width="6" height="6" rx="1" fill="black" />
-                      <rect x="52" y="12" width="6" height="6" rx="1" fill="black" />
-                      <rect x="44" y="24" width="6" height="6" rx="1" fill="black" />
-                      <rect x="52" y="28" width="6" height="6" rx="1" fill="black" />
-                      <rect x="14" y="44" width="6" height="6" rx="1" fill="black" />
-                      <rect x="26" y="44" width="6" height="6" rx="1" fill="black" />
-                      <rect x="38" y="40" width="6" height="6" rx="1" fill="black" />
-                      {/* Center Monogram Accent */}
-                      <rect x="46" y="44" width="12" height="12" rx="2" fill="#d97706" />
-                      <rect x="62" y="40" width="6" height="6" rx="1" fill="black" />
-                      <rect x="74" y="44" width="6" height="6" rx="1" fill="black" />
-                      <rect x="84" y="44" width="6" height="6" rx="1" fill="black" />
-                      <rect x="40" y="58" width="6" height="6" rx="1" fill="black" />
-                      <rect x="52" y="62" width="6" height="6" rx="1" fill="black" />
-                      <rect x="64" y="56" width="6" height="6" rx="1" fill="black" />
-                      <rect x="78" y="60" width="6" height="6" rx="1" fill="black" />
-                      <rect x="42" y="74" width="6" height="6" rx="1" fill="black" />
-                      <rect x="56" y="76" width="6" height="6" rx="1" fill="black" />
-                      <rect x="68" y="72" width="6" height="6" rx="1" fill="black" />
-                      <rect x="80" y="76" width="6" height="6" rx="1" fill="black" />
-                      <rect x="48" y="86" width="6" height="6" rx="1" fill="black" />
-                      <rect x="62" y="86" width="6" height="6" rx="1" fill="black" />
-                      <rect x="76" y="86" width="6" height="6" rx="1" fill="black" />
-                    </svg>
-                    <span className="text-[8px] xs:text-[9px] font-mono font-extrabold text-amber-700 mt-1 uppercase tracking-tight text-center">
-                      SCAN TO CONNECT
+                  {/* Built-in High-Contrast QR Code in Gold Frame (Click to Zoom) */}
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowQrModal(true);
+                    }}
+                    className="w-[102px] xs:w-[110px] sm:w-[118px] p-2 rounded-2xl bg-white border-2 border-amber-400/80 hover:border-amber-300 flex flex-col items-center justify-center shrink-0 shadow-lg shadow-black/60 transition-transform active:scale-95 cursor-zoom-in group/qr"
+                    title="Click to enlarge QR Code"
+                  >
+                    <div className="relative w-full aspect-square bg-white rounded-lg overflow-hidden flex items-center justify-center">
+                      <Image
+                        src="/images/qr-code.png"
+                        alt="Subhash Ketagoda Official QR Code"
+                        width={100}
+                        height={100}
+                        priority
+                        className="object-contain w-full h-full"
+                      />
+                    </div>
+                    <span className="text-[8px] xs:text-[8.5px] font-mono font-extrabold text-amber-800 mt-1 uppercase tracking-tight text-center group-hover/qr:text-amber-900 flex items-center gap-0.5">
+                      <span>TAP TO ENLARGE</span>
                     </span>
                   </div>
 
@@ -700,6 +678,66 @@ export default function BusinessCardPage() {
           &copy; {new Date().getFullYear()} Subhash Ketagoda &bull; All Rights Reserved
         </p>
       </footer>
+
+      {/* Enlarged High-Resolution QR Code Modal */}
+      {showQrModal && (
+        <div
+          onClick={() => setShowQrModal(false)}
+          className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[320px] w-full p-5 rounded-3xl bg-gradient-to-b from-[#141824] via-[#0d101a] to-[#07090f] border-2 border-amber-400/50 shadow-[0_0_50px_rgba(245,158,11,0.3)] flex flex-col items-center text-center space-y-3.5 relative animate-in fade-in zoom-in-95 duration-200"
+          >
+            {/* Header */}
+            <div className="w-full flex items-center justify-between pb-2 border-b border-white/10">
+              <span className="font-mono text-[11px] text-amber-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>OFFICIAL QR CODE</span>
+              </span>
+              <button
+                type="button"
+                onClick={() => setShowQrModal(false)}
+                className="p-1 rounded-lg bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors"
+                title="Close"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* High-Res QR Image */}
+            <div className="p-3 bg-white rounded-2xl shadow-2xl w-60 h-60 relative overflow-hidden flex items-center justify-center border-2 border-amber-400/30">
+              <Image
+                src="/images/qr-code.png"
+                alt="Subhash Ketagoda Official QR Code"
+                width={240}
+                height={240}
+                priority
+                className="object-contain w-full h-full"
+              />
+            </div>
+
+            {/* Subtitle / Details */}
+            <div className="space-y-0.5">
+              <h4 className="text-white font-black text-base gold-foil-text">Subhash Ketagoda</h4>
+              <p className="text-gray-400 text-xs font-mono">Senior Full-Stack Architect</p>
+              <p className="text-emerald-400 text-xs font-mono font-bold">+94 78 965 6969</p>
+            </div>
+
+            <p className="text-[11px] text-gray-400 leading-tight">
+              Scan with camera on any iPhone or Android to connect instantly.
+            </p>
+
+            <button
+              type="button"
+              onClick={() => setShowQrModal(false)}
+              className="w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-400/20 to-orange-500/20 hover:from-amber-400/30 hover:to-orange-500/30 border border-amber-400/40 text-amber-300 font-mono text-xs font-bold uppercase transition-all"
+            >
+              CLOSE
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle, ChevronDown, Sparkles, Send, MessageSquare, CalendarDays } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Mail, Phone, MapPin, Clock, CheckCircle, ChevronDown, Sparkles, Send, MessageSquare, CalendarDays, QrCode } from "lucide-react";
 import CalBooker from "@/components/CalBooker";
 
 export default function Contact() {
@@ -121,6 +123,40 @@ export default function Contact() {
                   <Phone className="w-3.5 h-3.5" />
                   <span>CALL DIRECT</span>
                 </a>
+              </div>
+            </div>
+
+            {/* Digital Business Card & QR Code */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#131622]/90 to-[#0c0e16]/95 border border-white/[0.09] hover:border-amber-400/40 shadow-xl flex items-center gap-3.5 sm:gap-4 transition-all duration-300">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 p-1.5 rounded-xl bg-white border border-amber-400/50 shrink-0 shadow-md flex items-center justify-center">
+                <Image
+                  src="/images/qr-code.png"
+                  alt="Subhash Ketagoda QR Code"
+                  width={72}
+                  height={72}
+                  className="object-contain w-full h-full"
+                />
+              </div>
+              <div className="min-w-0 flex-1 space-y-1">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-mono text-amber-400 uppercase tracking-wider font-bold flex items-center gap-1">
+                    <QrCode className="w-3.5 h-3.5" />
+                    <span>DIGITAL VCARD &bull; NFC</span>
+                  </span>
+                  <span className="text-[10px] font-mono text-gray-400">SK-2026</span>
+                </div>
+                <p className="text-xs text-gray-300 leading-tight">
+                  Scan with mobile camera to instantly save Subhash&apos;s contact (.vcf) or launch 3D business card.
+                </p>
+                <div className="pt-0.5">
+                  <Link
+                    href="/business-card"
+                    className="inline-flex items-center gap-1 text-xs font-mono font-bold text-amber-300 hover:text-amber-200"
+                  >
+                    <span>OPEN 3D BUSINESS CARD</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
               </div>
             </div>
 
