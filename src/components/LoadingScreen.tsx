@@ -14,7 +14,17 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   const [progress, setProgress] = useState(0);
   const [activeWordIndex, setActiveWordIndex] = useState(0);
   const [isRevealing, setIsRevealing] = useState(false);
-  const [isFinished, setIsFinished] = useState(false);
+  const [isFinished, setIsFinished] = useState(() => {
+    if (typeof window !== "undefined") {
+      return (
+        window.innerWidth < 768 ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0 ||
+        sessionStorage.getItem("subhash_intro_seen") === "1"
+      );
+    }
+    return false;
+  });
   const hasFinishedRef = useRef(false);
 
   const unlockScroll = useCallback(() => {
@@ -138,7 +148,7 @@ export default function LoadingScreen({ onComplete }: { onComplete?: () => void 
   return (
     <div
       onClick={handleFinish}
-      className="fixed inset-0 z-[120] pointer-events-auto select-none overflow-hidden cursor-pointer"
+      className="hidden md:block fixed inset-0 z-[120] pointer-events-auto select-none overflow-hidden cursor-pointer"
     >
       {/* ========================================================================= */}
       {/* 5-COLUMN VERTICAL SHUTTER SLATS (Awwwards Staggered Wipe)                 */}
